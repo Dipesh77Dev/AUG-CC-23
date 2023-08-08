@@ -1,0 +1,196 @@
+In cmd - install pgadmin from edb & psql -U postgres & give pass.. 							
+1] Check Database => \l; SELECT datname FROM pg_database; 
+2] Exit => \q; 
+3] \c (switching db);
+4] \dt (listing table);
+
+We can write in uppercase, lowercase, etc ..
+
+Execution <==>
+Most Postgres servers have three databases defined by default: template0, template1 and postgres.
+
+PgAdmin4 -
+
+Create Server. give server name as localhost, username - postgres, pass - postgres. [testDb].
+Go to Database > Create Database.  [demo]
+
+Do in Query Tool; If we use script use "" for keys...
+
+1] Create Table => 
+CREATE TABLE sports(
+	sportId INT PRIMARY KEY,
+	sportName VARCHAR(30),
+	sportType Varchar(20)
+);
+
+
+2] Check created table =>
+Select * from sports;
+
+
+3] Insert Values =>
+INSERT INTO sports (sportId, sportName, sportType)
+VALUES (1, 'Cricket', 'Outdoor');
+
+INSERT INTO sports 
+VALUES (2, 'Football', 'Outdoor'),
+(3, 'Hockey', 'Outdoor'),
+(4, 'Carrom', 'Indoor'),
+(5, 'Chess', 'Indoor'),
+(6, 'Badminton', 'Outdoor'),
+(7, 'Tennis', 'Outdoor'),
+(8, 'Business', 'Indoor'),
+(9, 'BasketBall', 'Outdoor'),
+(10, 'Golf', 'Outdoor');
+
+
+4] All Data/Selected Data =>
+select sportName, sportType from sports;
+SELECT * FROM sports;
+
+
+5] Add column in existing table =>
+Alter table sports 
+Add sportsSeq int;
+
+
+6] Update Column =>
+Update sports 
+Set sportsseq = 1
+// where sportname = badminton;  - Not working..
+where sportid = 1;
+
+
+7] Update Datatype =>
+ALTER TABLE sports
+ALTER COLUMN sportType TYPE VARCHAR(4);
+
+
+8] Drop Column =>
+add isFamous boolean; add createdAt timestamp; add updatedAt timestamp; add demo int;
+drop column demo;
+
+
+9] Delete columns =>
+1. Delete all records <--> DELETE FROM sports;
+2. Delete from sports where ... = '...';  -- if we skipped where clause it will delete all records of the table.
+3. Truncate table sports;
+
+
+10] Drop Table =>
+Drop table sports;
+
+
+11] Operators =>
+
+a) Greater than =>
+select * from sports where sportId > 5;
+b) Greater than or equal to =>
+select * from sports where sportId >= 5;
+c) Less than =>
+select * from sports where sportId < 5;
+d) Less than or equal to =>
+select * from sports where sportId <= 5;
+e) Equal to =>
+select * from sports where sportId = 5;
+f) Not equal to =>
+select * from sports where sportId != 5;
+
+Pattern Matching --
+Like, ILike with %(0,1,more than one character) or _ (1 character)
+% & _ are wildcard..
+
+select * from sports where sportId Like '6%'; // Not work bcoz it works with character pattern matching
+a) select * from sports where sportName Like 'Bad%';   // start with
+b) select * from sports where sportName Like '%et';		// end with
+c) select * from sports where sportName Like '%et%';   // substring means in between
+d) select * from sports where sportname Like 'C_ic___';  // _ represent a single character.
+
+Like is case-sensitive
+select * from sports where sportName Like '%ET';  // we had matching with this data but its in small letter so we will not see an o/p
+
+We can use ILike which is not case-sensitive [Same as 'like']
+select * from sports where sportName ILike '%ET';
+
+Checking with multiple columns conditn in table --
+select * from sports where sportName = "Business", "Chess" AND sportType="Indoor"; - Error
+
+Select * from sports where sportName = "Chess" AND sportType = "Indoor";
+Don't pass values in double quote in query tool..
+a) select * from sports where sportName = 'Chess' AND sportType= 'Indoor';  // check more that one condition
+b) select * from sports where sportName = 'Chess' Or sportType= 'Outdoor';  // accept that only one of many conditions is true
+c) select * from sports where sportName In ('Chess', 'Cricket', 'Football');  // shorthand of Or; when a column's value matches any of the values in a list
+d) select * from sports where sportId Between 5 AND 10;  // to check within range
+e) select * from sports where sportId is null; // check if column value is Null
+select * from sports where isFamous is null;
+
+Not -- can be work with Like, ILike, Between, & Null to reverse the truth of operator.
+a) select * from sports where sportName NOT Like 'B%';  // to check where we are not matching with starting letter B
+b) select * from sports where sportName NOT ILike 'B%';
+c) select * from sports where sportName NOT In ('Tennis', 'Badminton'); // Not include this values.
+d) select * from sports where sportId Not Between 5 AND 10;  // to check/not include the values from 5-10.
+e) select * from sports where isFamous is NOT Null // give o/p which doesnt have any null value.
+
+
+12] Select data(retrive data from database) =>
+a) select columnname1, columnname2, ... from tablename;
+b) select * from tablename;  [* - used for all columns];
+
+
+13] SELECT Distinct(column can have many duplicate/same values so we can avoid this) =>
+a) Select Distinct sportType from sports;  // We had 15 values but contain only 2 data, so we will get that 2 data only.
+b) Select Count (Distinct sportType) from sports; // it will check how many values are repeating.
+
+
+14] Where Clause - Its an where clause, we had seen examples above use for filteration/filter records according to conditions..
+
+
+15] Order By Clause(We can managed data in order by giving an order) =>
+select * from sports order by sportseq ASC;  // We had 2 order ASC(A-Z) Or DESC(Z-A).
+
+
+16] Limit(Maximum no. of records) & Offset(specify where to start selecting the records to return) Clause =>
+a) select * from sports Limit 10;
+b) select * from sports order by sportseq ASC Limit 10 Offset 8;
+
+
+17] Min & Max functn =>
+a) select min(sportId) from sports; // returns minimum value in that field.
+b) select max(sportId) from sports; // returns maximum value in that field.
+
+
+18] Count functn (returns the number of rows that matches a specified criterion) =>
+select count(sportId) from sports; // if we had 10 field it will return 10..
+
+
+19] Sum function (returns the total sum of a numeric column) =>
+select sum(sportId) from sports;  // adds it & null values are ignored.
+
+
+20] Avg function (returns the average value of a numeric column) =>
+select avg(sportId) from sports;
+select avg(sportId)::Numeric(10,2) from sports;  // if we want only 2 decimals
+
+
+21] Like Operators had been done in above examples.
+ 
+ 
+22] In Operators(shorthand for multiple or) =>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

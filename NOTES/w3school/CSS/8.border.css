@@ -1,0 +1,176 @@
+/*
+CSS border properties allow you to specify the style, width, and color of an element's border.
+
+1. Border-style => It specifies what kind of border to display.
+dotted(dotted border); dashed(dashed border); solid(solid border); double(double border); groove, ridge, inset, outset(3D border, effect depends on the border-color value); none(no border); hidden(hidden border). The border-style property can have from one to four values (for the top border, right border, bottom border, and the left border)/(top,right,bottom,left...)
+
+2. Border-width => It specifies the width of the four borders. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: thin, medium, or thick.
+
+3. Border-color => It is used to set the color of the four borders. It can be set as - name,HEX,RGB,HSL,transparent. If border-color is not set, it inherits the color of the element.
+
+4. Border-Individual sides => In CSS, there are also properties for specifying each of the borders (top, right, bottom, and left).
+
+5. ShortHand => border-width, border-style(required), border-color.
+
+6. Rounded Border => The border-radius property is used to add rounded borders to an element.
+*/
+
+p.dotted {
+  border-style: dotted;
+}
+
+.dashed {
+  border-style: dashed;
+}
+
+.solid {
+  border-style: solid;
+}
+
+.double {
+  border-style: double;
+}
+
+.groove {
+  border-style: groove;
+}
+
+.ridge {
+  border-style: ridge;
+}
+
+.inset {
+  border-style: inset;
+}
+
+.outset {
+  border-style: outset;
+}
+
+.none {
+  border-style: none;
+}
+
+.hidden {
+  border-style: hidden;
+}
+
+p.width1 {
+  border-style: outset;
+  border-width: 5px;
+}
+
+.width2 {
+  border-style: inset;
+  border-width: medium;
+}
+
+.width3 {
+  border-style: ridge;
+  border-width: 1.5em;
+}
+
+.width4 {
+  border-style: groove;
+  border-width: 50%;
+}
+
+.width5 {
+  border-style: solid;
+  border-width: 20px; /* only 1 same value for all side */
+}
+
+.width6 {
+  border-style: dashed;
+  border-width: 20px 10px; /* 2 sides 20px <=> top-bottom; 10px <=> left-right */
+}
+
+.width7 {
+  border-style: dotted;
+  border-width: 20px 10px 5px 15px; /* given all sides value */
+}
+
+.color1 {
+  border-style: dotted;
+  /* border-color: red; */
+  border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+}
+
+.color2 {
+  border-style: solid;
+  border-color: #ff0000; /* red */
+}
+
+.color3 {
+  border-style: dashed;
+  border-color: rgb(255, 0, 0); /* red */
+}
+
+.color4 {
+  border-style: groove;
+  border-color: hsl(0, 100%, 50%); /* red */
+}
+
+.sides1{
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+}
+
+.sides2{
+    border-style: groove;
+}
+
+.sides3{
+    border-style: solid ridge;
+}
+
+.sides4{
+    border-style: solid dashed ridge;
+}
+
+.sides5{
+    border-style: solid ridge dashed groove;
+}
+
+.short1{
+    border: 10px inset blue;
+}
+
+.short2{
+    /* We can give to individual sides also */
+    border-left: 5px dashed orange;
+    border-bottom: 3px solid yellow;
+}
+
+.rounded{
+    border: 7px outset darkblue;
+    border-radius: 10px;
+}
+
+/*
+Properties{https://www.w3schools.com/css/css_border_rounded.asp} =>
+
+border	                Sets all the border properties in one declaration
+border-bottom	        Sets all the bottom border properties in one declaration
+border-bottom-color	    Sets the color of the bottom border
+border-bottom-style	    Sets the style of the bottom border
+border-bottom-width	    Sets the width of the bottom border
+border-color	        Sets the color of the four borders
+border-left	            Sets all the left border properties in one declaration
+border-left-color	    Sets the color of the left border
+border-left-style	    Sets the style of the left border
+border-left-width	    Sets the width of the left border
+border-radius	        Sets all the four border-*-radius properties for rounded corners
+border-right	        Sets all the right border properties in one declaration
+border-right-color	    Sets the color of the right border
+border-right-style	    Sets the style of the right border
+border-right-width	    Sets the width of the right border
+border-style	        Sets the style of the four borders
+border-top	            Sets all the top border properties in one declaration
+border-top-color	    Sets the color of the top border
+border-top-style	    Sets the style of the top border
+border-top-width	    Sets the width of the top border
+border-width	        Sets the width of the four borders
+*/

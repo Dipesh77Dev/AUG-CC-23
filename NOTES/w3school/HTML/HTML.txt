@@ -1,0 +1,27 @@
+1] Intro - HTML stands for Hyper Text Markup Language. It is the standard markup language for creating Web pages. With HTML we can create our own Website.It describes the structure of a Web page. Easy to Learn. It consists of a series of elements. HTML elements tell the browser how to display the content. HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.
+
+HTML Document - Simple.html & Syntax.html .
+
+The purpose of a web browser (Chrome, Edge, Firefox, Safari) is to read HTML documents and display them correctly. A browser does not display the HTML tags, but uses them to determine how to display the document.
+
+2] Editors - 
+Web pages can be created and modified by using professional HTML editors.
+However, for learning HTML we recommend a simple text editor like Notepad (PC) or TextEdit (Mac).
+We believe that using a simple text editor is a good way to learn HTML.
+We can use any other editor like Sublime text, VS code, etc..
+
+3] Basics.html
+
+4] Elements.html & Attributes.html
+
+5] Heading-Paragraph-Comments.html
+
+6] Styles-Formatting-Quotations.html
+
+7] Colors-CSS.html
+
+8] Links-Images-Favicon.html
+
+9] Tables.html
+
+10] Lists.html

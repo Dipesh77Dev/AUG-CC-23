@@ -1,0 +1,134 @@
+Database(store data/collection of datas) =>
+It is an organized collection of structured information, stored in computer system. We can organize the data like insert, update, delete, get, etc..
+
+SQL(Structured Query Language) =>
+It is used to manage relational databases(RDBMS) & perform various operations on data.
+
+SQL Queries =>
+It & other operations take the form of commands written as statements & are aggregrated into programs that enables the user to add, modify, retrieve data from database tables.
+
+Table =>
+It is the most basic unit of a database and consists of rows and columns of data. A single table holds records, and each record is stored in a row of the table. 
+Tables are the most used type of database objects, or structures that hold or reference data in a relational database. 
+
+Other Types =>
+Views are logical representations of data assembled from one or more database tables.
+Indexes are lookup tables that help speed up database lookup functions.
+Reports consist of data retrieved from one or more tables, usually a subset of that data that is selected based on search criteria.
+
+
+MySQL =>
+MySQL is an RDBMS(Relational Database Management System/Query Language). Free & Open Source. Can be used for both small & large applications.
+eg. Fb, Twitter, Booking, Github, Youtube, etc..
+
+RDBMS =>
+Program to maintain a relational database(storing data in container). It uses SQL queries to access the data in database.
+eg. MySQL, Microsoft SQL Server, Oracle, and Microsoft Access.
+
+Relational Database =>
+Relational databases are relational because they are composed of tables that relate to each other. OR
+It  defines database relationships in the form of tables. The tables are related to each other - based on data common to each.
+
+
+
+Install mysql community version & set the path in environment variables. GUI - MySql Workbench
+in cmd check version if present means it installed, otherwise not installed.
+
+cmd =>
+mysql -u <username> -p <password>; for closing - quit;
+
+
+
+Commands =>
+
+1] Check Databases => show databases; 
+
+
+2] Use Database => use databasename;
+eg. use test1;
+
+
+3] Add Database => create database databasename; Or CREATE DATABASE databasename;
+Note - If database is already present with same name we will get an error - DB exists...
+eg. create database test1;
+
+
+4] Delete Database => DROP DATABASE databasename; 
+Note - Deleting a database will result in loss of complete information stored in database, So be carefull before deleting it...
+eg. drop database test1;
+
+
+5] Table Creation =>
+create table table_name(
+	column1 datatype,
+	column1 datatype,
+	....
+	);
+column - Name of the columns of table data, datatype - It specified what type of data to store(eg. varchar, integer, date, etc).
+
+eg. 
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+
+
+6] Copy of an existing Table =>
+CREATE TABLE new_table_name AS
+    SELECT column1, column2,...
+    FROM existing_table_name
+    WHERE ....;
+
+eg.
+CREATE TABLE TestTable AS
+SELECT customername, contactname
+FROM customers;
+
+
+7] Table data insertion =>
+1. Specify both the column names and the values to be inserted.
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+2. If we are adding values for all the columns of the table, we don't need to specify the column names in the SQL query. 
+However, make sure the order of the values is in the same order as the columns in the table.
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+
+
+8] List Tables => SHOW TABLES;
+1. The optional FULL modifier will show the table type as a second output column -- SHOW FULL TABLES;
+2. To get a list of the tables without switching to the database, use either the FROM or IN clause followed by the database name:
+SHOW TABLES FROM database_name;
+3. The LIKE clause can be used to filter the output of the SHOW TABLES command according to a specific pattern --
+SHOW TABLES LIKE pattern; Or SHOW TABLES LIKE 'permissions%';  (The percent sign (%) means zero, one, or multiple characters).
+
+
+9] Delete Table => DROP TABLE table_name;
+eg. DROP TABLE test1;
+
+10] Delete inside table's data(It will delete table's inner data, rather then removing whole table) - TRUNCATE TABLE table_name;
+
+
+11] Table Updation =>
+
+1. Add Column --
+ALTER TABLE table_name
+ADD column_name datatype;
+eg. 
+ALTER TABLE Customers
+ADD Email varchar(255);
+
+2. Drop Column --
+ALTER TABLE table_name
+DROP COLUMN column_name;
+eg. 
+ALTER TABLE Customers
+DROP COLUMN Email;
+
+3. Modify Column datatype --
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype;

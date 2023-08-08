@@ -1,0 +1,60 @@
+w3school, programiz,
+
+1] WHY JS =>
+
+JS improves the user experience of web page by converting it from static webpage to dynamic webpage/interactive one. OR JS adds behavior to webpages.
+
+How websites work => frontend/backend Or client/server 
+Frontend => HTML/HTML5(structure/what to display), CSS/CSS3(we can make more decorative), JS(we can make more interactive by having dynamic interface).
+
+We can make static pages by only HTML & CSS, but for dynamic we need JS(which can be used as frontend - React & Angular/backend - Node).
+
+We can work on JS in browser everywhere by using console.
+alert("hello world!"); console.log("Hello world!");
+6+7; 3-0; 2*2; 8/4; 5>3; 2>3; 
+
+VS Code editor. Extension - Babel JS.
+
+We had to run js in terminal use node (node <filename>);
+
+1st we were consoling in browser but with the help of vs we can do console in teerminal also.
+
+2] Values & Variabls.
+
+3] Data Types.
+
+4] Expressions & Opeators.
+
+5] Control Statements & Loops.
+
+6] Function
+
+7] ES6 P1.
+
+8] Arrays.
+
+9] Strings.
+
+10] Date & Time.
+
+11] Math Object.
+
+12] DOM, BOM, Window Object.
+
+13] Events.
+
+14] Timing-Based Events.
+
+15] IQ.
+
+16] ES 2015-2020 P2.
+
+17] Advanced Js P1.
+
+18] Asynchronous.
+
+19] Event Loop.
+
+20] Advanced Js P2.
+
+Projects...

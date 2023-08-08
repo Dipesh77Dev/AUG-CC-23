@@ -1,0 +1,18 @@
+{
+  "name": "tt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "main1": "challenge.js",
+  "scripts": {
+    "learn": "nodemon index.js",
+    "iq": "node interview.js",
+    "c" : "node challenge.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

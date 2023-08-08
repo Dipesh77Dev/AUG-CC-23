@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-1</title>
+    <!-- Internal CSS -->
+    <style>
+        #internal1,
+        #internal2 {
+            color: maroon;
+            margin-left: 40px;
+        }
+    </style>
+    <!-- External CSS -->
+    <link type="text/css" href="2.selector.css" rel="stylesheet" />
+    <!-- <link type="text/css" href="color.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <div>
+        3] Selector =>
+        <!-- 3. CSS Selector -->
+
+        <!-- 3.1 CSS Element Selector -->
+        <p> 1<sup>st</sup> para is affected... </p>
+
+        <!-- 3.2 CSS Id Selector -->
+        <p id="para1"> 2<sup>nd</sup> para is affected using id </p>
+        <p id="para1"> another para is affected using id </p>
+        <h2 id="para1"> 3<sup>rd</sup> head2 is affected using id </h2>
+
+        <!-- 3.3 CSS Class Selector -->
+        <p class="para2"> 4<sup>th</sup> para is affected using class</p>
+        <h3 class="para2"> 5<sup>th</sup> head3 is affected using class</h3>
+
+        <!-- We can also specify that only specific HTML elements should be affected by a class. -->
+        <h4 class="center">This heading will not be affected</h4>
+        <p class="center">This paragraph will be yellow and center-aligned.</p>
+
+        <!-- It can also refer to more than one class. -->
+        <h5 class="right">This heading will not be affected</h1>
+            <p class="right">This paragraph will be orange and center-aligned.</p>
+            <p class="left large">This paragraph will be red, center-aligned, and in a large font-size.</p>
+            <p class="right large">This paragraph will be orange, center-aligned, and in a large font-size.</p>
+
+            <!-- 3.4 Universal Selector -->
+
+            <!-- 3.5 Grouping Selector -->
+            <span>Grouping Selector 1</span>
+            <h4>Grouping Selector 1</h4>
+            <h5>Grouping Selector 1</h5>
+            <h6>Grouping Selector 1</h6>
+    </div>
+    <hr />
+
+    <!-- 4. ADD CSS  -->
+
+    <div>
+        4] How to add CSS.. =>
+        <!-- 4.1 inline -->
+        <!-- <h2 style= "text-size: 1.5em">Inline CSS</h2> -->
+        <h2 style="font-size: 2em">Inline CSS</h2>
+
+        <!-- 4.2 Internal CSS (css code is written in head tag in same file..) -->
+        <span id="internal1">Internal CSS1</span>
+        <span id="internal2">Internal CSS2</span>
+
+        <!-- 4.3 External CSS (write all css in one file and link with html in head tag..) -->
+    </div>
+    <hr />
+</body>
+
+</html>

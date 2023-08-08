@@ -1,0 +1,106 @@
+/*
+The CSS background properties are used to add background effects for elements.
+1. background-color => It specifies the background color of an element.
+With CSS, a color is most often specified by:
+a valid color name - like "red"; a HEX value - like "#ff0000"; an RGB value - like "rgb(255,0,0)". We can set bgcolor to any HTML Elements.
+Opacity/Transparency - The opacity property specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0. The lower value, the more transparent; {1-visible; 0-not visible/0.1,0.3,0.6,1}.
+When using the opacity property to add transparency to the background of an element, all of its child elements inherit the same transparency. This can make the text inside a fully transparent element hard to read.
+Transparency using RGBA - If you do not want to apply opacity to child elements, like in our example above, use RGBA color values.
+In addition to RGB, you can use an RGB color value with an alpha channel (RGBA) - which specifies the opacity for a color. An RGBA color value is specified with: rgba(red, green, blue, alpha). The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque) {10%,30%,60%,100%}.
+
+2. background-image => It specifies an image to use as the background of an element. By default, the image is repeated so it covers the entire element. Images can be used from our directory or on web(using image address).
+When using a background image, use an image that does not disturb the text. The background image can also be set for specific elements, like the <p> element - p{background-image: url("paper.gif");}
+
+3. background-image repeat => It repeats an image both horizontally and vertically. Some images should be repeated only horizontally or vertically, or they will look strange.
+horizontally (background-repeat: repeat-x); vertically (background-repeat: repeat-y); no(background-repeat: no-repeat) - background image only once.
+background-position = It is used to specify the position of the background image.
+
+4. background-attachment => It specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page).
+Fixed(background image should be fixed); Scroll(background image should scroll with the rest of the page).
+
+5. shorthand => To shorten the code, it is also possible to specify all the background properties in one single property. This is called a shorthand property. Use the shorthand property to set the background properties in one declaration.
+Order - background-color; background-image; background-repeat; background-attachment; background-position.
+It does not matter if one of the property values is missing, as long as the other ones are in this order.
+*/
+
+.bgcolor {
+  background-color: lightblue;
+  opacity: 0.6;
+  /* background: rgba(0, 128, 0, 0.3) - Green background with 30% opacity */
+}
+
+.img1 {
+  /* background-image: url("paper.gif"); - relative */
+  background-image: url('https://imgs.search.brave.com/k7KNDZLfmd13_InLHFec5MGOH4PAJVIEytElEHIthmQ/rs:fit:594:1080:1/g:ce/aHR0cHM6Ly93d3cu/ZnJlZWNvbXB1dGVy/ZGVza3RvcHdhbGxw/YXBlci5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDkv/ZHJhZ29uLWJhbGwt/ei1nb2t1LXNheWFq/aW4td2FsbHBhcGVy/cy5qcGc');
+}
+
+.img2 {
+  background-image: url('https://imgs.search.brave.com/JLPINILnh6MrBHiUwz0HnqSnbsEx9H2YKdr3NV_13g4/rs:fit:316:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5H/clVsWTdocjFCaUFx/Q25ramp5X3RBSGFM/SCZwaWQ9QXBp');
+  background-repeat: repeat-x;
+  /* background-repeat: repeat-y; */
+  /* background-repeat: no-repeat; */
+}
+
+.img3 {
+  /* In the example above, the background image is placed in the same place as the text. We want to change the position of the image, so that it does not disturb the text too much*/
+  background-image: url('https://imgs.search.brave.com/JLPINILnh6MrBHiUwz0HnqSnbsEx9H2YKdr3NV_13g4/rs:fit:316:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5H/clVsWTdocjFCaUFx/Q25ramp5X3RBSGFM/SCZwaWQ9QXBp');
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.img4 {
+  background-image: url('https://imgs.search.brave.com/JLPINILnh6MrBHiUwz0HnqSnbsEx9H2YKdr3NV_13g4/rs:fit:316:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5H/clVsWTdocjFCaUFx/Q25ramp5X3RBSGFM/SCZwaWQ9QXBp');
+  /* background-repeat: repeat-y; */
+  background-repeat: no-repeat;
+  /* background-position: right top; */
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.img5{
+    background-image: url('https://imgs.search.brave.com/JLPINILnh6MrBHiUwz0HnqSnbsEx9H2YKdr3NV_13g4/rs:fit:316:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5H/clVsWTdocjFCaUFx/Q25ramp5X3RBSGFM/SCZwaWQ9QXBp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+}
+
+.img6{
+    /* background-image: url('https://imgs.search.brave.com/k7KNDZLfmd13_InLHFec5MGOH4PAJVIEytElEHIthmQ/rs:fit:594:1080:1/g:ce/aHR0cHM6Ly93d3cu/ZnJlZWNvbXB1dGVy/ZGVza3RvcHdhbGxw/YXBlci5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDkv/ZHJhZ29uLWJhbGwt/ei1nb2t1LXNheWFq/aW4td2FsbHBhcGVy/cy5qcGc');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll; */
+    background: #ffffff url("https://imgs.search.brave.com/k7KNDZLfmd13_InLHFec5MGOH4PAJVIEytElEHIthmQ/rs:fit:594:1080:1/g:ce/aHR0cHM6Ly93d3cu/ZnJlZWNvbXB1dGVy/ZGVza3RvcHdhbGxw/YXBlci5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDkv/ZHJhZ29uLWJhbGwt/ei1nb2t1LXNheWFq/aW4td2FsbHBhcGVy/cy5qcGc") no-repeat center fixed;
+}
+
+/*
+Keyword values =
+background-position: top;
+background-position: bottom;
+background-position: left;
+background-position: right;
+background-position: center;
+
+<percentage> values =
+background-position: 25% 75%;
+
+<length> values =
+background-position: 0 0;
+background-position: 1cm 2cm;
+background-position: 10ch 8em;
+
+Multiple images =
+background-position: 0 0, center;
+
+Edge offsets values =
+background-position: bottom 10px right 20px;
+background-position: right 3em bottom 10px;
+background-position: bottom 10px right;
+background-position: top right 10px;
+
+Global values =
+background-position: inherit;
+background-position: initial;
+background-position: revert;
+background-position: revert-layer;
+background-position: unset;
+*/

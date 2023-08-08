@@ -1,0 +1,106 @@
+1] Intro => 
+CSS stands for Cascading Style Sheets. CSS describes how HTML elements are to be displayed on screen, paper, or in other media. CSS saves a lot of work. It can control the layout of multiple web pages all at once.External stylesheets are stored in CSS files. CSS is the language we use to style an HTML document. 
+
+Ex -
+body {
+  background-color: lightblue;
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+Why CSS?
+CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.
+
+CSS Solved a big problem -
+HTML was NEVER intended to contain tags for formatting a web page! HTML was created to describe the content of a web page, like:
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+When tags like <font>, and color attributes were added to the HTML 3.2 specification, it started a nightmare for web developers. Development of large websites, where fonts and color information were added to every single page, became a long and expensive process.
+To solve this problem, the World Wide Web Consortium (W3C) created CSS.CSS removed the style formatting from the HTML page!
+
+The style definitions are normally saved in external .css files. With an external stylesheet file, you can change the look of an entire website by changing just one file!
+
+2] Syntax =>
+A CSS rule consists of a selector and a declaration block.
+h1{color: blue; font-size: 12px;}
+h1 => Selector; {color: blue; font-size: 12px;} => Declaration; color/font-size => property; blue/12px => value.
+
+The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons. Each declaration includes a CSS property name and a value, separated by a colon. Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
+
+Ex -
+p {
+  color: red;
+  text-align: center;
+}
+
+p is a selector in CSS (it points to the HTML element you want to style: <p>). color is a property, and red is the property value. text-align is a property, and center is the property value
+
+3] Selector.css
+
+4] How to add CSS =>
+There are three ways of inserting a style sheet:
+External CSS; Internal CSS; Inline CSS
+
+Inline CSS - An inline style may be used to apply a unique style for a single element. To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property. An inline style loses many of the advantages of a style sheet (by mixing content with presentation)
+
+Internal CSS - An internal style sheet may be used if one single HTML page has a unique style. The internal style is defined inside the <style> element, inside the head section.
+
+External CSS - With an external style sheet, you can change the look of an entire website by changing just one file! Each HTML page must include a reference to the external style sheet file inside the <link> element, inside the head section. An external style sheet can be written in any text editor, and must be saved with a .css extension. The external .css file should not contain any HTML tags.
+
+Do not add a space between the property value and the unit:
+Incorrect (space): margin-left: 20 px;
+Correct (nospace): margin-left: 20px;
+
+Multiple StyleSheets -
+If some properties have been defined for the same selector (element) in different style sheets, the value from the last read style sheet will be used. 
+
+Ex -
+Assume that an external style sheet has the following style for the <h1> element:
+h1 {
+  color: navy;
+}
+Then, assume that an internal style sheet also has the following style for the <h1> element:
+h1 {
+  color: orange;   
+}
+If the internal style is defined after the link to the external style sheet, the <h1> elements will be "orange":
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<style>
+h1 {
+  color: orange;
+}
+</style>
+</head>
+However, if the internal style is defined before the link to the external style sheet, the <h1> elements will be "navy": 
+<head>
+<style>
+h1 {
+  color: orange;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+Cascading Order -
+Inline style (inside an HTML element); External and internal style sheets (in the head section); Browser default
+So, an inline style has the highest priority, and will override external and internal styles and browser defaults.
+
+5] Comments =>
+Single & Multi-line comments = /* Content */
+
+6] Color.html & colors.css (STD color names = https://www.w3schools.com/colors/colors_names.asp)
+
+7] Backgrounds.html & Backgrounds.css
+
+8] Border.html & Border.css
+
+9] Marging-Padding.html & Margin-Padding.css
+
+10]
