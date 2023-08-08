@@ -300,7 +300,7 @@ fullName1 - ${fullName1}
 
 5. for loop[shorthand of while loop, do while loop & gives result fast as compared to them].
 
-6. for in/for of loop
+6. for in/for of loop[Used in array so it will be in array section & its introduced in ES6]
 
 7. conditional(ternary) operator[It is the only operator that takes 3 operands Or Shorthand for if-else]
 
@@ -495,7 +495,8 @@ Function Expressions[It simply means create a function and put it into the varia
 
 Return Keyword[When JavaScript reaches a return statement, the function will stop executing. Functions often compute a return value. The return value is "returned" back to the "caller"]
 
-Anonymous Function[A function expression is similar to and has the same syntax as a function declaration. One can define "named" function expressions (where the name of the expression might be used in the call stack for example) or "anonymous" function expressions].
+Anonymous Function[A function expression is similar to and has the same syntax as a function declaration. One can define "named" function expressions (where the name of the expression might be used in the call stack for example) or "anonymous" function expressions]
+We avoid giving function name i.e function(){}.
 */
 
 
@@ -531,30 +532,30 @@ f2(50, 50);
 f2(20, 30);
 
 
-function f3(x, y){
+function f3(x, y) {
     const z = x + y;
     console.log(`Function with parameters & argument & stored in Variables - ${z}`);
 }
-let func = f3(7,7);
+let func = f3(7, 7);
 // func;
 
 
 
-function f4(x, y){
-   return z = x + y;
+function f4(x, y) {
+    return z = x + y;
 }
-let func1 = f4(7,7);
+let func1 = f4(7, 7);
 console.log(`Function with return keyword => ${func1}`);
 
 
 
-let f5 = function (x, y){
+let f5 = function (x, y) {
     return z = x + y;
 }
 let respo = f5(10, 20)
 let respo1 = f5(5, 5)
 let respo2 = f5(10, 10)
-console.log(`Anonymous function => ${f5(2,4)}`);
+console.log(`Anonymous function => ${f5(2, 4)}`);
 console.log(`Anonymous function with problem => ${f5}`);
 console.log(`Anonymous function with problem => ${f5()}`);
 console.log(`Anonymous function => ${respo}`);
@@ -562,3 +563,398 @@ console.log(`Anonymous function => ${respo}`);
 console.log(`Anonymous function => ${respo1 > respo2}`);
 console.log(`Anonymous function => ${respo1 < respo2}`);
 
+
+
+
+/*
+8] ES6 =>
+
+JS had been introduced at 1996;
+JS had submitted to ECMA for standardization which resulted in ECMAScript by 1997.
+By 2015 we started giving standardize name for js & annual releases of ECMAScript.
+Till 2014 we get amazing features & update, in 2014 we got 'use strict' mode so that we can't have waste debuggings, but from year 2015 it comes with many features so it make JS more easy to use..
+In 2015(known as ECMAScript 2015 or ES6[6th edition of js]).
+After 2015 we are getting new js edition [i.e 2015 - ES6, 2016 - ES7, 2017 - ES8].
+
+New features for ES6/Modern JS/ECMAScript 2015 =>
+let & const[Challenge, interview question]; template strings; default arguments; destructuring[Array or Objects, IMP.]; Object properties; Arrow Functions; Rest Operator[We don't use that much]; Spread Operator[Imp.]
+Destrucing, Object Properties, Rest & Spread Operator can be deal when we done with arrays & Objects topics.
+*/
+
+
+// Template literals =>
+
+// Normal Methods -
+console.log("Namaste JS!!")
+let normalString = "Hello"
+console.log(normalString + " World")
+let name1 = "Rohit"
+let age3 = 27
+let hobby = "Playing Cricket"
+let bankBalance = 500
+console.log("Normal way => My name is - " + name1 + ". My age is - " + age3 + ". My Hobby is - " + hobby + ". Bank Balance is - " + bankBalance)
+
+console.log(`Template Literal => My name is - ${name1}. My age is - ${age3}. My Hobby is - ${hobby} & His nickname is "Shaanya", 
+Nickname can also be as - 'Chiku'.
+Bank Balance is - ${(bankBalance) * (20)}
+`) // Automatic replacing of variables with real value is called as string interpolation.
+
+
+// Default Parameters/Arguments[It allow named parameters to be initialized with default values, if no value or undefined is passed] => 
+
+function mult(a, b) {
+    return a * b;
+}
+var line = 'Normal Function'
+var multResult = mult(10, 10)
+// console.log(`${line} (mult(10, 10))`)
+// console.log(mult(10,10))
+console.log(`${line} => ${multResult}`)
+
+
+function mult1(a, b) {
+    return a * b
+    // var line = 'ES6 Default Parameters & Arguments'
+}
+var line1 = 'normal func'
+var mult1Result = mult1(5)
+console.log(`${line1} => ${mult1Result}`)
+
+
+function mult2(a, b = 3) {
+    return a * b
+}
+var line2 = 'ES6 Default Parameters & Arguments'
+var mult2Result = mult2(5)
+console.log(`${line2} => ${mult2Result} \n`)
+
+
+
+// Arrow Function/Fat Arrow Function =>
+
+// Normal Functn -
+
+// console.log(`Normal Function => ${powerFunc}`)
+console.log(power(7, 2))
+
+function power(x, y) {
+    let result = x ** y;
+    return `Power of ${x} raise to ${y} is = ${result}`
+}
+var powerFunc = power(7, 2);
+// let powerFunc = power(7,2);
+console.log(`Normal Function => ${powerFunc}`)
+
+
+// console.log(add(50,50))
+console.log(add4())
+function add4() {
+    let x1 = 50, x2 = 50
+    let z1 = x1 + x2
+    return `Normal add function - ${z1}`
+}
+
+// Arrow -
+// console.log(add5())
+const add5 = () => {
+    let x1 = 100, x2 = 100
+    let z1 = x1 + x2
+    return `Arrow add function - ${z1}`
+}
+console.log(add5())
+
+const add6 = () => {
+    let x1 = 100, x2 = 100
+    return `Reduce in Arrow add function 1 - ${x1 + x2}`
+}
+console.log(add6())
+
+const add7 = () => {
+    return `Reduce in Arrow add function 2 - ${(x1 = 75) + (x2 = 75)}`
+}
+console.log(add7())
+
+// If there is only one return statement no need to used that.
+const add8 = () => { `Reduce in Arrow add function 3 - ${(x1 = 75) + (x2 = 75)}` }
+console.log(add8())     // undefined
+
+// If there is only one return statement no need to used that.
+const add9 = () => `Reduce in Arrow add function 4 - ${(x1 = 75) + (x2 = 75)}`
+console.log(add9())
+
+
+
+
+
+/*
+9] Arrays =>
+Array[
+When we use var, we can store only 1 value/data at a time. 
+But when we had to store multiple values & datatypes in one variable then we use array. In Js we have an array class & array are the prototype of this class].
+var names = ["Raj", "Dipu", "Lollz"]
+Raj - Lower Index/Lower Boundary/Starting Element; Lollz - Upper Index, Upper Boundary/Ending element.
+So in array inside this [] is called as Elements.
+So to access each individual elements we had the index no. & it starts with 0 & to access last element - we can had array.length - 1. 
+Length starts with 1 & index starts with 0, if we had to go reverse so its starts with -1
+
+
+Traversal of Array
+Search & Filter in an Array
+Sort & Compare an Array
+Insert, Read, Replace/update, Delete elements in array[CRUD Operation]
+Map(), Reduce(), Filter()
+*/
+
+// var f1 = "Rajesh" , "Ramesh" - error
+let fri1 = "Rajesh", fri2 = "Ramesh", fri3 = "Pakya", fri4 = "Gotya"
+let ag1 = 30, ag2 = 28, ag3 = 35, ag4 = 20
+console.log(`
+${fri1} - ${ag1}
+${fri2} - ${ag2}
+${fri3} - ${ag3}
+${fri4} - ${ag4}
+`)
+
+
+/*
+How can we store this whole values & different datatypes only in 1 variable that can be done by array.
+In other programming language when we deal with array so it is used to store multiple values is right, but there is catch if we are storing only string value so we are not able to stored any other datatypes in that array.
+But in JS we can store any kind of datatypes in an array.
+One thing is that we can store multiple values at a time, but we can't store that extra data to that particular respective data, so for that we had an objects. 
+*/
+
+
+
+let myFriendsName = ["Rajesh", ' Ramesh', " Pakya", " Gotya"]
+console.log(`My friends Name in Array - ${myFriendsName}`)
+
+
+// let myArray1 = ["Rajesh", 20, male, 'Ramesh', 25, male, "Pinki", 28, female, true, false, 100]
+
+// var myArray1 = new Array    // Its optional bcoz js automatically understand that if we used [] then it will be an array's data.
+
+let myArray1 = ["Rajesh", 20, 'Ramesh', 25, "Pinki", 28, true, false, 100]
+let myArray2 = [("Rajesh", 20, false), ('Ramesh', 25), ("Pinki", 28), (true, false), 100]
+console.log(`My Array1 - ${myArray1}
+My Array2, but not getting whole array only last value for storing that one's whole data we required objects - ${myArray2}`)
+
+
+
+// Traversal of Array[It traverse/navigate to each element of an array. If we want to get single value/data at a time & also if we want to change the data of that particular element].
+
+let myArray3 = ['Dipesh', 'Tarun', 'Mandar', 'Vedant', 'Krishna'];
+console.log(`My friends names =>
+For whole Array - ${myArray3};
+For first element Dipesh - ${myArray3[0]},
+For Tarun - ${myArray3[1]},
+For Mandar - ${myArray3[2]},
+For Vedant - ${myArray3[3]},
+For Krishna - ${myArray3[4]},
+For last element when we had huge data - ${myArray3[myArray3.length - 1]},
+For last element when we had huge data - ${myArray3[myArray3.length - 2]}. `)
+// For going with descending - ${myArray3[-1]},
+// For going with descending - ${myArray3[-3]}.
+
+
+// if we want to check the length of elements of an array Or if we had large no of data so if want to access last data so at that time we can had myArray3.length - 1, myArray3.length-2 ...
+console.log(`Total elements in array - ${myArray3.length}`)    // .length is an property; if it method than it would be - .length()
+
+
+
+// for loop, for in, for of, forEach() -
+
+let myFriends = ['Dipesh', 'Tarun', 'Mandar', 'Vedant', 'Krishna'];
+console.log(`Whole Array => ${myFriends}`)
+
+// For loop [i < myfriends.length - bcoz we know length always give one no. extra than index no -
+for (let i = 0; i < myFriends.length; i++) {
+    console.log(`Normal for loop => ${myFriends[i]}`)
+}
+
+// for in [gives index no.] -
+for (let elements in myFriends) {
+    // console.log(`For in loop => ${myFriends[i]}`)
+    console.log(`For in loop gives index no. => ${elements}`)
+}
+
+// for of [gives values/elements] - 
+for (let elements of myFriends) {
+    console.log(`For of loop gives elements => ${elements}`)
+}
+
+// for each[calls a function for each elements in an array OR 
+// We can pass one callback function with this 3 params - elements(particular element in array), index(index no), array(particular array), thisArg(not mandatory/optional)]
+// Combination of for In + for of = for Each.
+// In for each we can't have break statement bcoz if it starts with data it will show the data to us till the end 
+// thisArg(4th parameter) it supports in normal function, in fat arrow we can't pass the 4th parameter in it -
+
+myFriends.forEach(function (element, index, array) {
+    // console.log(`For Each => ${element} & index no is - ${index} of that array - ${array}`)
+    console.log(`Normal Function => ${element} index no is - ${index}`)
+    console.log(`Normal Function => ${array}`)
+});
+
+
+myFriends.forEach((element, index, array) => {
+    console.log(`Fat Arrow Function => ${element} index no is - ${index}`)
+    console.log(`Fat Arrow Function => ${array}`)
+});
+
+
+
+// Search & Filter in an Array[Search : Search the data(eg. in amazon we can write any brandName so it will show that particular brands detail), filter : put condition (eg. like price, color, etc...)] -
+
+
+// Search Methods in Array -
+
+// Array.prototype.indexOf() : Returns the first (least) index of an element within the array equal to an element, or -1 if none is found. It search the element from the 0th index number; [Forward Direction & access array one time only] - 
+
+let myFriends1 = ['Dipesh', 'Tarun', 'Mandar', 'Vedant', 'Krishna', 'Priya', 'Koyal', 'Mansi', 'Priya', 'Bhakti', 'Khusbu'];
+
+// console.log(`a. IndexOf => ${myFriends1.indexOf(Khusbu)}`) - Error
+console.log(myFriends1.indexOf("Mandar")) // 2
+console.log(`a. IndexOf => ${myFriends1.indexOf("Priya", 4)}`)     // 5
+console.log(`a. IndexOf => ${myFriends1.indexOf("Priya", 6)}`)     // 8
+console.log(`a. IndexOf => ${myFriends1.indexOf("Priya", 9)}`)     // -1
+console.log(`a. IndexOf => ${myFriends1.indexOf("priya", 4)}`)     // -1
+
+
+// Array.prototype.lastIndexOf() : Returns the last (greatest) index of an element within the array equal to an element, or -1 if none is found. It search the element last to first. [Backward Direction & access array one time only] -
+
+console.log(myFriends1.lastIndexOf("Priya"))    // 8
+console.log(`a. lastIndexOf => ${myFriends1.lastIndexOf("Priya", 4)}`)     // -1
+console.log(`a. lastIndexOf => ${myFriends1.lastIndexOf("Priya", 6)}`)     // 5
+console.log(`a. lastIndexOf => ${myFriends1.lastIndexOf("Priya", 9)}`)     // 8
+console.log(`a. lastIndexOf => ${myFriends1.lastIndexOf("priya", 4)}`)     // -1
+
+
+// Array.prototype.includes() : Determines whether the array contains a value, returning true/false as appropriate. [Forward only & access array one time only]
+
+console.log(myFriends1.includes("Priya"))    // true
+console.log(`a. includes => ${myFriends1.includes("priya", 4)}`)     // false
+console.log(`a. includes => ${myFriends1.includes("Priya", 5)}`)     // true
+console.log(`a. includes => ${myFriends1.includes("Priya", 9)}`)     // false
+
+
+
+// Filter Methods of array  -
+
+// Array.protoype.find() : arr.find(callback(element[, index[, array]])[, thisArg]). Returns the found element in the array, if some element in the array satisfies the testing function, or undefined if not found. Only problem is that it return only one element
+
+const prices = [0, 50, 100, 150, 200, 250, 300, 350, 400, 500, 600, 700, 1000];
+
+// Contitn 1 - prices > 500
+const findMethod1 = prices.find((currVal, index, arr) => {
+    return currVal > 500
+})
+
+// Contitn 2 - prices <= 500
+const findMethod2 = prices.find((currVal, index, arr) => {
+    return currVal <= 500
+})
+
+// Contitn 3 - prices = 200 && prices > 100
+const findMethod3 = prices.find((currVal, index, arr) => {
+    return currVal = 200 && currVal > 100
+})
+
+// Contitn 4 - prices = 200 || prices > 100
+const findMethod4 = prices.find((currVal, index, arr) => {
+    return currVal = 200 || currVal > 100
+})
+
+// Contitn 5 - prices >= 1000
+const findMethod5 = prices.find((currVal, index, arr) => {
+    return currVal > 1000
+})
+
+// console.log(prices.find((currVal, index, arr) =>currVal > 500));     // currVal is nothing but just an element
+console.log(`Find method with only 1st element : ${findMethod1}, ${findMethod2}, ${findMethod3}, ${findMethod4}, ${findMethod5}`);     // 600, 0, 150, 0, undefined
+
+
+// Array.prototype.findIndex() : Returns the found index in the array, if an element in the array satisfies the testing function, or -1 if not found.
+
+// Contitn 1 - prices > 500
+const findMethod6 = prices.findIndex((elem, index, arr) => {
+    return elem > 500
+})
+
+// Contitn 2 - prices <= 500
+const findMethod7 = prices.findIndex((elem, index, arr) => {
+    return elem <= 500
+})
+
+// Contitn 3 - prices = 200 && prices > 100
+const findMethod8 = prices.findIndex((elem, index, arr) => {
+    return elem = 200 && elem > 100
+})
+
+// Contitn 4 - prices = 200 || prices > 100
+const findMethod9 = prices.findIndex((elem, index, arr) => {
+    return elem = 200 || elem > 100
+})
+
+// Contitn 5 - prices >= 1000
+const findMethod10 = prices.findIndex((elem, index, arr) => {
+    return elem > 1000
+})
+
+// console.log(prices.findIndex((currVal, index, arr) =>currVal > 500));  
+console.log(`Find Index Method with only index no. of that element: ${findMethod6}, ${findMethod7}, ${findMethod8}, ${findMethod9}, ${findMethod10}`);     // 10, 0, 3, 0, -1
+
+
+// Array.prototype.filter() : Returns a new array containing all elements of the calling array for which the provided filtering function returns true. It does't mutate the current array(doesn't change any value in current array instead it makes a new array with updated one).
+// For solving all above problem we had one solution that it returns all the elements in an new array i.e (filter method). [Its very important bcoz, it are using in React & Node for filteration].
+
+// Contitn 1 - prices > 500
+const findMethod11 = prices.filter((elem, index, arr) => {
+    return elem > 500
+})
+
+// Contitn 2 - prices <= 500
+const findMethod12 = prices.filter((elem, index, arr) => {
+    return elem <= 500
+})
+
+// Contitn 3 - prices = 200 && prices > 100
+const findMethod13 = prices.filter((elem, index, arr) => {
+    return elem = 200 && elem > 100
+})
+
+// Contitn 4 - prices = 200 || prices > 100
+const findMethod14 = prices.filter((elem, index, arr) => {
+    return elem = 200 || elem > 100
+})
+
+// Contitn 5 - prices >= 1000
+const findMethod15 = prices.filter((elem, index, arr) => {
+    return elem > 1000
+})
+
+// console.log(prices.findIndex((currVal, index, arr) =>currVal > 500));  
+console.log(findMethod11, findMethod12, findMethod13, findMethod14, findMethod15);
+console.log(`Filter Method: 
+FindMethod11 - ${findMethod11}, 
+FindMethod12 - ${findMethod12},
+FindMethod13 - ${findMethod13}, 
+FindMethod14 - ${findMethod14}, 
+FindMethod15 - ${findMethod15}`);   
+
+
+// Sort & Compare an Array[ASC, DES] - It sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+
+// Array.prototype.sort() -
+
+const months = ['March', 'Aug', 'Jan', 'Dec', 'Apr', 'Oct', 'Feb', 'Nov', 'Jul'];
+const nos1 = [1, 25, 0, 45, -3, 10000, -8, 100, -15, 5.5, 999, 777];
+const sort1 = months.sort();
+const sort2 = nos1.sort();
+console.log(`Sorted Array: ${sort1}, 
+${sort2}`)
+
+// However, the numbers are sorted as string & had a sort comparison, i.e ("25" is bigger than "100", because "2" is bigger than "1"). Because of this, the sort() method produce an incorrect result when sorting numbers.
+
+
+
+// Insert, Read, Replace/update, Delete elements in array[CRUD Operation]
+// Map(), Reduce(), Filter()

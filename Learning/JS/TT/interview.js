@@ -61,6 +61,66 @@ Checking both value & Datatype - ${no4}`)
 
 // Q4] Difference between Var, Let & Const.
 
+/*
+a. var - function scope; let & const - block scope.
+b.
+var - can be redeclare & reassigned
+let - can be reassigned, but can't redeclared
+const - fixed value Or can't reassigned & redeclared
+*/
+
+var oldName = "Bandu"
+console.log(`OldName in var is - ${oldName}`)
+var oldName = "Raju"
+console.log(`OldName in var is - ${oldName}`)
+oldName = "Goa"
+console.log(`OldName in var is - ${oldName}`)
+
+let oldName1 = "Bandu"
+console.log(`OldName in let is - ${oldName1}`)
+// let oldName1 = "Raju"
+// console.log(`OldName in let is - ${oldName1}`) 
+oldName1 = "Goa"
+console.log(`OldName in let is - ${oldName1}`)
+
+const oldName2 = "Bandu"
+console.log(`OldName in const is - ${oldName2}`)
+// const oldName2 = "Raju"
+// console.log(`OldName in const is - ${oldName2}`) 
+// oldName2 = "Goa"
+// console.log(`OldName in const is - ${oldName2}`)
+
+
+// var can access function scope
+function check() {
+    var firstName = "Dipesh";
+    console.log(`Outer var - ${firstName}`)
+
+    if (true) {
+        var lastName = "Kumar";
+        console.log(`Inner var - ${firstName}`)
+        console.log(`Inner var - ${lastName}`)
+    }
+    console.log(`Outer var - ${lastName}`)
+}
+// console.log(`Outer function var - ${firstName}`)
+check()
+
+// let & const can access only block scope [if in parent we had defined child can use i.e firstName had defined out of if else but it will work; but child defined can't be used in parent i.e lastName had been deifned in child so it will work in child only not in parent].
+function check1() {
+    let firstName1 = "Dipesh";
+    console.log(`Outer let - ${firstName1}`)
+
+    if (true) {
+        let lastName1 = "Kumar";
+        console.log(`Inner let - ${firstName1}`)
+        console.log(`Inner let - ${lastName1}`)
+    }
+    // console.log(`Outer let - ${lastName1}`)
+}
+// console.log(`Outer function let - ${firstName}`)
+check1()
+
 
 
 
@@ -77,3 +137,43 @@ again and again.
 
 DRY => do not repeat yourself
 */
+
+
+
+
+// Q6] Function & Arrow function ?
+
+/*
+a. Function call can be done before declaring the function or after declaring the function; But in arrow function call should be done only after function had been declared, if we try before function declaration it will throw error
+b. Arrow function can be used to reduce the line of code rather than in function.
+*/
+
+
+
+
+
+// Q7] Difference between for in & for of loop 
+
+let myFriends = ['Dipesh', 'Tarun', 'Mandar', 'Vedant', 'Krishna'];
+
+console.log(`Whole Array => ${myFriends}`)
+
+
+// For loop [i < myfriends.length - bcoz we know length always give one no. extra than index no -
+for (let i = 0; i < myFriends.length; i++) {
+    console.log(`Normal for loop => ${myFriends[i]}`)
+}
+
+
+// for in [gives index no.] -
+for (let elements in myFriends) {
+    // console.log(`For in loop => ${myFriends[i]}`)
+    console.log(`For in loop gives index no. => ${elements}`)
+}
+
+
+// for of [gives values/elements]
+for (let elements of myFriends) {
+    console.log(`For of loop gives elements => ${elements}`)
+}
+
