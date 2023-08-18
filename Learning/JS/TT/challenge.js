@@ -209,7 +209,7 @@ for (let x = 1; x <= 10; x++) {
 
 // if we had to find sum(20, 30); sum (50, 50) then we will need to do hardcode, so for reusing we can use function parameter(it is used while defining the function) & function arguments(it is used to pass the real value for params while calling the function).
 
-function f1 (x, y) {
+function f1(x, y) {
   const z = x + y
   console.log(`Function with parameters & argument - ${z}`)
 }
@@ -262,7 +262,7 @@ if (indexOfMonth != -1) {
 //     console.log(updateMonth1);
 // }
 else {
-  ;('No data found in this month')
+  ; ('No data found in this month')
 }
 
 if (indexOfMonth1 != -1) {
@@ -270,7 +270,7 @@ if (indexOfMonth1 != -1) {
   console.log(`Updated month June with june - ${months}`) // soln 3
   console.log(updateMonth2)
 } else {
-  ;('No data found in this month')
+  ; ('No data found in this month')
 }
 
 if (indexOfMonth2 != -1) {
@@ -279,7 +279,7 @@ if (indexOfMonth2 != -1) {
   console.log(`Deleted April - ${months}`) // soln 4
   console.log(updateMonth3)
 } else {
-  ;('No data found in this month')
+  ; ('No data found in this month')
 }
 
 
@@ -312,3 +312,31 @@ let finalResult2 = greatherThan10
   .filter(elem => elem > 10)
 // .filter((curElem) => curElem > 10)
 console.log(`Final Result 2 - ${finalResult2}`)
+
+
+
+
+
+// 8] Strings =>
+
+// Q1. Display only 280 characters of a string like the one used in Twitter.
+
+
+let tweet1 = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
+let resTweet = tweet1.slice(0, 280);  // 0 - 279 characters.
+console.log(`
+Original tweet length - ${tweet1.length}
+Final tweet result - ${resTweet}
+& Its Length - ${resTweet.length}  
+`, tweet1.length, resTweet.length)
+
+
+
+// Q2. Return the Unicode of last character in a string.
+
+let str2 = "Hello WORLD";
+let lastChar = str2.length;
+let lastChar1 = str2.length - 1;
+
+console.log(lastChar, str2.charCodeAt(lastChar), str2.charCodeAt(lastChar1));

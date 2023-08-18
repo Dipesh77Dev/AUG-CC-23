@@ -729,10 +729,10 @@ So to access each individual elements we had the index no. & it starts with 0 & 
 Length starts with 1 & index starts with 0, if we had to go reverse so its starts with -1
 
 
-Traversal of Array
-Search & Filter in an Array
-Sort & Compare an Array
-Insert, Read, Replace/update, Delete elements in array[CRUD Operation]
+Traversal of Array <--> [length, for loop, for in, for of, forEach()]
+Search & Filter in an Array <--> [Search -> indexOf(), lastIndexOf(), includes(); Filter -> find(), findIndex(), filter()]
+Sort & Compare an Array <--> [sort(), reverse()]
+Insert, Read, Replace/update, Delete elements in array[CRUD Operation] <--> [push(), pop(), shift(), unshift(), splice()]
 Map(), Reduce(), Filter()
 */
 
@@ -1279,3 +1279,311 @@ console.log(arr4.flat(Infinity));  // ES 2020
 // const arr5 = [['zone_1', 'zone_2'], ['zone_3', ['zone_1', 'zone_2', ['zone_1', 'zone_2']]]];
 // console.log(arr5.flat(3));
 // console.log(arr5);
+
+
+
+
+
+
+/*
+Strings => 
+[
+String is zero or more characters written inside quotes. It are used for storing and manipulating text. We can use single or double quotes.
+Strings can be created as primitives, from string literals, or as objects, using the String() constructor. String can hold only one value in a variable. [eg. let car = "Audi",(Right) let car = "Audi", "BMW"(Wrong)]
+].
+
+Escape Character[\' => ' ==> Single Quote; \" => " ==> Double Quote; \\ => \ ==> Backslash; \b => backspace; \f => form feed; \n => New Line; \r => Carriage Return; \t => Horizontal Tabular; \v => Vertical Tabulars]
+Finding a String in String <--> [indexOf(), lastIndexOf(), .length]
+Searching for String in String <--> [search(regex)]
+Extracting String Parts <--> [slice(start, end); substring(start, end); substr(start, length)]
+Replacing String Content <--> [replace(), replaceAll()]
+Extracting String Characters <--> [charAt(position); charCodeAt(position), property access [ ] ].
+Other useful methods <--> [upperCase(); lowerCase(); concat(); trim()]; Convert String to an array using split method
+*/
+
+
+// 👉 How to find the length of a string
+// String.prototype.length 🙋‍♂️
+// Reflects the length of the string. 
+
+// let myName = "vinod thapa";
+// console.log(myName.length);
+
+
+let myOrgNameDoubleQuote = "DD";
+let myOrgNameDoubleQuoteWithSpace = "D D";
+let myOrgNameSingleQuote = 'DD';
+let myOrgNameSingleQuoteWithSpace = 'D D';
+let myOrgNamewithNull = " "
+
+
+let ytName = new String("GG Ok"); // We dont used this bcoz its shows an diff output
+let ytName1 = 'GG';
+
+console.log(`
+String => ${myOrgNameDoubleQuote}, ${myOrgNameDoubleQuoteWithSpace}, ${myOrgNameSingleQuote}, ${myOrgNameSingleQuoteWithSpace}, ${myOrgNamewithNull}`);
+// console.log((ytName + ytName1));
+console.log((ytName, ytName1));
+
+
+
+// String.prototype.length - Reflects the length of the string.
+
+let demoName = "Cool Buddy";
+console.log(`Demo Name - ${demoName}
+Length - ${demoName.length}`);  // The length property returns the length of a string.
+
+
+
+// Escape Character (\' => ' => Single Quote, \" => " => Double Quote, \\ => \ => Backslash). But remember when we had to use both quote so interchange give whole outside string as single & use inside as double or vice-versa.
+
+// let anySentence1 = "We are the so-called "Vikings" from the north.";
+// console.log(anySentence1);  // Error
+
+let anySentence2 = "We are the so-called \"Vikings\" from the north.";
+console.log(anySentence2);
+
+
+let anySentence3 = "We are the so-called 'Vikings' from the north. "; console.log(anySentence3);  // if you dont want to mess, simply use the alternate quotes 
+
+
+// Finding a string -
+
+
+// String.prototype.indexOf(searchValue [, fromIndex]) - The indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string. JavaScript counts positions from zero. 0 is the first position in a string, 1 is the second, 2 is the third, ...etc. Remember in string spaces are also count. If its present it will return index no, if not it will return as -1(we had seen this in array).
+
+
+const myBioData = 'Hello Guyz I am Web Developer';
+console.log(`
+Index Of =>
+Wrong Match bcoz its case-sensitive - ${myBioData.indexOf("web", 6)}
+Correct - ${myBioData.indexOf("Web")}
+Correct - ${myBioData.indexOf("G", 8)}`);
+
+// Soln =>  -1, 16, -1
+
+
+
+// String.prototype.lastIndexOf(searchValue [, fromIndex]) - Returns the index within the calling String object of the last occurrence of searchValue, or -1 if not found.
+
+const myBioData1 = 'Hello Guyz I am Web Developer';
+console.log(`
+Last-Index Of =>
+Wrong Match bcoz its case-sensitive - ${myBioData1.lastIndexOf("web", 6)}
+Correct - ${myBioData1.lastIndexOf("Web")}
+Correct - ${myBioData1.lastIndexOf("G", 8)}`);
+
+// Soln =>  -1, 16, 6
+
+
+// String.prototype.search(regexp) - It searches a string for a specified value and returns the position of the match. The search() method cannot take a second start position argument.
+
+const myBioData2 = 'Hello Guyz I am Web Developer/JS Developer';
+const searchBioData1 = myBioData2.search("developer")
+const searchBioData2 = "Developer"
+const searchBioData2_1 = myBioData2.search("Developer")
+const searchBioData3 = myBioData2.search("Devel")
+// const searchBioData3 = myBioData2.search("Devel", 5) // E - We cant give start position argument
+
+console.log(`
+Search =>
+Original data - ${myBioData2},
+searchBioData1 - ${searchBioData1},
+searchBioData2 - ${myBioData2.search("Developer"), searchBioData2},
+searchBioData2_1 - ${searchBioData2_1}
+searchBioData3 - ${searchBioData3}
+`)
+
+// Soln => whole String; -1; Developer, ; 20; 20. 
+
+
+
+// Extracting String Parts - slice(start, end); substring(start, end); substr(start, length);
+
+
+// slice(start, end) - It extracts a part of a string and returns the extracted part in a new string. It takes 2 parameters: the start position, and the end position (end not included).
+// It selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
+// Note: The original array will not be changed.
+// Remember: JavaScript counts positions from zero. First position is 0, Second position is 1, ....
+
+
+// const strSlice = "Apple, Banana, Mango", "Apple, Orange";  // E - String can hold only 1 value in a variable.
+const strSlice = "Mango";
+const strSlice1 = 'Apple, Banana, Mango';
+const resSlice1 = strSlice1.slice(3, 15);
+const resSlice2 = strSlice1.slice(3);
+const resSlice3 = strSlice1.slice(8, -3);
+const resSlice4 = strSlice1.slice(-3);
+const resSlice5 = strSlice1.slice(-10, -3);
+
+console.log(`Extract String =>
+Slice ==>
+String with one item - ${strSlice}
+String with multiple items - ${strSlice1}
+Final resSlice1 - ${resSlice1}
+Final resSlice2 - ${resSlice2}
+Final resSlice3 - ${resSlice3}
+Final resSlice4 - ${resSlice4}
+Final resSlice5 - ${resSlice5}
+`)
+
+
+
+// substring(start,end) - It is similar to slice(). The difference is that substring() cannot accept negative indexes. If we give negative value then the characters are counted from the 0th position. OR start and end values less than 0 are treated as 0 
+
+
+const strSubString = "Mango";
+const strSubString1 = 'Apple, Banana, Mango';
+const resSubString1 = strSubString1.substring(3, 15);
+const resSubString2 = strSubString1.substring(3);
+const resSubString3 = strSubString1.substring(8, -3);
+
+console.log(`Extract String =>
+SubString ==>
+String with one item - ${strSubString}
+String with multiple items - ${strSubString1}
+Final resSubString1 - ${resSubString1}
+Final resSubString2 - ${resSubString2}
+Final resSubString3 - ${resSubString3}
+`)
+
+
+
+// The substr() Method - It is similar to slice(). The difference is that the second parameter specifies the length of the extracted part.
+
+var strSubStr = "Apple, Bananaa, Kiwi";
+let res1 = strSubStr.substr(0, 4);
+let res2 = strSubStr.substr(7, -2);
+let res3 = strSubStr.substr(-4);
+console.log(res1, `
+SubStr ==>
+Original String - ${strSubStr},
+Res 1 - ${res1},
+Res 2 - ${res2},
+Res 3 - ${res3},
+`);
+
+
+
+
+// String.prototype.replace(searchFor, replaceWith) - It replaces a specified value with another value in a string.
+
+/* 
+Points => 
+1: The replace() method does not change the string it is called on. It returns a new string.
+2: By default, the replace() method replaces only the first match
+3:By default, the replace() method is case sensitive. Writing Dipesh (with upper-case) will not work
+*/
+
+
+const myBioDataOrg = 'I am dipesh Dev, Learning JS for now... - dipesh';
+
+let resultBioData = myBioDataOrg.replace('dipesh', "DIPESH");
+let resultBioData1 = myBioDataOrg.replace('DIPESH', "dipesh");
+let resultBioData2 = myBioDataOrg.replace(/DIPESH/i, "Mandar");
+let resultBioData3 = myBioDataOrg.replace(/DIPESH/g, "Mandar");
+let resultBioData4 = myBioDataOrg.replace(/dipesh/g, "Mandar");
+// let resultBioData5 = myBioDataOrg.replace(/dipesh/i/g, "Mandar");
+let resultBioData5 = myBioDataOrg.replaceAll("dipesh", "Tarun"); // Its an part of ES 2021
+
+console.log(`Replacing String =>
+Replace ==>
+Original String - ${myBioDataOrg},
+Resulted/Replaced String Data with 1st match - ${resultBioData}
+Wrong bcoz that searching field is not present - ${resultBioData1}
+With regular expression(regex) -- (i) case sensitive <-> ${resultBioData2}
+With regular expression(regex) -- (g) replace all matches but not work <->${resultBioData3}
+With regular expression(regex) -- (g) replace all matches work <->${resultBioData4}
+With Replace All Method <->${resultBioData5}
+`)
+
+
+// Extracting String Characters => charAt(position); charCodeAt(position); Property access [ ]
+
+
+// charAt(position) - It returns the character at a specified index (position) in a string. It doesn't work with negative index values.
+
+let extract1 = "Hello WORLD!!...";
+console.log(extract1.charAt(2), extract1.charAt(10), extract1.charAt(5), extract1.charAt(-3), extract1.charCodeAt(0));
+
+
+// charCodeAt(position) - It returns the unicode of the character at a specified index in a string:
+// The method returns a UTF-16 code(an integer between 0 and 65535).
+// The Unicode Standard provides a unique number for every character, no matter the platform, device, application, or language. UTF-8 is a popular Unicode encoding which has 88-bit code units. But if we provide negative index it will return as NaN.
+
+
+let extract2 = "Hello WORLD";
+console.log(extract1.charCodeAt(2), extract1.charCodeAt(10), extract1.charCodeAt(5), extract1.charCodeAt(-3), extract1.charCodeAt(0));
+
+
+// Property Access (ECMAScript 5 - 2009) - It allows property access [ ] on strings..
+
+
+let extract3 = "HELLO WORLD";
+console.log(extract3[0], extract3[3], extract3[5], extract3[7], extract3[10]);
+
+
+
+// Other Methods => upperCase(), lowerCase(), concat(), trim(), convert string into array 
+
+
+// UpperCase() & LowerCase() -
+
+const normalStr = "DIPesh devruKhKAR";
+const uc = normalStr.toUpperCase();     // all letter in caps
+const lc = normalStr.toLowerCase();     // all letter in small
+
+console.log(` Normal String - ${normalStr}, UpperCase - ${uc}, LowerCase - ${lc}`);
+
+
+// concat - Joins 2 or more strings.
+
+let fName = "Dipesh";
+let lName = "dev"
+
+console.log((fName, lName), (fName + lName), (fName.concat(lName)), (fName.concat(" ", lName)));
+console.log(`My first Name is -> ${fName} & Last name is -> ${lName}`)
+console.log(`${fName} ${lName}`)
+
+
+// trim - It removes whitespace from both sides of a string
+
+let strTrim = "              Hello         World!            ";
+let strTrim1 = "Hello         World!            ";
+let strTrim2 = "Hello World!            ";
+let strTrim3 = " Hello World!";
+console.log(`${strTrim.trim()}, ${strTrim1.trim()}, ${strTrim2.trim()}, ${strTrim3.trim()}`);
+
+
+
+// String convert into Array - A string can be converted to an array with the split() method 
+
+let txt = "a, b,c d,e";             // String
+console.log(txt.split(","));        // Split on commas
+console.log(txt.split(" "));        // Split on spaces
+console.log(txt.split("|"));        // Split on pipe
+
+
+// Examples =>
+
+let str10 = "Hire the top 1% freelance developers";
+let str11 = "Hire the top 1 % free lance developer";
+let str12 = 'JavaScript, Python, C++, PHP';
+let str13 = 'JavaScript,Python,C++,PHP';
+let str14 = 'JavaScript, Python | C++, PHP';
+let str15 = 'JavaScript | Python | C++ | PHP';
+
+const splitString1 = str10.split(" ");
+const splitString2 = str11.split(" ");
+const splitString3 = str11.split("");
+const splitString3_1 = str11.split("", 7);
+const splitString4 = str12.split(",");
+const splitString4_1 = str13.split(",");
+const splitString5 = str12.split("|");
+const splitString5_1 = str14.split("|");
+const splitString6 = str14.split(" | ");
+const splitString7 = str15.split(" | ");
+
+console.log(`Split String 1 - ${splitString1}
+Split String 2 - ${splitString2}
+`, splitString1, splitString2, splitString3, splitString3_1, splitString4, splitString4_1, splitString5, splitString5_1,splitString6, splitString7 );
