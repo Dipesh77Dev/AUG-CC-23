@@ -1286,7 +1286,7 @@ console.log(arr4.flat(Infinity));  // ES 2020
 
 
 /*
-Strings => 
+8] Strings => 
 [
 String is zero or more characters written inside quotes. It are used for storing and manipulating text. We can use single or double quotes.
 Strings can be created as primitives, from string literals, or as objects, using the String() constructor. String can hold only one value in a variable. [eg. let car = "Audi",(Right) let car = "Audi", "BMW"(Wrong)]
@@ -1586,4 +1586,296 @@ const splitString7 = str15.split(" | ");
 
 console.log(`Split String 1 - ${splitString1}
 Split String 2 - ${splitString2}
-`, splitString1, splitString2, splitString3, splitString3_1, splitString4, splitString4_1, splitString5, splitString5_1,splitString6, splitString7 );
+`, splitString1, splitString2, splitString3, splitString3_1, splitString4, splitString4_1, splitString5, splitString5_1, splitString6, splitString7);
+
+
+
+
+
+/*
+9] Date & Time =>
+Date Methods(get & set); Time Methods(get & set).
+JavaScript Date objects represent a single moment in time in a platform-independent format. Date objects contain a Number that represents milliseconds since 1 January 1970 UTC.
+*/
+
+
+// Creating Date Objects - 4 ways to create a new Date object <=>
+
+// new Date();
+// new Date(year, month, day, hours, minutes, seconds, milliseconds) // it takes total 7 arguments.
+// new Date(milliseconds)   // we cannot avoid month section 
+// new Date(date string);
+
+
+
+// new Date - Date objects are created with the new Date() constructor[constructor will be an oops concept, but till that remember when we see 'new' keyword than understand its same object's constructor. 'new' keyword means we are creating new instance/object throught the Dare class]
+
+// console.log(new Date());
+let currentDate = new Date();
+let propString = new Date().toString();
+let properDateTime1 = new Date().toLocaleString(); // proper format
+console.log(`Date => 
+Current Date - ${currentDate}, Current String Format - ${propString}, Current format - ${properDateTime1}
+`)
+
+// toString() - perfect original timing, toLocaleString() - will get proper time & date Or local area timing, Date() - it will give standard timezone with T & Z. 
+
+
+
+// Date.now() - Returns the numeric value corresponding to the current time - the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
+
+console.log(Date.now()); // it returns milliseconds value from Jan 1, 1970 till today.
+
+
+
+// new Date(year, month, ...) -- 7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order)
+// Note: JavaScript counts months from 0 to 11. i.e (January is 0. December is 11). Week (0 - Sunday, 6 - Saturday);
+
+let jan = new Date(2023, 0);
+let apr = new Date(2022, 3);
+// console.log(apr.Date());
+let dec = new Date(2023, 11);
+// let all = new Date(2023, 0, 6, 05, 30, 10, 05)
+let all = new Date(2023, 0, 6, 5, 30, 10, 5);
+let date1 = new Date();
+
+// till month is necessary.. for getting date. Or 2 arguments is necessary i.e(year, month).
+let date2 = new Date(2023);
+let date3 = new Date(0);
+
+
+console.log(` Date with types =>
+Jan with toString -> ${jan.toString()}, 
+April with toDateString -> ${apr.toDateString()}, 
+December with toLocaleString -> ${dec.toLocaleString()},
+All - ${all}, ${all.toLocaleString()},
+Date1 - ${date1},
+Date2 - ${date2},
+Date3 - ${date3},
+`);
+
+
+
+// new Date(dateString) - It creates a new date object from a date string
+
+let d1 = new Date("August 25, 2023 11:13:00");
+console.log(d1, d1.toLocaleString());
+
+// new Date(milliseconds) - It creates a new date object as zero time plus milliseconds:
+
+
+let d2 = new Date(0);
+let d3 = new Date(1609574531435);
+let d4 = new Date(86400000*2);
+console.log(Date.now(), d2.toLocaleString(), d3.toLocaleString(), d4.toLocaleString);
+
+
+
+// Dates Method(with date only) -->
+
+const currentDate1 = new Date();
+
+// get individual date -
+
+let ls1 = currentDate1.toLocaleString();
+let fy = currentDate1.getFullYear();
+let m = currentDate1.getMonth();
+let dt = currentDate1.getDate();
+let dy = currentDate1.getDay();
+
+console.log(`Get Methods => ${ls1}, ${fy}, ${m}, ${dt}, ${dy}`);
+
+
+// set individual date(all will give result in milliseconds[ms]) --
+
+let curDate2 = new Date();
+
+console.log(curDate2.setFullYear(2022)); // The setFullYear() method can optionally set month and day
+console.log(curDate2.setFullYear(2022, 10, 5));
+let setmonth = curDate2.setMonth(10); // 0-11 jan to dec
+console.log(setmonth);
+console.log(curDate2.setDate(5));
+console.log(curDate2.toLocaleString());
+
+
+
+// Time Methods -->
+
+// get individual time --
+
+const currentTime = new Date();
+
+// The getTime() method returns the number of milliseconds since January 1, 1970
+console.log(currentTime.getTime());
+// The getHours() method returns the hours of a date as a number (0-23)
+console.log(currentTime.getHours());
+console.log(currentTime.getMinutes());
+console.log(currentTime.getSeconds());
+console.log(currentTime.getMilliseconds());
+
+
+// set individual times --
+
+const currentTime1 = new Date();
+
+let st = currentTime1.setTime();
+let sh = currentTime1.setHours();
+let sh1 = currentTime1.setHours(5);
+let sm = currentTime1.setMinutes();
+let sm1 = currentTime1.setMinutes(5);
+let ss = currentTime1.setSeconds();
+let ss1 = currentTime1.setSeconds(5);
+let sms = currentTime1.setMilliseconds();
+let sms1 = currentTime1.setMilliseconds(5);
+
+console.log(`Set time => set Time - ${st}, set Hour - ${sh}, set Minute - ${sm}, set second - ${ss}, set Milliseconds - ${sms}, ${sh1}, ${sm1}, ${ss1}, ${sms1}`);
+
+
+let curTime2 = new Date();
+
+// console.log(curTime2.setTime());
+console.log(curTime2.setHours(5));
+console.log(curTime2.setMinutes(5));
+console.log(curTime2.setSeconds(5));
+console.log(curTime2.setMilliseconds(5));
+
+
+// console.log(toLocaleString(1692923301032));
+let getter = new Date(1692920152269)
+console.log(getter, getter.toLocaleString, getter.toLocaleString())
+
+
+
+// Local String Methods -
+const lts = new Date().toLocaleTimeString(); // 1:14:43 PM 
+const lds = new Date().toLocaleDateString(); // 8/25/2023 
+const lstr = new Date().toLocaleString(); // 8/25/2023, 1:14:43 PM
+
+console.log(lts, lds, lstr);
+
+
+
+
+
+/*
+10. Math Objects => The JavaScript Math object allows you to perform mathematical tasks on numbers.
+Math.round(), Math.pow(), Math.sqrt(), Math.abs(), Math.ceil(), Math.floor(), Math.min(), Math.max(), Math.random(), Math.round(), Math.trunc()
+*/
+
+
+// Property =>
+// a) Pi value -
+console.log(`Pi property with Math Object - ${Math.PI}`);
+
+
+// Methods => 
+// b) Math.round() - returns the value of x rounded to its nearest integer.  [After point, if no is greater than 5 it will give increment no & if its less than it will give same no].
+
+let round1 = 10.500, round2 = 20, round3 = 30.455555;
+
+// console.log(Math.round(round1, round2, round3));
+// console.log(`Math object round method => ${Math.round(round1), Math.round(round2), Math.round(round3)}`);
+console.log(`Math object with round method => ${Math.round(round1)}, ${Math.round(round2)}, ${Math.round(round3)}`);
+
+
+// c) Math.pow() - returns the value of x to the power of y
+
+// console.log(5**3); can be written as <-->
+console.log(`Math Object with power method => ${Math.pow(5,3)}`); // 5 * 5 * 5
+
+
+// d) Math.sqrt() - the square root of x
+
+let sqrt1 = 25, sqrt2 = 66, sqrt3 = 81
+console.log(`Math Object with square root method => ${Math.sqrt(sqrt1)}, ${Math.sqrt(sqrt2)}, ${Math.sqrt(sqrt3)}`);
+
+
+// e) Math.abs() - returns the absolute (positive) value of x
+
+// console.log(Math.abs(-55));
+// console.log(Math.abs(-55.5));
+// console.log(Math.abs(-955));
+// console.log(Math.abs(4-6));
+
+let abs1 = Math.abs(-55), abs2 = (Math.abs(-1055)), abs3 = -77.5, abs4 = 4-6, abs5 = 5;
+
+// console.log(`Math object with absolute method => ${abs1}, ${abs2}, ${abs3.Math.abs()}, ${abs4}, ${abs4.Math.abs()}, ${abs5.Math.abs()}`)
+
+console.log(`Math object with absolute method => ${abs1}, ${abs2}, ${Math.abs(abs3)}, ${abs4}, ${Math.abs(abs4)}, ${Math.abs(abs5)}`)
+
+
+
+// f) Math.ceil() - returns the value of x rounded up to its nearest integer
+
+// console.log(Math.ceil(4.51));
+// console.log(Math.round(4.51));
+// console.log(Math.ceil(99.01));
+// console.log(Math.round(99.1));
+
+let ceil1 = Math.ceil(4.51), ceil2 = Math.round(4.51), ceil3 = Math.ceil(99.01), ciel4 = Math.round(99.1), ciel5 = Math.round(99), ciel6 = Math.ceil(99);
+
+console.log(`Math object with ceil method => ${ceil1}, ${ceil2}, ${ceil3}, ${ciel4}, ${ciel5}, ${ciel6}`)
+
+
+// g) Math.floor() - returns the value of x rounded down to its nearest integer
+
+// console.log(Math.floor(4.7)); 
+// console.log(Math.floor(99.1)); 
+
+let floor1 = Math.floor(4.7), floor2 = Math.floor(100.1), floor3 = Math.floor(99.99), floor4 = Math.floor(50);
+console.log(`Math Object with floor method => ${floor1}, ${floor2}, ${floor3}, ${floor4}`);
+
+
+// h) Math.min() - can be used to find the lowest value in a list of arguments
+
+/*
+const min0 = 0, 150, 30, 20, -8, -200
+const min1 = (0, 150, 30, 20, -8, -200); // return last value
+const min1 = [0, 150, 30, 20, -8, -200];  // NaN
+let minResult = Math.min(min1);
+
+// console.log(`Math Object with min method => Original nos - ${min1} & Minimum number amongst them is ${minResult}`);
+console.log(`Math Object with min method => Minimum number amongst them is -> ${minResult}`);
+*/
+
+console.log(Math.min(0, 150, 30, 20, -8, -200));
+
+
+// i) Math.max() - can be used to find the highest value in a list of arguments
+
+/*
+const max1 = (0, 150, 30, 20, -8, -200);  // return last value
+let maxResult = Math.max(max1);
+
+console.log(`Math Object with max method => Maximum number amongst them is -> ${maxResult}`);
+*/
+
+console.log(Math.max(0, 150, 30, 20, -8, -200));
+
+
+// j) Math.random() - returns a random number between 0 (inclusive) [it will include], and 1 (exclusive) [it will not include]
+
+// console.log(Math.floor(Math.random()*10));
+// console.log(Math.floor(Math.random()*10)); // 0 to 9
+
+let random1 = (Math.random()*5), random2 = (Math.floor(Math.random()*5));
+console.log(`Math object with random method => ${random1}, ${random2}`);
+
+
+// k) Math.trunc() - returns the integer part of a number
+
+// console.log(Math.trunc(4.6));
+// console.log(Math.trunc(-99.1));
+
+let trun1 = (Math.trunc(7.6)), trun2 = (Math.trunc(-48.57));
+console.log(`Math object with trunc method => ${trun1}, ${trun2}`)
+
+// if the argument is a positive number, Math.trunc() is equivalent to Math.floor(), otherwise Math.trunc() is equivalent to Math.ceil().
+
+
+
+
+
+
+/*
+*/

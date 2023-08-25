@@ -45,16 +45,23 @@ We had to run js in terminal use node (node <filename>);
 
 14] Timing-Based Events.
 
-15] IQ.
+15] ES 2015-2020 P2.
 
-16] ES 2015-2020 P2.
+16] Advanced Js P1.
 
-17] Advanced Js P1.
+17] Asynchronous.
 
-18] Asynchronous.
+18] Event Loop.
 
-19] Event Loop.
+19] Advanced Js P2.
 
-20] Advanced Js P2.
+20] Extra part newly added...
 
 Projects...
+
+
+index.js => Contain all data with notes & examples.
+challenge.js => Contain some challenging questions.
+interview.js => Some important question of theory and coding.
+coding question folder => Some best coding question from scratch.
+test.js => demonstration of examples.

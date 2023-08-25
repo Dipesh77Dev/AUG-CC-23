@@ -340,3 +340,15 @@ let lastChar = str2.length;
 let lastChar1 = str2.length - 1;
 
 console.log(lastChar, str2.charCodeAt(lastChar), str2.charCodeAt(lastChar1));
+
+
+
+
+
+// 9] Date & Time =>
+
+// (function(){
+//   setInterval(()=> {
+//     console.log(new Date().toLocaleTimeString());
+//   }, 1000)
+// })();
