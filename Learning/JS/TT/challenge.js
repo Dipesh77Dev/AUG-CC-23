@@ -229,6 +229,8 @@ Q4. Update march to March (update)?
 Q5. Delete June from an array?
 */
 
+// Q2 - Q5] =>
+
 // Splice method can do all CRUD Operation. Adds or removes any elements from an array.
 
 const months = ['Jan', 'march', 'April', 'June', 'July']
@@ -281,6 +283,55 @@ if (indexOfMonth2 != -1) {
 } else {
   ; ('No data found in this month')
 }
+
+
+// Q1] Compare Function	Optional. 
+// A function that defines an alternative sort order. The function should return a negative, zero, or positive value, depending on the arguments, like:
+
+// function(a, b){return a-b}
+const array1 = [1, 30, 4, 21, 100000, 99];
+
+// for asecnding order 
+array1.sort(function (a, b) {
+  console.log(a, b);
+  if (a > b) {
+    return 1;     // b comes first and then a 
+  }
+  if (a < b) {    // a comes first and then b 
+    return -1;
+  }
+  if (a == b) {
+    return 0;     // No changes
+  }
+});
+console.log(array1);
+
+// function(a, b){return b-a}
+// for desecnding order 
+array1.sort(function (a, b) {
+  console.log(a, b);
+  if (a > b) {
+    return -1;    // b comes first and then a 
+  }
+  if (a < b) {    // a comes first and then b 
+    return 1;
+  }
+  if (a == b) {   // No changes
+    return 0;
+  }
+});
+
+console.log(array1);
+
+
+// 2: sort the array in descending order
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits);
+let sFruits = fruits.sort()
+console.log(sFruits);
+let rFruits = sFruits.reverse()
+console.log(rFruits);
+// console.log(fruits, sFruits, rFruits);
 
 
 // Map Method -

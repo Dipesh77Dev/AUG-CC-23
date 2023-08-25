@@ -1,3 +1,7 @@
+// const chalk = require('chalk'); const express = require('express'); JS import package using node..
+
+// For showing output we had alert, console, prompt, confirm, but mostly JS is used - "console" ....
+
 /* 
 1] Values & Variables =>
 
@@ -22,8 +26,8 @@ eg. var myAge = 25; cl(myage); - Error bcoz while reading its same but naming co
 5. We cant use keyword as a variable name.
 eg. var var = 25;
 
-var age; - Declaration [if we console this it will return undefined. undefined means we had not giving any value but afterwards we can give it a value]
-age = 22; - Initialization
+var age; - Declaration/How to create variables [if we console this it will return undefined. undefined means we had not giving any value but afterwards we can give it a value]
+age = 22; - Initialization/How to use variables
 var age = 25; Dynamic Initialization[Declaration + initialization]
 */
 
@@ -42,7 +46,7 @@ console.log(`1. Varaibles => My name is - ${myName} & age is - ${myAge}
 
 /*
 2] Datatypes(which type of data it contains) =>
-Primitives -
+Primitives[Only store one value in variable, if we try to put more than one value in it. it will give error] -
 undefined: typeof instance === "undefined"
 Boolean: typeof instance === "boolean" [true/false => 1/0 or we can use yes/no]
 Number: typeof instance === "number" [10, 2.5]
@@ -60,9 +64,12 @@ To check which datatype it contains we had one method -
 typeof();
 */
 
+// let myName1 = 'Rajesh', 'Rahul'
 let myName1 = 'Rajesh'
+
+// let myAge1 = 25 50 75
 let myAge1 = 25
-let isLegal1 = true
+let isLegal1 = true  // false
 // console.log(`Name is ${name} & its type is -`, typeof(name)); // Error
 // console.log(`Name is ${myName1} & its type is -`, typeof(myName1));
 // console.log(`Age is ${myAge1} & its type is -`, typeof(myAge1));
@@ -303,6 +310,7 @@ fullName1 - ${fullName1}
 
 ShortHand for if else is ternary operator
 But when we had nested if else then we used Switch Statements.
+Break can be used in condition & loop, continue will used in loops.
 */
 
 var contro = 500
@@ -1666,7 +1674,7 @@ console.log(d1, d1.toLocaleString());
 
 let d2 = new Date(0);
 let d3 = new Date(1609574531435);
-let d4 = new Date(86400000*2);
+let d4 = new Date(86400000 * 2);
 console.log(Date.now(), d2.toLocaleString(), d3.toLocaleString(), d4.toLocaleString);
 
 
@@ -1781,7 +1789,7 @@ console.log(`Math object with round method => ${Math.round(round1)}, ${Math.roun
 // c) Math.pow() - returns the value of x to the power of y
 
 // console.log(5**3); can be written as <-->
-console.log(`Math Object with power method => ${Math.pow(5,3)}`); // 5 * 5 * 5
+console.log(`Math Object with power method => ${Math.pow(5, 3)}`); // 5 * 5 * 5
 
 
 // d) Math.sqrt() - the square root of x
@@ -1797,7 +1805,7 @@ console.log(`Math Object with square root method => ${Math.sqrt(sqrt1)}, ${Math.
 // console.log(Math.abs(-955));
 // console.log(Math.abs(4-6));
 
-let abs1 = Math.abs(-55), abs2 = (Math.abs(-1055)), abs3 = -77.5, abs4 = 4-6, abs5 = 5;
+let abs1 = Math.abs(-55), abs2 = (Math.abs(-1055)), abs3 = -77.5, abs4 = 4 - 6, abs5 = 5;
 
 // console.log(`Math object with absolute method => ${abs1}, ${abs2}, ${abs3.Math.abs()}, ${abs4}, ${abs4.Math.abs()}, ${abs5.Math.abs()}`)
 
@@ -1858,7 +1866,7 @@ console.log(Math.max(0, 150, 30, 20, -8, -200));
 // console.log(Math.floor(Math.random()*10));
 // console.log(Math.floor(Math.random()*10)); // 0 to 9
 
-let random1 = (Math.random()*5), random2 = (Math.floor(Math.random()*5));
+let random1 = (Math.random() * 5), random2 = (Math.floor(Math.random() * 5));
 console.log(`Math object with random method => ${random1}, ${random2}`);
 
 
@@ -1878,4 +1886,160 @@ console.log(`Math object with trunc method => ${trun1}, ${trun2}`)
 
 
 /*
+Methods - Actions [adding/deleting HTML elements]; Properties - values [we can get & set/changing the content].
+
+11. DOM[Document Object Model] in JS =>
+Window vs Document;
+DOM VS BOM;
+DOM Navigation;
+Searching & getting Elements Reference.
+*/
+
+
+// 1] Window vs Document ->
+/*
+a) Window is the main container/parent or we can say the global Object and any operations related to entire browser window can be a part of window object. eg. History or to find the url etc.
+
+DOM is the child of Window Object.
+In Short, Whole screen is Window & the content inside website is deal with DOM.
+
+eg. If we go to youtube, then whole page like title bar, back button, next button, close button, minimize button, content is all window object; The section where data is loading or changing is Document. Document is the part of window; & with the help of document we can't go back or close the website, bcoz document is used to deal with rendering HTML & CSS content.  
+
+
+b) All the members like objects, methods or properties, If they are the part of window object then we do not refer the window object. Since window is the global object so we don't have to write down window. 
+eg.  
+window.screen or just screen is a small information object about physical screen dimensions;
+window.location giving the current URL [see in browser - window.location.href/ location.href]
+window.document or just document is the main object of the potentially visible (or better yet: rendered) 
+window.alert or alert for popup message.
+document object model/DOM.
+
+In Dom we need to refer the document, if we want to use the document object, methods or properties
+eg. document.getElementById(), document.getElementByClassName(), ... etc.
+
+
+c) Window has methods, properties and object. ex setTimeout() or setInterval() are the methods. 
+Where as Document is the object of the Window and it also has a screen object with properties describing the physical display.
+
+Document is just the object of global object i.e Window, which deals with document, HTML elements themselves.
+
+In short - HTML & CSS Part will handle by DOM, rather than HTML it can be handle by window.
+
+Window Objects properties - innerHeight, innerWidth, & many more...
+
+Window[parent Global Object] ==>
+DOM[document --> HTML --> HEAD / Body [--> a, p, h1, div, span, ...]];
+BOM[navigator, screen, location, frames, history, XMLHTTPRequest(api)]
+JS[Array, Object, Function]
+*/
+
+
+
+/*
+DOM VS BOM ->
+The DOM is the Document Object Model, which deals with the document, or the HTML elements themselves, e.g. document and all traversal you would do in it, events, etc.
+For Ex: change the background color to red --> document.body.style.background = "red";
+
+
+The BOM is the Browser Object Model, which deals with browser components aside from the document, like history, location, navigator and screen (as well as some others that vary by browser). OR 
+In simple meaning all the Window operations which comes under BOM are performed usign BOM. 
+Functions alert/confirm/prompt are also a part of BOM: they are directly not related to the document, but represent pure browser methods of communicating with the user.
+
+alert(location.href); --  shows current URL
+if (confirm("Want to Visit Youtube?")) {
+   location.href = "https://www.youtube.com"; // redirect the browser to another URL
+}
+*/
+
+
+
+/*
+Navigate through DOM ->
+
+before that make one html file to understand properly -->
+<body>
+<div id="main"></div>
+<div class="one">Child 1</div>
+<div class="two">Child 2</div>
+<div class="three">Child 3</div>
+<script></script>
+</body>
+
+1: document.documentElement    [returns the Element that is the root element of the document]. 
+2: document.head
+3: document.body
+4: document.body.childNodes (include tab, enter, whiteSpace & named as text in browser).
+list of the direct children only -> 5: document.children (without text nodes, only regular Elements)
+6: document.childNodes.length
+*/
+
+
+
+/*
+Practise Time ->
+
+a. How we can check whether an element has child nodes or not? -> hasChildNodes()  [it returns in boolean].
+
+b. How we can find child in DOM Tree? ->
+firstChild vs firstElementChild; lastChild vs lastElementChild 
+const data = document.body.firstElementChild.firstElementChild;
+undefined
+data; data.firstElementChild; data.firstElementChild.firstElementChild;data.firstElementChild.firstElementChild.style.color = "red"
+                            VS
+document.querySelector(".two").style.color = "yellow";
+
+c. Check Parent Nodes? -> document.body.parentNode; document.body.parentElement
+
+d. Access Siblings? -> document.body.nextSibling; document.body.nextElementSibling; document.body.previousSibling; document.body.previousElementSibling
+*/
+
+
+
+/*
+Search Elements & References ->
+document.getElementById; document.getElementsByClassName; document.getElementsByTagName;
+
+Create Html file -
+<body>
+    <p class = "para">Had you Like the content</p>
+    <p class = "para">Plz share the content</p>
+    <p>Plz share on social media handles..</p>
+    <h3 id="heading">Changed the content of h3</h3>
+    <button onclick = "changeContent()">Change</button>
+    <hr />
+
+    <form>
+        <label for = "">male</label>
+        <input type="radio" name="gender" id="">
+        <label for = "">female</label>
+        <input type="radio" name="gender" id="">
+        <label for = "">not to say</label>
+        <input type="radio" name="gender" id="">
+    </form>
+</body>
+
+<script>
+    const changeContent = () => {
+
+        // Document Selector <-->
+        // direct method
+        document.getElementById('heading').innerHTML = "Welcome in this tutorial";   [innerHTML is a property which will change the HTML content, make sure id should match with the given one].
+
+        // reference, heading is the object here -
+        const changeHeading = document.getElementById('heading');
+        changeHeading.innerHTML = "";
+
+        console.log(document.getElementsByClassName('para'));
+        console.log(document.getElementsByTagName('p'));
+        console.log(document.getElementsByName('gender'));
+
+        // Vs query selector [We can use class, element, tag, etc...] <-->
+        // querySelector() - return 1st matching values; querySelectorAll() - return all Elements.
+
+        document.querySelector('#heading').innerHTML = "";
+        document.querySelector('.para').innerHTML = "";
+
+        document.querySelectorAll('.para').innerHTML = ""; // it will return not changed so - console.log(document.querySelectorAll('.para'));
+    }
+</script>
 */

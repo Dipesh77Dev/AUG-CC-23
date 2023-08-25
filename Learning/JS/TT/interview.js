@@ -217,3 +217,52 @@ let newArrMap = arr.map((curEl, index, arr) => {
 console.log(`After Map method Array - ${newArrMap}`)
 
 
+
+
+// Q9] String, Arrays, Date & Time Object, Math Object [All Properties & Methods].
+
+
+
+
+
+// Q10] Difference Between getElementById & querySelector?
+
+/*
+getElementById -->
+element = document.getElementById(id);
+Return a reference to the element by its Id. If the element with specified ID us not in document, it returns null.
+
+querySelector -->
+element = document.querySelector(selectors);  // css selectors.
+Returns the 1st element within the document that matches the specified group of selectors, if no matches found it returns null.
+
+eg.
+<body>
+  <ul>
+    <li id="web-id">PHP</li>
+    <li>HTML</li>
+    <li class="web-class">CSS</li>
+    <li class="web-class">JS</li>
+  </ul>
+
+  <script>
+    console.log(document.getElementById("web-id").innerHTML);
+    console.log(document.querySelector("#web-id").innerHTML);
+  </script>
+</body>
+
+
+Differences <-->
+What if we want to get HTML content of 3rd <li>.
+We can use querySelector, but we can't used getElementById bcoz no id is there it is represented with class.
+
+<script>
+  console.log(document.getElementById("web-class").innerHTML);  // return null..
+
+    console.log(document.querySelector(".web-class").innerHTML);
+    console.log(document.querySelector("li.web-class").innerHTML);
+    console.log(document.querySelector("ul li.web-class").innerHTML);
+
+</script>
+// Amongst both faster is document.getElementById bcoz it supports every browser..
+*/

@@ -65,3 +65,6 @@ challenge.js => Contain some challenging questions.
 interview.js => Some important question of theory and coding.
 coding question folder => Some best coding question from scratch.
 test.js => demonstration of examples.
+
+
+ES6 => Destructure of array & object, object properties, spread operator & rest operator & different ES Versions...
