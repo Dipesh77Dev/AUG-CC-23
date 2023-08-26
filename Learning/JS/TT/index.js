@@ -1925,7 +1925,7 @@ Document is just the object of global object i.e Window, which deals with docume
 
 In short - HTML & CSS Part will handle by DOM, rather than HTML it can be handle by window.
 
-Window Objects properties - innerHeight, innerWidth, & many more...
+Window Objects properties - innerHeight(gives the height), innerWidth(gives the width), & many more...
 
 Window[parent Global Object] ==>
 DOM[document --> HTML --> HEAD / Body [--> a, p, h1, div, span, ...]];
@@ -1936,7 +1936,7 @@ JS[Array, Object, Function]
 
 
 /*
-DOM VS BOM ->
+2] DOM VS BOM ->
 The DOM is the Document Object Model, which deals with the document, or the HTML elements themselves, e.g. document and all traversal you would do in it, events, etc.
 For Ex: change the background color to red --> document.body.style.background = "red";
 
@@ -1954,7 +1954,7 @@ if (confirm("Want to Visit Youtube?")) {
 
 
 /*
-Navigate through DOM ->
+3] Navigate through DOM ->
 
 before that make one html file to understand properly -->
 <body>
@@ -1996,7 +1996,7 @@ d. Access Siblings? -> document.body.nextSibling; document.body.nextElementSibli
 
 
 /*
-Search Elements & References ->
+4] Search Elements & References ->
 document.getElementById; document.getElementsByClassName; document.getElementsByTagName;
 
 Create Html file -
@@ -2038,8 +2038,614 @@ Create Html file -
 
         document.querySelector('#heading').innerHTML = "";
         document.querySelector('.para').innerHTML = "";
+        document.querySelector('p').innerHTML = "";
 
         document.querySelectorAll('.para').innerHTML = ""; // it will return not changed so - console.log(document.querySelectorAll('.para'));
     }
 </script>
+*/
+
+
+
+
+
+/*
+12. Events =>
+
+4 ways of writing events in JS.
+Event Object
+MouseEvent, Keyboard Event, Input Event in JS
+*/
+
+
+/*
+HTML events are "things" that happen to HTML elements.
+When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+In short, when an action is triggered inside the page that is called as event.
+An HTML event can be something the browser does, or something a user does.
+
+eg.
+An HTML web page has finished loading.
+An HTML input field was changed.
+An HTML button was clicked.
+Often, when events happen, you may want to do something.
+
+JavaScript lets you execute code when events are detected. [js is ued for making interactive web page].
+HTML allows event handler attributes, with JavaScript code, to be added to HTML elements.
+
+DOM Events allow JavaScript to add event listener or event handlers to HTML elements.
+Common HTML Events ->
+onchange --> HTML element has been changed.
+onclick --> User clicks an HTML element.
+onmouseover --> User moves the mouse over an HTML element.
+onmouseout --> User moves the mouse away from an HTML element.
+onkeydown --> User pushes a keyboard key.
+onload --> Browser has finished loading the page.
+onsubmit --> It used in form tag to submit all form details.
+
+Mostly used --> onchange, onclick, onsubmit.
+*/
+
+
+/*
+4 ways of writing Events in JavaScript ->
+
+1: using inline events alert();
+2: By Calling a funcion. (Common way/traditional way of writing, Mostly everyone uses this when we had to deal with buttons, links, etc...).
+3: using Inline events (HTML onclick="" property and element.onclick)
+4: using Event Listeners (addEventListener and IE's attachEvent)
+*/
+
+
+/*
+<div>
+    <h1> Event Types </h1>
+    <div class = "">
+
+        // 1st way - writing using inline alert
+        <div class = "">
+            <span class = ""></span>
+            <a href = "#" onclick = "alert(' I hope you are enjoying this content')" class = "";
+            <span class = "">Inline alert()</span>
+            </a>
+        </div>
+
+
+        // 2nd way - calling function.
+         <div class = "">
+            <span class = ""></span>
+            <a href = "#" class = "" onclick="callFunction()">
+                <span class = "">Calling a function</span>
+            </a>
+        </div>
+
+
+        // 3rd way - accessing with id, class, tagName, 
+         <div class = "">
+            <span class = ""></span>
+            <a href = "#" class = "" id = "">
+                <span class = "" id = "">Inline Event</span>
+            </a>
+        </div>
+
+
+        // 4th way - querySelector & eventListener
+        <div class = "">
+            <span class = ""></span>
+            <a href = "#" id = "" class = "">
+                <span class = "">Event Listeners</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // 2nd
+    const callFunction = () => {
+        alert("Function had been called...")
+    }
+
+    // 3rd
+    const res = document.getElementById(id);
+
+    // When we call same event through the reference, it will run the latest one that's an debug, bcoz it goes from top-to-bottom approach.
+
+    res.onclick = function(){
+        alert("Document.getElementById had been activated...")
+    }
+
+    res.onclick = function(){
+        alert("Document.getElementById had been activated...")
+    }
+
+    // 4th
+    const res1 = document.querySelector('#id');
+
+    // When we call same event through the reference with addEventListener, it runs/execute all commands. There is no limitations to write same event again, we can write many time & use also.
+
+    res1.addEventListener('click', () => {
+        alert("4th way using Event Listener ...")
+    } );
+
+    res1.addEventListener('click', () => {
+        alert("4th way using Event Listener ...")
+    } );
+
+// addEventListener() --> It takes 3 arguments - a.Which event we had to fire, b. which function to call or use callback function, c. true/false which is part of event bubbling or event capturing...
+
+</script>
+*/
+
+
+
+/*
+What is Event Object -> Event Object is the parent object of the event object. 
+eg. MouseEvent, focusEvent, KeyboardEvent, inputEvent etc.
+
+<body>
+<div class="">
+    <h1>Event Object</h1>
+    <div class="">
+        <div class="">
+            <span class=""></span>
+            <a href="#" class="" id="ok1">
+                <span class="">Event Listener</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const ress = document.getElementById("ok1");
+
+    const checkevent = () => {
+        console.log(event, event.target, event.type)
+    }
+
+    ress.addEventListener('ok1', checkevent)
+
+</script>
+
+</body>
+*/
+
+
+/*
+Mouse Event in JavaScript -> It occur when the mouse interacts with the HTML document belongs to the MouseEvent Object.
+
+<body>
+    <p id = "one" onmousedown = "mouseDown()" onmouseup = "mouseUp()">
+        Clicked...
+    </p>
+
+    <div class="">
+        <div id="ok2"></div>
+    </div>
+
+    <script>
+        // mouse is pressed it will run
+        function mouseDown(){
+            document.getElementById('one').style.color = "";
+        }
+
+        // mouse is released it will run
+        function mouseUp(){
+            document.getElementById('one').style.color = "";
+        }
+
+        const me = document.getElementById('ok2');
+
+        me.addEventListener('mouseenter', () => {
+            me.style.backgroundColor = "";
+            console.log('Mouse had been Entered')
+        });
+
+        const mouseLeaveFunc = () => {
+            me.style.backgroundColor = "";
+            console.log('Mouse had been leaved')
+        };
+
+        me.addEventListener('mouseleave', mouseLeaveFunc);
+    </script>
+</body>
+*/
+
+
+/* 
+Keyboard Event -> It occur when user presses a key on the keyboard, belongs to the KeyboardEvent Object.
+https://www.w3schools.com/jsref/obj_keyboardevent.asp
+
+<body>
+    <div class="">
+        <div>
+            <p>sffsf</p>
+            <br>
+            <input type = "text" class = "c1" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()"
+            <p id="keys"></p>
+        </div>
+    </div>
+
+    <script>
+        const keyPress = () => {
+            document.getElementById('keys').innerHTML = `You had press - ${event.key} & it's code is - ${event.code}`;
+        }
+
+        // better to use 2nd & 3rd ->
+        
+        const keyDown = () => {
+            document.getElementById('keys').innerHTML = `Key is down`;
+            // when we click backslash to delete, then it will run
+        }
+
+        const keyUp = () => {
+            document.getElementById('keys').innerHTML = `Key is up`;
+            // when we click backslash to delete, then it will run
+        }
+
+    </script>
+</body>
+*/
+
+
+/*
+Input Events -> The onchange event occurs when the value of an element has been changed.
+For radiobuttons and checkboxes, the onchange event occurs when the 
+checked state has been changed.
+OnChange event/method is used many times when we deal with any forms in react...
+
+<body>
+    <div class="">
+        <div>
+            <label for="">Name</label>
+            <input type="text" name="" id="sport"><br>
+            <label>Choose any 1
+            
+            // <select id="sports" name="sports"> - No need of inline we can directly used this by addEventListener.
+            <select id="sports" name="sports" onchange="selectElement()">
+                <option value="">Select One...</option>
+                <option value="cricket">Cricket</option>
+                <option value="football">Football</option>
+                <option value="hockey">Hockey</option>
+                <option value="chess">Chess</option>
+                <option value="carrom">Carrom</option>
+            </select>
+            </label><br>
+            <div id="result1"></div>
+        </div> 
+    </div>
+
+    <script>
+        const selectElement = () => {
+            // const inputChange = document.getElementById('sport');
+            // const selectedSport = document.getElementById('sports');
+            // console.log(`${inputChange} & ${selectedSport}`);
+
+            // Remember when we had to deal with text we use .innerHTML/.innerText, but when we deal with form we use .value
+
+            const inputChange = document.getElementById('sport').value;
+            const selectedSport = document.getElementById('sports').value;
+            console.log(`${inputChange} & ${selectedSport}`);
+
+            const result = document.getElementById('result1');
+            result.innerHTML = `Hi, Mr. ${inputChange}, your favourite sports is ${selectedSport}`;
+        }
+
+        // const inputChange = document.getElementById('sport');
+
+        // No need of inline directly use this ->
+        const sport = document.getElementById('sports');
+
+        sport.addEventListener('change', () => {
+            const inputChange = document.getElementById('sport').value;
+            const selectedSport = document.getElementById('sports').value;
+            console.log(`${inputChange} & ${selectedSport}`);
+
+            const result = document.getElementById('result1');
+            result.innerHTML = `Hi, Mr. ${inputChange}, your favourite sports is ${selectedSport}`;
+        });
+
+    </script>
+
+</body>
+*/
+
+
+
+
+
+/*
+13. Timing Based Events =>
+The window object allows execution of code at specified time intervals.These time intervals are called timing events.
+
+The two key methods to use with JavaScript are:
+setTimeout(function, milliseconds)
+It will executes a function once, after waiting for a specified number of milliseconds. [eg. lecture's schedule time].
+
+setInterval(function, milliseconds)
+Same as setTimeout(), but repeats the execution of the function continuously. [eg. clock's countdown].
+
+setTimeout(), clearTimeout()
+setInterval(), clearInterval() 
+*/
+
+
+
+/*
+1000ms -> 1s, 60s -> 1m, 60m -> 1h, 24h -> 1day
+setTimeout() [takes 2 argument -> function & time in milliseconds], clearTimeout() ->
+
+<body>
+    <div class="">
+        <div>
+            <p>Do you know what's my name is...</p>
+            <p id="showName"></p><br>
+            <button id="btn">Click</button>
+        </div>
+    </div>
+
+    <script>
+        const showName = document.querySelector('#showName');
+        const clickButton = document.getElementById('btn');
+
+        btn.addEventListener('click', () => {
+                showName.innerText = "Loading"
+            setTimeout( () => {
+                showName.innerHTML = "Dipesh"
+            }, 2000);
+        })
+
+        // clearTimeout(btn);
+    </script>
+
+    <div class = "">
+        <div>
+            <p>Both Methods SetTimeout(), clearTimeout()</p>
+
+            <button onclick = "btn1 = setTimeout(func1, 2000)">SetTimeout</button>
+            <button onclick = "clearTimeout(btn1)">ClearTimeout</button> 
+        </div>
+    </div>
+
+    function func1(){alert("Welcome...")}
+</body>
+*/
+
+
+/*
+setInterval, clearInterval ->
+
+
+<body>
+    <div class="">
+        <div>
+            <p> Can we react till 15 & stop..</p><br>
+            <button type="button" class="" id="btn1">Start</button>
+            <button type="button" class="" id="btn2">Stop</button>
+        </div>
+
+        <script>
+        const stop = document.querySelector('p');
+        const clickButton = document.getElementById('btn');
+        const stopInterval = document.querySelector('#btn2');
+        const num = 0;
+        const timeRef;
+
+        // clickButton.addEventListener('click', () => {
+        //     stop.innerText = "Loading"
+        //     setInterval( () => {
+        //         stop.innerHTML = `${num}`;
+        //         num++;
+        //     }, 2000);
+        // })
+
+
+         clickButton.addEventListener('click', () => {
+            stop.innerText = "Loading"
+            timeRef = setInterval( () => {
+                stop.innerHTML = `${num}`;
+                num++;
+            }, 2000);
+        });
+
+        stopInterval.addEventListener('click', () => {
+            clearInterval(timeRef);
+        });
+
+        </script>
+    </div>
+
+</body>
+*/
+
+
+
+
+
+
+/*
+14. OOPS [We will discussed only on object bcoz, react is working in functional component rather than class, so we should learn more about object for now].
+Object Literals; "this" objects  =>
+*/
+
+
+/*
+What is Object Literal -> Object literal is simply a key:"value" pair data structure. Storing variables and functions together in one container, we can refer this as an Objects.
+eg. object = school bag(in one bag it contains every data like notebook, compass, tiffin, water bottle, etc...) 
+
+Why Objects -> 
+In primitive[string, no, boolean, symbol, null, undefined] - we can put only one value in it. it uses passed by value.
+eg. 
+const a1 = "Raj"   // Correct
+const a1 = "Raj" , "Rohan"   // InCorrect
+const b1 = 5   // Correct
+const b2 = 6 , 10   // InCorrect
+const c1 = true   // Correct
+const c1 = true, false   // InCorrect
+
+Pass by value ->
+let num1 = 70
+let num2 = num1
+console.log(num1) // 70
+console.log(num2) // 70
+num1 = 40
+console.log(num1) // 40
+console.log(num2) // 70
+
+Pass by reference ->
+let obj1 = {website: "Scaler Academy"}
+let obj2 = obj1;
+console.log(obj1)     // {website: "Scaler Academy"}
+console.log(obj2)     // {website: "Scaler Academy"}
+obj1.website = "Scaler Topics"
+console.log(obj1)     // {website: "Scaler Topics"}
+console.log(obj2)     // {website: "Scaler Topics"}
+
+
+Non-Primitive[objects, array, function] - Can be made up of primitive datatypes. It is pass by reference.
+Array we can use many data, but we will use similar data only.
+const arr = [ 'Raj', 25, true, null]; 
+
+But what if I need to had properties of single thing & we can add action[function to it], that can be done with objects..
+Key can consist varaible & function in objects.
+
+*/
+
+// How to create an Object ->
+
+// We were having many ways but now we have only this 2 traditional ways <-->
+
+// 1st way - 
+
+// var biodata = "Dipesh Devrukhkar"; console.log(biodata);
+
+// Remember when we write function inside objects its called as methods.
+
+let bioData = {
+    myNameinObj: "Dipesh Devrukhar",
+    myAgeinObj: 23,
+    getData: function () {
+        console.log(`Object => My name is - ${bioData.myNameinObj} and my age is - ${bioData.myAgeinObj}`);
+    }
+}
+//   console.log(myNameinObj); // Error
+console.log(bioData.myNameinObj + " , " + bioData.myAgeinObj);
+bioData.getData();
+//   console.log(bioData.getData());  // undefined
+
+
+// 2nd way no need to write functions as well after es6
+
+let bioData1 = {
+    myName: "Dipesh Devrukhar",
+    myAge: 25,
+    getData() {
+        console.log(`My name is ${bioData1.myName} and my age is ${bioData1.myAge}`);
+    }
+}
+// bioData1.getData();
+
+
+
+// What if we want object as a value inside an Object 
+
+let bioData3 = {
+    myName: {
+        realName: "Dipesh Devrukhkar",
+        favouriteSport: "Cricket & Football"
+    },
+    myAge: 26,
+    getData() {
+        console.log(`My name is ${bioData3.myName} and my age is ${bioData3.myAge}`);
+    }
+}
+
+console.log(bioData3.myName.favouriteSport + " , " + bioData3.myName.realName);
+
+
+
+/*
+What is this Object ->
+The definition of "this" object is that it contain the current context[context or which scope it is working on] 
+The this object can have different values depending on where it is placed.  
+*/
+
+
+/*
+// This will not work in editor, run this in browser ==>
+
+// ex 1 ->
+console.log(this);
+console.log(this.alert('Awesome')); // it refers to the current context and that is window global object 
+
+
+
+// ex 2 [this everytime refers to global object i.e nothing but an window object then what's its use case..] ->
+function myNamewithThis() {
+    console.log(this);
+}
+myNamewithThis();
+
+
+
+// ex 3 ->
+var myNames = 'Raj';
+function myName() {
+    console.log(this.myNames);
+}
+myName();
+
+
+
+// ex 4 -> [in object if we use this it change current context from window to current object].
+const obj = {
+    myAge : 26,
+    myName() {
+      console.log(this);
+      console.log(this.myAge);
+    }
+}
+obj.myName();
+
+
+
+// ex 5 [this object will not work with arrow function bcz arrow function is bound to class]. ->
+
+const obj = {
+    myAge : 26,
+    myName : () => {
+      console.log(this);
+    }
+}
+obj.myName();   //  it will return {} - nothing but an window object.
+
+
+
+// ex 6
+
+let bioData = {
+  myName : {
+    realName : "Dipesh Devrukhkar",
+    hobbies : 'Playing Games'
+  },
+  myAge : 26,
+  getData (){
+    console.log(`My name is - ${this.myName.realName} and my age is - ${this.myAge} `);  // here this refer to object i.e bioData.
+  }
+}
+bioData.getData();
+
+
+// call method is used to call the method of another object or with call(), an object can use a method belonging to another object 
+// But as per other it is simply the way to use the this keyword or another object 
+
+*/
+
+
+
+
+
+
+/*
+
 */

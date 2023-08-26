@@ -89,7 +89,7 @@ console.log(`OldName in const is - ${oldName2}`)
 // console.log(`OldName in const is - ${oldName2}`)
 
 // var can access function scope
-function check () {
+function check() {
   var firstName = 'Dipesh'
   console.log(`Outer var - ${firstName}`)
 
@@ -104,7 +104,7 @@ function check () {
 check()
 
 // let & const can access only block scope [if in parent we had defined child can use i.e firstName had defined out of if else but it will work; but child defined can't be used in parent i.e lastName had been deifned in child so it will work in child only not in parent].
-function check1 () {
+function check1() {
   let firstName1 = 'Dipesh'
   console.log(`Outer let - ${firstName1}`)
 
@@ -191,7 +191,7 @@ console.log(arr)
 
 arr.forEach(forEach1)
 
-function forEach1 () {
+function forEach1() {
   console.log(`For Each console 1 => ${arr}`)
 }
 
@@ -199,7 +199,7 @@ let sum = 0
 const numbers = [65, 44, 12, 4]
 numbers.forEach(myFunction)
 
-function myFunction (item) {
+function myFunction(item) {
   sum += item
   console.log(numbers + ' => ', sum)
 }
@@ -266,3 +266,79 @@ We can use querySelector, but we can't used getElementById bcoz no id is there i
 </script>
 // Amongst both faster is document.getElementById bcoz it supports every browser..
 */
+
+
+
+
+
+
+// Q11] Difference Between onclick & addEventListener?
+
+/*
+1. addEventListener does not override existing event handlers, whereas onclick overrides any eisting onclick function event handlers.
+2. onclick will always work, whereas addEventListener does not work in Internet Explorer before version 9.
+
+eg -->
+const oc = document.getElementById('');
+
+oc.onclick = funtion(){
+  alert('1st one);
+};
+oc.onclick = funtion(){
+  alert('2nd one);
+};
+oc.onclick = funtion(){
+  console.log('3rd one);
+}
+
+// const oc = document.getElementById('');
+const oc = document.querySelector('');
+
+oc.addEventListener('click', () => {
+  alert('1st one);
+});
+oc.addEventListener('click', () => {
+  alert('2nd one);
+});
+const third = () => {
+  console.log('3rd one');
+};
+oc.addEventListener('click', third);
+
+*/
+
+
+
+
+
+// Q12] Difference Between setTimeout() & SetInterval()?
+
+// setTimeout -> After few ms/sec/minutes/hrs/day it will call only once .
+// setInterval -> When we want to use/show same content continuosly.
+
+
+
+
+// Q13] Output of -
+
+const obj = {
+  myAge : 26,
+  myName : () => {
+    console.log(this);
+  }
+}
+obj.myName();  // it will return {} - nothing but an window object.
+
+
+let bioData = {
+  myName : {
+      realName : "Dipesh Devrukhkar",
+      hobbies : 'Playing Games'
+  },
+  myAge : 26,
+  getData (){
+    console.log(`My name is - ${this.myName.realName} and my age is - ${this.myAge} `);
+  }
+}
+// bioData.getData();
+
