@@ -2645,7 +2645,426 @@ bioData.getData();
 
 
 
+// 15. ES 2015[ES6] - 2020[ES11] =>
+
+// ES6 - Let & Const; Template Strings/Literals; Default Arguments; Arrow Function - which we had already done above.
+
+// ES6 - Destructing; Object Properties; Spread & Rest Operator ->
+
 
 /*
-
+Destructuring in ES6 -->
+The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+In short Destructure means split code or break into pieces.
+Array Destructuring & Object Destructuring[Used Mostly in React].
 */
+
+
+// Array Destructing -> 
+const myBioDatainArray = ['Raja', 'Sharma', 30];
+
+// old way of writing but what if we had 10, 20 data we can use destructure.
+let myFName = myBioDatainArray[0];
+let myLName = myBioDatainArray[1];
+let myAgeIs = myBioDatainArray[2];
+
+console.log(`Array without Destructor => ${myFName}, ${myAge}, ${myLName}`);
+
+// let [ fName1, lName1, mAge ] = myBioDatainArray;
+// console.log(`Array with Destructor => ${fName1}, ${lName1}, ${mAge}`);
+
+// we can add values too - 
+let [fName1, lName1, mAge, myDegree = "BCS-CS"] = myBioDatainArray;
+console.log(`Array with Destructor => ${fName1}, ${lName1}, ${mAge}, ${myDegree}`);
+
+
+// Object destructuring ->
+const myBioData5 = {
+    myFnameinObj: 'Raju',
+    myLnameinObj: 'Sharma',
+    myAgeinObj: 26
+}
+
+let myAgeinObj = myBioData5.myAgeinObj;
+let myFnameinObj = myBioData5.myFnameinObj;
+let myLnameinObj = myBioData5.myLnameinObj;
+
+console.log(`Object without Destructor => ${myAgeinObj}, ${myFnameinObj}, ${myLnameinObj}`);
+
+
+const myBioData6 = {
+    myLnameinObj1: 'Raju',
+    myFnameinObj1: 'Sharma',
+    myAgeinObj1: 26
+}
+
+let { myAgeinObj1, myFnameinObj1, myLnameinObj1, myDegree1 = "MCS" } = myBioData6;
+console.log(`Object with Destructor => ${myAgeinObj1}, ${myFnameinObj1}, ${myLnameinObj1}, ${myDegree1}`);
+
+
+const myBioData7 = {
+    myLnameinObj2: 'Raju',
+    myFnameinObj2: 'Sharma',
+    myAgeinObj2: 26
+}
+
+let { myAgeinObj3, myFnameinObj3, myLnameinObj3 } = myBioData7;
+console.log(`Object with Destructor => ${myAgeinObj3}, ${myFnameinObj3}, ${myLnameinObj3}`);   // it will return undefined bcoz destructure object keys doesn't match with origial objects.
+
+
+
+// Object Properties [ES6]->
+
+// we can now use Dynamic Properties ->
+
+let orgName = "Gamer";
+
+const DynamicBio1 = {
+    [orgName]: "Great name buddy",
+    [50 / 2]: "is my age"
+}
+console.log(DynamicBio1);
+
+// const DynamicBio1 = {
+//     orgName : "Great name buddy",
+//     50 / 2: "is my age",
+//      23: "is my age"
+// }  // Error
+
+
+// no need to write key and value, if both are same ->
+
+let myKeyName = "Jhaplu";
+let myKeyAge = 25;
+
+// const keyandVal = {
+//     myKeyName : myKeyName,
+//     myKeyAge : myKeyAge
+// }  
+// console.log(keyandval);
+
+// can be written as <->
+const keyandVal = { myKeyName, myKeyAge }
+console.log(keyandVal);
+
+
+
+// Spread Operator -> allows us to quickly copy all or part of an existing array or object into another array or object.
+
+const sports = ['cricket', 'football', 'hockey', 'badminton'];
+console.log(`Without Spread => ${sports}`);
+
+const mySports1 = ['cricket', 'football', 'hockey', 'badminton', 'chess', 'hockey'];
+console.log(`Without Spread => ${mySports1}`);
+
+// 2nd time add one more sports on top and tell we need to write it again on mysports1 array too - its like do not repeat again code. 
+const MyLastSportData = [...mySports1, 'kabaddi', 'ludo'];
+// const MyLastSportData = [ 'kabaddi', 'ludo', ...mySports1];
+console.log(`With Spread => ${MyLastSportData}`);
+
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+const numbersCombined = [...numbersOne, ...numbersTwo];
+console.log(numbersCombined);
+
+
+// it can alse be used in combination with destructuring ->
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const [one, two, ...rest] = numbers;
+console.log(`1 -> ${one}, 2 -> ${two}, 3-6 -> ${rest}`);
+
+
+// object spread operator ->
+
+const myVehicle = {
+    brand: 'Ford',
+    model: 'Mustang',
+    color: 'red'
+}
+
+const updateMyVehicle = {
+    type: 'car',
+    year: 2021,
+    color: 'yellow'
+}
+
+const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle }
+console.log(myUpdatedVehicle)
+
+// Remember when property did not match it combined, but when property match it overrides by last object that are passed.
+
+
+
+// Rest Parameter/Operator -> It is an improved way to habdle function parameter, allowing us to more easily handle various input as parameters in function. It gather all the remaining arguments.
+
+// before rest, we were having arguments objects, means if we pass arguents in function call & use argument object no need to write parameters in function defination.
+
+function sum() {
+    console.log(arguments);
+    var total = 0;
+    for (i of arguments) {
+        total += i;
+    }
+    console.log(total)
+}
+sum(2, 4, 4, 5, 0);
+
+
+const sumOf = () => {
+    console.log(arguments);
+    var total = 0;
+    for (i of arguments) {
+        total += i;
+    }
+    console.log(total)
+}
+// sumOf(2,4,4,5,0);  // Get error bcoz
+
+
+// To tackle argument in fat arrow function we use rest operator.
+const sumOfParams = (...params) => {
+    console.log(params);
+    var total = 0;
+    for (i of params) {
+        total += i;
+    }
+    console.log(total)
+}
+sumOfParams(2, 4, 4, 5, 0);  // Get error bcoz
+
+// Whenever we are passing multiple arguments, & when we are not having params, but if we need 1st & 2nd data, so to access that we can use rest operator/parameters (using 3 dots) - for gathering all the remaining arguments, but we can use rest operator at last only, we cant use rest operator at start or in middle as we do in spread operator.
+
+// const sumOfParams1 = (...a, b, params) =>{ - // error
+const sumOfParams1 = (a, b, c, ...params) => {
+    console.log(params);
+    var total = 0;
+    for (i of params) {
+        total += i;
+    }
+    console.log(total)
+}
+sumOfParams1(2, 4, 4, 5, 0, 10);  // Get error bcoz
+
+
+// Difference between REST & SPREAD Operator -> REST(elements get combined); SPREAD(combined elements gets divided).
+
+
+function sumOk(a,b,c, ...d){
+    console.log(a,b,c,d);
+    return a + b - c;   // we can perform any mathemeatical operations
+}
+const resss = sumOk(2,5,8,9,7,8,9,0);
+console.log(resss);
+
+
+let spreadName = ["Raj", "Mandar", "Tarun", "Vedant", "Krishna"];
+
+function getSpreadNames(name1, name2, name3, name4, name5){
+    console.log(name1, name2, name3, name4, name5);
+}
+getSpreadNames(spreadName[0], spreadName[1], spreadName[2], spreadName[3], spreadName[4]);
+getSpreadNames(...spreadName);   // best bcoz if we remove anything it will not throw error.
+console.log(spreadName);
+
+
+const students = {
+    name: "RajHans",
+    age: "18",
+    hobbies: ['cricket', 'football', 'games']
+}
+// const age = students.age
+const {...rest1} = students;
+console.log(rest1);
+
+
+const students1 = {
+   ...students,
+   education: "BSC-CS",
+   age: 23,
+   gender: "MALE",
+}
+console.log(students1);
+
+
+
+
+// ECMAScript 2016/ES7 -> Array.prototype.includes; Exponentiation Operator.
+
+// 1: array include [present in array retuns true, not present in array retuns false] ->
+const colors = ['red', 'green', 'blue', 'white', 'pink'];
+const isPresent1 = colors.includes('purple');
+const isPresent2 = colors.includes('blue');
+console.log(isPresent1, isPresent2);
+
+// 2: Exponentiation/Raise to/Power-off;
+console.log(2**3);   // 2 * 2 * 2 = 8
+
+
+
+
+// ECMAScript 2017/ES8 -> String Padding; Object.values(), Object.entries(); async/await[it will be in advanced topic...];
+
+
+// String Padding ->
+let message = "Loolz";
+console.log(message);
+console.log(message.padStart(5));
+console.log(message.padEnd(12) + "ok");
+console.log(message.padStart(15));
+console.log(message.padEnd(15) + "extra");
+
+// let padStart = message.padStart(10);
+// console.log(padStart);
+// let padEnd= message.padEnd(15);
+// console.log(padEnd);
+
+
+
+// Object.values() & Object.entries() ->
+const person = { name: 'Fred', age: 87 };
+
+// Object. stores the result in array
+console.log(Object.keys(person));  // it will give direct keys
+console.log( Object.values(person) );  // it gives direct values of the object.
+console.log(Object.entries(person)); // it gives direct entries
+
+
+
+// ECMAScript 2018/ES9 -> Rest/Spread Operator with objects; Asynchronous iteration; Promise.prototype.finally().
+
+
+const person1 = { name: 'Gopu', age: 87, degree : "don't know" };
+const secPerson = { ...person1 };
+
+console.log(`Rest & Spread with Object => 
+p1 -> ${person1}, p2 -> ${secPerson}`);
+
+console.log("Rest & Spread with Object => ", person1, secPerson);
+
+
+
+// ECMAScript 2019/ES10 -> Array.prototype.(flat, flatMap); Object.fromEntries(); String.prototype(trimStart, trimEnd); Symbol.prototype.description[Not imp..];
+// JSON.stringify & function.prototype.toString()[in advanced...].
+
+
+// Array.prototype.flat & flatMap[Not imp...] ->
+
+const arr5 =
+    [
+        ['zone_1', 'zone_2'],
+        ['zone_3', 'zone_4'],
+        ['zone_5', 'zone_6'],
+        ['zone_7', ['zone_7', ['zone_7', 'zone_8']]]     // but there is an catch, that if we do more nested array so it didn't make from 2D array to single array, so in ES 2020 we had better soln for this & replace the reduce method..
+    ];
+
+let flatArr3 = arr5.reduce((accum, currVal) => {
+    return accum.concat(currVal);
+})
+
+console.log(flatArr3);
+// By flatten we can flat array one by one, but when there are nested arrays, so we need to pass value, or give as Infinity[it doesn't care how many nested arrays are there, it will convert 2D or 3D array in single array] which was introduced in ES2020.
+console.log(arr5.flat());
+console.log(arr5.flat(1));
+console.log(arr5.flat(2));
+console.log(arr5.flat(3));
+// console.log(arr5.flat(4));
+// console.log(arr5.flat(Infinity));  // ES 2020
+
+
+const p1 = { name: 'Vegeta', age: 87 };
+
+console.log(Object.keys(p1));
+console.log(Object.values(p1));
+console.log(Object.entries(p1));
+console.log(Object.assign(p1));
+
+const storedP1 = (Object.entries(p1))   // {} => []
+console.log(Object.fromEntries(storedP1));   // [] => {}
+// console.log(Object.fromEntries(p1));  // error bcoz fromEntries can be made with the help of reference of entries stored variable.
+
+
+
+// trim(), trimStart(), trimEnd() ->
+
+// trimStart() method - It removes whitespace only from the start of a string ->
+
+let text1 = "     Hello World!     ";
+console.log(text1 + "ok");
+let text2 = text1.trimStart();
+console.log(text2 + "ok");
+
+
+// trimEnd() method - It removes whitespace only from the end of a string ->
+
+let text3 = "     Hello World!     ";
+console.log(text3 + "ok");
+let text4 = text3.trimEnd();
+console.log(text4 + "ok");
+
+
+// trim() method - It removes whitespace from both start & end ->
+
+let text5 = "     Hello World!     ";
+console.log(text5 + "ok");
+let text6 = text5.trim();
+console.log(text6 + "ok");
+
+
+
+// ES2020/ES11 -> BigInt, 
+
+let oldNum = Number.MAX_SAFE_INTEGER;
+console.log(oldNum);   // 9007199254740991
+console.log(9007199254740991 + 1);
+console.log(9007199254740991 + 2);
+console.log(9007199254740991 + 3);
+console.log(9007199254740991 + 5);
+console.log(9007199254740991 + 10);
+console.log(9007199254740991 + 15);
+console.log(9007199254740991 + 100);
+
+// sometimes it will produce wrong input so we can use BigInt
+
+// console.log( oldNum + 12n );  // Error
+// console.log( 9007199254740991 + 12n ); // Error
+console.log( 9007199254740991n + 12n );  // we had to add n when we will deal further more after getting MAX_SAFE_INTEGER number.
+
+const newNumBI = 9007199254740991n + 12n;
+console.log(`Bigint => ${newNumBI}, type - ${typeof(newNumBI)}`);
+
+
+// Nullish Coalescing -> Its logical operator return right-hand side operand, when left-hand side operand is null or undefined & if there is no null/undefined in left-hand side operand it will return left side not go further for right side.
+const foo = null ?? 'Raj';
+const foo1 = 'Gaurav' ?? 'Raj';
+const foo2 = undefined ?? 'Raj';
+const foo3 = 1 ?? null;
+const foo4 = true ?? undefined;
+const foo5 = false ?? 'ok1';
+const foo6 = NaN ?? undefined;
+const foo7 = NaN ?? 'ok2';
+console.log(foo, foo1, foo2, foo3, foo4, foo5, foo6, foo7);
+
+// Same with Or || ->
+const foo8 = null || 'Raj';
+const foo9 = 'Gaurav' || 'Raj';
+const foo10 = undefined || 'Raj';
+const foo11 = 1 || null;
+const foo12 = true || undefined;
+const foo13 = false || 'ok1';
+const foo14 = NaN || undefined;
+const foo15 = NaN || 'ok2';
+console.log(foo8, foo9, foo10, foo11, foo12, foo13, foo14, foo15);
+
+
+
+// ES2014 -> "use strict";
+zoya = 3.14; 
+console.log(zoya);
+
+"use strict";  // this should be in top of file if we used in middle it will not work...
+// zoya1 = 3.14;  // - Error
+let zoya1 = 3.14;
+console.log(zoya1);
+
+// By help of 'use strict' use in start we will get error that in js now traditional way for writing is using variables rather than literal/fixed values, so use let, var, const intead of directly writing zoya1, or it can throw error sometimes when we forget to define.
