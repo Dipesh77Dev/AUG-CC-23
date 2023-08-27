@@ -2850,17 +2850,17 @@ sumOfParams1(2, 4, 4, 5, 0, 10);  // Get error bcoz
 // Difference between REST & SPREAD Operator -> REST(elements get combined); SPREAD(combined elements gets divided).
 
 
-function sumOk(a,b,c, ...d){
-    console.log(a,b,c,d);
+function sumOk(a, b, c, ...d) {
+    console.log(a, b, c, d);
     return a + b - c;   // we can perform any mathemeatical operations
 }
-const resss = sumOk(2,5,8,9,7,8,9,0);
+const resss = sumOk(2, 5, 8, 9, 7, 8, 9, 0);
 console.log(resss);
 
 
 let spreadName = ["Raj", "Mandar", "Tarun", "Vedant", "Krishna"];
 
-function getSpreadNames(name1, name2, name3, name4, name5){
+function getSpreadNames(name1, name2, name3, name4, name5) {
     console.log(name1, name2, name3, name4, name5);
 }
 getSpreadNames(spreadName[0], spreadName[1], spreadName[2], spreadName[3], spreadName[4]);
@@ -2874,15 +2874,15 @@ const students = {
     hobbies: ['cricket', 'football', 'games']
 }
 // const age = students.age
-const {...rest1} = students;
+const { ...rest1 } = students;
 console.log(rest1);
 
 
 const students1 = {
-   ...students,
-   education: "BSC-CS",
-   age: 23,
-   gender: "MALE",
+    ...students,
+    education: "BSC-CS",
+    age: 23,
+    gender: "MALE",
 }
 console.log(students1);
 
@@ -2898,7 +2898,7 @@ const isPresent2 = colors.includes('blue');
 console.log(isPresent1, isPresent2);
 
 // 2: Exponentiation/Raise to/Power-off;
-console.log(2**3);   // 2 * 2 * 2 = 8
+console.log(2 ** 3);   // 2 * 2 * 2 = 8
 
 
 
@@ -2926,7 +2926,7 @@ const person = { name: 'Fred', age: 87 };
 
 // Object. stores the result in array
 console.log(Object.keys(person));  // it will give direct keys
-console.log( Object.values(person) );  // it gives direct values of the object.
+console.log(Object.values(person));  // it gives direct values of the object.
 console.log(Object.entries(person)); // it gives direct entries
 
 
@@ -2934,7 +2934,7 @@ console.log(Object.entries(person)); // it gives direct entries
 // ECMAScript 2018/ES9 -> Rest/Spread Operator with objects; Asynchronous iteration; Promise.prototype.finally().
 
 
-const person1 = { name: 'Gopu', age: 87, degree : "don't know" };
+const person1 = { name: 'Gopu', age: 87, degree: "don't know" };
 const secPerson = { ...person1 };
 
 console.log(`Rest & Spread with Object => 
@@ -3028,10 +3028,10 @@ console.log(9007199254740991 + 100);
 
 // console.log( oldNum + 12n );  // Error
 // console.log( 9007199254740991 + 12n ); // Error
-console.log( 9007199254740991n + 12n );  // we had to add n when we will deal further more after getting MAX_SAFE_INTEGER number.
+console.log(9007199254740991n + 12n);  // we had to add n when we will deal further more after getting MAX_SAFE_INTEGER number.
 
 const newNumBI = 9007199254740991n + 12n;
-console.log(`Bigint => ${newNumBI}, type - ${typeof(newNumBI)}`);
+console.log(`Bigint => ${newNumBI}, type - ${typeof (newNumBI)}`);
 
 
 // Nullish Coalescing -> Its logical operator return right-hand side operand, when left-hand side operand is null or undefined & if there is no null/undefined in left-hand side operand it will return left side not go further for right side.
@@ -3059,12 +3059,467 @@ console.log(foo8, foo9, foo10, foo11, foo12, foo13, foo14, foo15);
 
 
 // ES2014 -> "use strict";
+
+/*
 zoya = 3.14; 
 console.log(zoya);
 
-"use strict";  // this should be in top of file if we used in middle it will not work...
-// zoya1 = 3.14;  // - Error
-let zoya1 = 3.14;
+"use strict"  // this should be in top of file if we used in middle it will not work...
+zoya1 = 'zoya1';  // - Error
+// let zoya1 = 3.14;
 console.log(zoya1);
 
 // By help of 'use strict' use in start we will get error that in js now traditional way for writing is using variables rather than literal/fixed values, so use let, var, const intead of directly writing zoya1, or it can throw error sometimes when we forget to define.
+*/
+
+
+
+
+
+
+/*
+16. Adv JS [IMP]  => 
+Event Propagation(Event Bubbling & Event Capturing) 
+Higher Order Function.
+CallBack Function.
+Function Currying(After Async JS).
+CallBack Hell.
+AJAX call using XMLHttprequest. [People not used bcoz this is old but still some people used].
+JSON.  [If we had to transferred data throughout the server mostly people used JSON rather than above XMLHTTPrequest].
+Fetch API.  [Simplied version of XMLHTTPrequest]; Promises, Async & Await; Error Handling in JS.  [Can be seen in project in detail]
+Asynchronous & Event Loop.
+*/
+
+
+
+// a) Event Propagation (Event Bubbling and Event Capturing) ->
+
+/*
+Event Propagation mode determines in which order the elements receive the event.
+
+Event bubbling & Capturing are two ways of w=event propagation in HTML DOM API, when an event occurs in an element inside another element, & both elements have register a handle for that event.
+Event Propagation mode determines in which order the elements receive the event.
+
+
+Capture phase -> Going from window to event target phase.
+Target phase -> Targeted phase [where clicked happened & propagation started].
+Bubble phase -> From event target phase back to window.
+
+Flow <---> Window --> document --> <html> --> <body> --> <div> --> button
+top - bottom <---> Capture phase; bottom - top <---> Bubble phase.
+
+eg.
+if we fire an alert action in every tag.
+html, body, table, tbody, tr, td.
+so if we click on td -
+Bubble phase --> td, tr, tbody, table, body, html
+Capture phase --> html, body, table, tbody, tr, td.
+
+
+Event Bubbling - The event is first captured & handled by innermost element & then propagated to outer elements.
+Event Capturing - The event is first captured & handled by outermost element & then propagated to inner elements. It is also called as "trickling" which helps remember the propagation order.
+By default it is bubbling.
+
+
+<body>
+    <div class="parentDiv" id="parentId">
+        <div class="childDiv" id="childId"></div>
+    </div>
+
+    <script>
+        const parent = document.getElementById('parentId');
+        const child = document.getElementById('childId');
+
+        const callParent = () => {
+            alert('Parent Div called');
+            console.log('Parent Div called');
+        }
+
+         const callChild = () => {
+            alert('Child Div called');
+            console.log('Child Div called');
+            event.stopPropagation(); // if we write this it will work only this function it will not go up for running parent div.
+        }
+
+        // parent.addEventListener('click', callParent);
+        // child.addEventListener('click', callChild);
+
+        // We had 3rd argument in addEventListener i.e true/false. By default it is false(Bubbling), true(capturing).
+
+        // parent.addEventListener('click', callParent);
+        // child.addEventListener('click', callChild, false);
+
+        // parent.addEventListener('click', callParent, true);
+        // child.addEventListener('click', callChild, true);
+
+    </script>
+
+</body>
+*/
+
+
+
+
+// b) Higher Order Function -> function which takes another function as an arguments is called HOF(Higher Order Function)  eg. CallBack functn. 
+
+
+// Callback Function -> In JavaScript, everything (strings, arrays, functions) is considered an object. A function which get passed as an argument to another function is called as CBF(Callback Function). It is a function that is passed as an argument to another function, to be “called back” at a later time. 
+// eg. when we need to create a calculator -
+
+const addCall = (a, b) => {
+    return a + b;
+}
+// console.log(addCall(5,2));
+
+const subCall = (a, b) => {
+    return Math.abs(a - b);
+}
+
+const multCall = (a, b) => {
+    return a * b;
+}
+
+const divCall = (a, b) => {
+    return a / b;
+}
+
+const modCall = (a, b) => {
+    return a % b;
+}
+
+const calculator = (num1, num2, operator) => {
+    return operator(num1, num2);
+    //   return add(5,2);
+}
+
+// calculator(5,2,addCall)    // Calculater [HOF], addCall, subCall,... [CF].
+console.log(calculator(5, 2, addCall));
+console.log(calculator(5, 2, subCall));
+console.log(calculator(5, 2, multCall));
+console.log(calculator(5, 2, divCall));
+console.log(calculator(5, 2, modCall));
+
+/* 
+we had to do the hardcoded for each operation which is bad, we can use the callback and the HOF to make it simple to use.
+
+Now instead of calling each function individually we can call it, by simply using one function that is calculator 
+console.log(calculator(5,2,addCall));
+console.log(calculator(5,2,subCall));
+
+In the above example, calculator is the higher-order function, which accepts three arguments, the third one being the callback.
+Here the calculator is called the Higher Order Function because it takes
+another function as an argument and addCall, subCall, multCall, etc are called the callback function bcz they are passed as an argument to another function. 
+IQ -> Difference between HOF & CF.
+*/
+
+function compute(action, x, y) {
+    if (action === "divide") {
+        return x / y
+    } else if (action === "multiply") {
+        return x * y
+    } else if (action === "add") {
+        return x + y
+    } else if (action === "modulus") {
+        return x % y
+    }
+}
+
+console.log(compute("divide", 10, 5))    // 2
+console.log(compute("multiply", 10, 5))  // 50
+console.log(compute("add", 10, 5))       // 15
+console.log(compute("modulus", 10, 5))   // 0
+
+
+// We can rewrite that code with the help of CF & HOF
+
+function divided(x, y) {
+    return x / y
+}
+
+function multiplied(x, y) {
+    return x * y
+}
+
+function added(x, y) {
+    return x + y
+}
+
+function compute1(callBack, x, y) {
+    return callBack(x, y)
+}
+
+console.log(compute1(divided, 10, 5))    // 2
+console.log(compute1(multiplied, 10, 5))  // 50
+console.log(compute1(added, 10, 5))         // 15
+
+
+
+
+// c) Synchronous & Asynchronous function, Event Loop => 
+// Hoisting; Scope Chain; Lexical Scope; use Strict mode; this keyword; closures; synchronous & asynchronous; event loop 
+
+
+
+/*
+c.1) Hoisting ->
+We have a creation phase and execution phase[running phase]
+Hoisting in Javascript is a mechanism where variables and functions declarations are moved to the top of their scope before the code execute.
+In ES2015/ES6, hoisting is avoided by using the let & const keyword instead of var. (The other difference is that variables declared with let are local to the surrounding block, not the entire function.)
+eg. 
+*/
+
+// console.log(hoistName);
+let hoistName;
+hoistName = "GV";
+
+// console.log(hoistName1);
+// const hoistName1;
+// hoistName1 = "GV";
+
+console.log(hoistName2);
+var hoistName2;
+hoistName2 = "GV";
+
+// How it will be in output during creation phase 
+
+// 1: console.log(myName); <--> var myName = undefined;
+// 2: console.log(myName);
+// 3: myName = "thapa";
+
+
+
+// c.2) Scope Chain & Lexical Scoping ->
+
+/*
+The scope chain is used to resolve the value of variable names 
+in JS.
+Scope chain in js is lexically defined, which means that we can 
+see what the scope chain will be by looking at the code. 
+At the top, we have the Global Scope, which is the window Object
+in the browser.
+Lexical Scoping means Now, the inner function can get access to 
+their parent functions variables But the vice-versa is not true.
+eg.
+*/
+
+// const PI = 3.142; If someone asked what's the value of PI we can say this is the value bcoz its lexically defined, so in code we can directly say which value we are storing in that variable.
+
+let a = "Outside Function. "; // global scope [we can write window.a]
+
+const first = () => {
+    let b = "Inside function but as First(Parent)"
+
+    const second = () => {
+        let c = "Inside function but as Second(Child)";
+        console.log(a + b + c);
+    }
+    second();
+    // console.log(a+b+c); // We can't bcoz as per lexical scoping child can access parent & global variables; But parent can access global, but not child variable.
+    // In short inner function can access outer function, but outer function can't access inner function.
+}
+first();
+
+
+
+// c.3) Closures in JavaScript ->
+
+/*
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). 
+In other words, a closure gives you access to an outer function’s scope from an inner function. 
+In JavaScript, closures are created every time a function is created, at function creation time.
+eg.
+*/
+
+
+const outerFun = (a) => {
+    let b = 10;
+    const innerFun = () => {
+        let sum = a + b;
+        console.log(`the sum of the two no is ${sum}`);
+    }
+    innerFun();
+}
+outerFun(5);
+
+// it is same like lexical scoping 
+
+
+const outerFun1 = (a) => {
+    let b = 10;
+    const innerFun = () => {
+        let sum = a + b;
+        console.log(`the sum of the two no is ${sum}`);
+    }
+    return innerFun;
+}
+let checkClousure = outerFun1(5);
+console.log(checkClousure);
+// console.dir(checkClousure);
+
+
+
+// c.4) Synchronous & Asynchronous [IQ] ->
+
+
+// Synchronous JavaScript Prog [We had to wait] -> In synchronous we will not go to second work until we done finished by 1st work; bcoz as word suggest that it will work as synchronous or sequence by sequence.
+// ex 1st work = 10min; 2nd work = 5s -> In this second work is of 5s only but it will not go to second until it finish with first work. 
+
+const fun2 = () => {
+    console.log(`Second Function is called`);
+}
+
+const fun1 = () => {
+    console.log(`First Function is called`);
+    fun2();
+    console.log(`First Function is called Again`);
+}
+fun1();
+
+
+// Asynchronous JavaScript Prog [After Ajax we got asynchronous/ We don't have to wait] -> In asynchrous it will not wait for anybody to finished. it will start work at same time, 
+// Remember when we had sync/async --> so first it will call sync then async bcoz in async function like setTimeout, setInterval we had to set some timing in ms, so sync will work & async will also work at same time but after given time it will execute.
+// 1st work = 10m; 2nd work = 5s -> In this it will not wait for finishing 1st work, both will start at same time, & 2nd work if done it will go but 1st will work until it finish his task.
+// We had 2 methods setTimeout, setInterval as asynchronous in nature.
+
+const fun3 = () => {
+    setTimeout(() => {
+        console.log(`Function 2 is called`);
+    }, 5000);
+}
+
+const fun4 = () => {
+    console.log(`Function 1 is called`);
+    fun3();
+    console.log(`Function 1 is called Again ✌`);
+}
+fun4();
+
+
+
+// c.5) Event Loop =>
+
+/*
+const fun3 = () => {
+  setTimeout(()=> {
+      console.log(`Function 2 is called`);
+  }, 5000);
+}
+
+const fun4 = () => {
+  console.log(`Function 1 is called`);
+  fun3();
+  console.log(`Function 1 is called Again ✌`);
+}
+fun4();
+
+
+For event Loop We had 3 stages -> 
+execution Stack[Global Execution Context];
+Web APIS[setTimeout(), DOM, AJAX/API Call]
+Message Queue [After going form message queue to execution stack its called as event loop]. 
+
+How the above code is running -->
+(`Function 1 is called`) --> (`Function 1 is called Again ✌`) --> (`Function 2 is called`).
+
+S1: So when we call fun4() - it creates fun4 Execution context in global Execution object, means it make its own world/own environment, that it can work on their task & when it complete they move.
+S2: So now it goes to func4 & inside that it sees for execution now we had console.log its another function & now it will be in execution context, so after console is done & its task is done it will be get removed from execution stack.
+S3: It goes to fun3(), so it will make again execution context.
+S4: After going to fun3() we had setTimeout function which will make again execution context. SetTimeout() basically moves to web apis.
+S5: So in that we had set a countdown timer for 5s as callback.
+S6: So for 5 sec it goes from execution stack to web Api & that setTimeout() function had been vanished from execution stack. func4() execution had also get vanished from execution stack.
+S7: Again console.log() get in execution context & after finihsed it got vanished, so now whole fun4 execution will be removed from stack.
+S8: Now but still timer had been there in WEB APIS for 5s after completing it goes to message queue[first come, first serve].
+S9: If we had more setTimeout function then it moves from web apis to message queue.
+S10: So it will check if anything was there or not in global exection context; So nothing found than that timer function will move from message queue to global execution context. So whatever we get from web apis to message queue & when that content passed from message queue to global execution context is called as event loop.
+*/
+
+
+
+
+// Currying -> It is a technique of evaluating function with multiple arguments into sequence of function with single argument.
+// In other words, when a function, instead of taking all arguments at one time, takes the first one & return a new function that takes the second one & returns a new function that takes the third one & so forth, until all arguments have been fulfilled.
+// eg.
+
+// sum(5,3,8) & sum(5)(3)(8)  // both are different.
+
+// function sum(num1, num2){
+// console.log(num1)
+// }
+
+
+function sum(num1) {
+    // console.log(num1)
+    return function (num2) {
+        // console.log(num1, num2);
+        return function (num3) {
+            console.log(num1, num2, num3);
+            console.log(num1 + num2 + num3);
+        }
+    }
+}
+sum(5)(3)(8);   // we had different function for 5, 3, 8.
+
+
+// Single line -
+// function sum5(num1){ num2 => (num3) => console.log(num1 + num2 + num3)};
+const sum5 = (num1) => num2 => (num3) => console.log(num1 + num2 + num3);
+sum5(5)(3)(8);
+
+
+
+
+// d) Callback Hell -> The phenomenon which happens when we nest multiple callbacks within a function is called a callback hell. The shape of the resulting code structure resembles a pyramid and hence callback hell is also called the “pyramid of the doom”. To handle callback hell we had promises.
+
+setTimeout(() => {
+    console.log(`1st work is done`);
+    setTimeout(() => {
+        console.log(`2nd work is done`);
+        setTimeout(() => {
+            console.log(`3rd work is done`);
+            setTimeout(() => {
+                console.log(`4th work is done`);
+                setTimeout(() => {
+                    console.log(`5️th work is done`);
+                    setTimeout(() => {
+                        console.log(`6th work is done`);
+                    }, 1000)
+                }, 1000)
+            }, 1000)
+        }, 1000)
+    }, 1000)
+}, 1000)
+
+
+
+// e) JSON & AJAX ->
+
+// JSON.stringify turns a JavaScript object into JSON text and stores that JSON text in a string, eg:
+
+var myObject = { key_1: "some text", key_2: true, key_3: 5 };
+
+var objectToString = JSON.stringify(myObject);  
+console.log(objectToString);  // "{"key_1":"some text","key_2":true,"key_3":5}"  
+console.log(typeof(objectToString));  // "string" 
+
+
+// JSON.parse turns a string of JSON text into a JavaScript object, eg:
+
+var stringToObject = JSON.parse(objectToString);   // {key_1: "some text", key_2: true, key_3: 5} 
+console.log(stringToObject, typeof(stringToObject));   // "object" 
+
+
+/*
+// How to handled with the events and callback ?
+
+// XMLHttpRequest (XHR) objects are used to interact with servers. When we can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. XMLHttpRequest is used heavily in AJAX programming.
+
+const request = new XMLHttpRequest();
+// we need to call the api or request the api using GET method of which we want to receive data.
+request.open('GET', "https://covid-api.mmediagroup.fr/v1");
+request.send(); // we need to send the request and its async so we need to add the event to load the data and get it
+
+// to get the response 
+request.addEventListener("load", () => {
+    console.log(this.responseText);
+});
+*/

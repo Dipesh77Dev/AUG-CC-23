@@ -322,8 +322,8 @@ oc.addEventListener('click', third);
 // Q13] Output of -
 
 const obj = {
-  myAge : 26,
-  myName : () => {
+  myAge: 26,
+  myName: () => {
     console.log(this);
   }
 }
@@ -331,14 +331,33 @@ obj.myName();  // it will return {} - nothing but an window object.
 
 
 let bioData = {
-  myName : {
-      realName : "Dipesh Devrukhkar",
-      hobbies : 'Playing Games'
+  myName: {
+    realName: "Dipesh Devrukhkar",
+    hobbies: 'Playing Games'
   },
-  myAge : 26,
-  getData (){
+  myAge: 26,
+  getData() {
     console.log(`My name is - ${this.myName.realName} and my age is - ${this.myAge} `);
   }
 }
 // bioData.getData();
 
+
+
+
+
+// Q14] Output of sum (5)(3)(8)(0)(10);
+
+function sumCurry(num1) {
+  return function (num2) {
+    return function (num3) {
+      return function (num4) {
+        return function (num5) {
+          console.log(num1 + num2 + num3 + num4 + num5);
+        }
+      }
+    }
+  }
+};
+
+sumCurry(5)(3)(8)(0)(10);
