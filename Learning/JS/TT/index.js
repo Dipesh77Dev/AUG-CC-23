@@ -3523,3 +3523,77 @@ request.addEventListener("load", () => {
     console.log(this.responseText);
 });
 */
+
+
+
+
+
+/*
+Extra Part => 
+1] Primitive[immutable] Vs Non primitive[mutable].
+*/
+
+
+
+/*
+1] Primitive[immutable] Vs Non primitive[mutable].
+In JS, datatypes are represented as primitive[immutable/pass by value], non-primitive[mutable/pass by reference].
+
+Primitive[Value & Immutable] -> 
+Primitive data types include numbers, strings, booleans, null, and undefined. They are immutable, which means their values cannot be changed once they are created. When you perform operations on primitive values, you're actually creating new values rather than modifying the original ones.
+eg. 
+let str1 = "Hello";
+let str2 = str1; // Creating a new reference to the same value
+str2 = "Hi"; // A new string is created with the value "Hi", but str1 remains "Hello"
+
+let num1 = 5;
+let num2 = num1;
+num2 = 10; // A new number is created with the value 10, but num1 remains 5
+
+
+Non-Primitive[Reference & Mutable] ->
+Non-primitive data types include objects (including arrays and functions), and these values are mutable. When you work with non-primitive data types, you are working with references to the underlying data. Modifying the reference will affect the data itself.
+
+let arr1 = [1, 2, 3];
+let arr2 = arr1; // Both arr1 and arr2 refer to the same array
+arr2.push(4); // Modifies the original array, both arr1 and arr2 show [1, 2, 3, 4]
+
+let obj1 = { name: "Alice" };
+let obj2 = obj1;
+obj2.name = "Bob"; // Modifies the original object, both obj1 and obj2 now have { name: "Bob" }
+
+The distinction between mutable and immutable only refers to whether the original value can be changed. For non-primitive types, like arrays and objects, the variables actually hold references to memory locations where the data is stored, not the data itself. This is why modifying the reference affects the underlying data.
+
+
+eg.
+const str = "Mango, Banana, Orange";
+// console.log("Orignal string => ", str);
+// console.log("Orignal string Before Change => " +  str);
+// console.log(str.slice(0,5));
+// console.log("Orignal string After Change => " + str);
+
+
+const arr = ["Mango", "Banana", "Orange", "Mango"];
+// console.log("Orignal array Before Change => " +  arr);
+// console.log(arr.indexOf(0,2));
+// console.log(arr.indexOf("Mango"));
+// console.log(arr.slice(0,2));
+// console.log("Orignal array After Change => " + arr);
+
+
+let str1 = "Hello";
+console.log(str1)
+let str2 = str1; // Creating a new reference to the same value
+console.log(str1 + " " + str2)
+str2 = "Hi"; // A new string is created with the value "Hi", but str1 remains "Hello"
+console.log(str1 + " " + str2)
+
+
+let arr1 = [1, 2, 3];
+console.log(arr1)
+let arr2 = arr1; // Both arr1 and arr2 refer to the same array
+console.log(arr1 + "-"+ arr2)
+arr2.push(4); // Modifies the original array, both arr1 and arr2 show [1, 2, 3, 4]
+console.log(arr1 + "-"+ arr2)
+*/
+

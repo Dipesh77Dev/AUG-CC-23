@@ -1,0 +1,115 @@
+Q] Current HTML & CSS version --> HTML5, CSS3.
+
+
+
+Q] View HTML Source? -->
+Right-click in an HTML page and select "View Page Source" (in Chrome) or "View Source" (in Edge), or similar in other browsers. This will open a window containing the HTML source code/HTMLcode for that page.
+Right-click on an element (or a blank area), and choose "Inspect" or "Inspect Element" to see what elements are made up of (we will see both the HTML and the CSS code in it). We can also edit the HTML or CSS code in the Elements or Styles panel that opens.
+
+
+
+
+Q1] what is HTML?  --> 
+HTML[Hypertext Markup Language].
+Its not a programming language, its a standard markup language.
+Markup means it deals with tags. With HTML we can create our own Website.
+It describes the structure of web pages.
+It consists of series of elements.
+HTML elements tell the browser how/what to display the content such as heading, paragraph, link, image, etc.
+HTML tags are not case sensitive language. <P> means the same as <p>.
+The HTML standard does not require lowercase tags, but W3C recommends lowercase in HTML, and demands lowercase for stricter document types like XHTML.
+
+
+
+
+Q2] How browser know in which language we are writing?  -->
+<html lang="en">
+lang attribute - Specifies the language of the elements content.
+en - Specifies the language code for the elements content
+France - <html lang="fr"> Spanish - <html lang="es"
+
+
+
+
+Q3] Syntax? -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+</body>
+</html>
+
+The <!DOCTYPE html> declaration defines that this document is an HTML5 document
+The <html> element is the root element of an HTML page
+The <head> element contains meta information about the HTML page
+The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
+The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+The <h1> element defines a large heading
+The <p> element defines a paragraph
+Note:
+The content inside the <body> section will be displayed in a browser. The content inside the <title> element will be shown in the browser's title bar or in the page's tab.
+
+
+
+
+
+Q4] Difference between Tag Vs Elements  -->
+eg. <h1> Best HTML Course </h1> 
+<h1> - Opening/Start Tag  
+</h1> - End/Closing Tag 
+Best HTML Course - Content which will be displayed on the screen. 
+<h1> Best HTML Course </h1>  - The whole thing/combination of start tag, content, closing tag is called as elements.
+Some HTML elements have no content eg. (hr, br, img). These elements are called empty elements/standalone elements. Empty elements do not have an end tag!
+
+
+
+
+Q5] Attributes? -->
+<html lang="en">
+Attributes are used along with the HTML tags to define the characteristics of the elements.
+Attributes provide additional information about the elements.
+It is written in - key = "value" pair.
+Attributes should be used in starting tag only.
+
+
+
+
+Q6] Comment -->
+<!-- write anything in this  -->
+We will see this code in our editor, but we can't see this in browser. This is for our reference or anyone who is using our code we can mention the working/what that code means.
+We insert information between <!-- comment --> tags(browsers won't show these notes).
+Commenting in HTML allows developers to leave notes about their code, its functionality or to indicate necessary changes for future.
+
+
+
+
+Q7] Heading Tag(h1-h6) & paragraph -->
+h1 is the largest heading, while h6 is the smallest heading.
+h1(36px), h2(30px), h3(24px), h4(18px), h5(14px), h6(12px)[Default font size].
+We can set different font sizes for different tags.
+<h6 style="font-size: 50px"></h6>
+
+Paragraph is used to define some para/data. It can contain small data or big data.
+Pre is preformatted text - means it gives output same as it is written.
+
+
+
+
+Q8] Standalone Tag -->
+br - Goes to new line, hr - makes a horizontal line & seperates the code.
+
+
+
+
+Q9] Formatting Text [tags with special effects] -->
+
+
+
+
+Q10] HTML Entities Name & Numbers -->
+Entity is a piece of text("string") that begins with an ampersand(&) and ends with semicolon(;).
+Entities are frequently used to display reserved characters(which would otherwise be interpreted as HTML code), & invisible characters(like non-breaking spaces).

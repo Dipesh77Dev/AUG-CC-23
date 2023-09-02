@@ -1,0 +1,89 @@
+1] Intro 
+
+
+
+2] What is Website & How to Create?  -->
+Website is nothing but when we type to search anything on internet(Firefox, chrome, etc..) with url(uniform resource loader) - https://www.google.com, so browser sends requests to server & if it matches it will send the data/response to client otherwise it will send that page not found, But whatever we will see the result/webpage had been created by HTML, Bcoz HTML is a parent/root for web applications.
+
+
+
+3] How HTML CSS & JS Work? [eg. car] --> For responsive & better User experience/interfaces we need CSS & JS with HTML. HTML, CSS, JS[Building Block of development].
+HTML - define the structure & display information/content which we will see in web page.
+CSS - Used to make website looks good/amazing in styling purposes.
+With HTML & CSS we can only create static website[static - only readable content].
+JS - We can add logic/functionality in JS. Used to create dynamic website & make user more friendly.
+With help of HTML, CSS and JS we will be like frontend developers.
+CMS(content management system)/dynamic - HTML, CSS, JS, PHP, MySQL.
+We think that HTML is easy but its very important bcoz if we don't have any content only then there is no use of CSS and JS.
+
+Static website - A static website is the simplest website that’s embedded with HTML codes with no customized coding and dynamic features. Having a static website does not require the user to use server-side scripting, only client-side scripting such as JavaScript, HTML, CSS, etc.
+
+Dynamic website - A CMS website is also known as a dynamic website that contains pages that are characterized by changing contents that would be more operational, something the viewers are able to interact with, than just reading it. Designing a CMS website would need more than client-side scripting, it’ll need a server-side scripting language like ASP, PHP, JavaScript, JSP, ColdFusion, etc. When the viewer accesses a CMS website, the codes are separated and divided on the web server and the final HTML page is shown on the client’s web browser. To simplify, a CMS website is a combination of a server-side scripting and a client-side scripting specifically an e-commerce site and social media site.
+
+
+
+4] what is HTML?  --> HTML[Hypertext Markup Language].
+Its not a programming language, its a markup language. Markup means it deals with tags.
+
+
+
+5] VS Code Editor & Folder Structure  --> We can write code in atom, bracket, sublime text, notepad, but we will use VS Code Editor. 
+Tip 1 -> HTML extension .html/.htm[it is used in old days, bcoz extension was supporting only 3 characters at that time].
+Tip 2 -> File name must be index.html bcoz it's a default path of of our home page/root of our website.
+Tip 3 -> Use - https://www.google.com/     OR   https://www.google.com/index.html.    
+Both will give same output but now browser are more modern so no need to write index.html in url.
+But when we had to access any other page like about us, contact, ...etc we had to write that particular path in url/web address so it can show that page, by default we will see only index.html page.
+
+
+
+6] How to Code HTML  --> <h1> Best HTML Course </h1>  
+<h1> - Opening/Start Tag  
+</h1> - End/Closing Tag 
+Best HTML Course - Content which will be displayed on the screen. 
+<h1> Best HTML Course </h1>  - The whole thing is called as elements.
+
+
+
+7] HTML Document Structure/Syntax  -->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> HTML Page </title>
+    </head>
+    <body>
+        <h1> Hello World!! </h1>
+    </body>
+</html>
+
+<!DOCTYPE HTML>(version 5) -- Defines that this is an HTML5 document Or let the browser know it an HTML5, it appears once, at the top of the page.
+<html> -- It is the parent/root tag of the page.
+<head> -- This is used for metadata(data about data) & better SEO(Search Engine Optimization) Or Contains the information about HTML document.
+<title> -- Used to define the title of the page, we can see this in address bar of the page.
+<body> -- This is used for displaying the content/data of the webpage Or The part which is visible to users.
+
+
+
+See this in code file & IQ.txt ===>
+
+8] HTML Elements & Attributes
+9] HTML Headings
+10] HTML Comments
+11] HTML Text Formatting
+12] HTML Anchor Tag
+13] HTML Images 
+14] HTML Picture Tag
+15] HTML Figure Tag
+16] HTML Semantic vs Non-Semantic
+17] HTML Order vs Unorder list
+18] HTML Tables
+19] HTML Form
+20] HTML Iframe Tag
+21] HTML Video Tag
+22] HTML Audio Tag
+23] HTML Entities 
+24] HTML Project Start
+25] Netlify free Hosting 
+26] HTML Trick
+27] HTML SEO
+28] Hosting Website on Hostinger
+
