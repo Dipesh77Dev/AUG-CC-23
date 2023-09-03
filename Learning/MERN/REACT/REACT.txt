@@ -243,10 +243,37 @@ A special fragment syntax in React 16.2 is indroduced as a syntactical sugar for
 
 
 
-
 C1] Challenge 1 : Create Web App on Top 5 Netflix Series List using JSX.
 
 
 
+11] JSX Expression &  12] Template Literals(``) =>
+eg.
+return( <h1>My name is Raj</h1> );
 
-11] JSX Expression =>
+const name = "Rohit";
+return ( <h1>My name is Raj</h1> <h1> My Name is Name</h1>)
+
+In JS file when we write HTML code in return is called as JSX Element but when in HTML we use JavaScript is called as JSX Expression just denoted by {} 
+
+const name = "Raj";
+return ( <h1>My name is Raj</h1> <h1> My Name is name</h1> <h1> My Name is {name}</h1> <h3>Favourite no is 5 + 2 </h3>  <h3>Favourite no is {5 + 2 <h3>Favourite no is {Math.random()} } </h3>).
+
+In Curly braces we can use only expression, we can't use statements.
+eg. if we use if(){}else{} - throw error.
+
+
+Normal way to use expression -->
+const name = "Rohit";
+const lName = "Yadav";
+<h3>My FullName is - {name} {lName}</h3>
+<h3>My FullName is - {name + ' ' + lName}</h3>
+
+Template Literal --> <h3>{`My FullName is => FirstName - ${name} & lastName - ${lName}`}</h3>
+
+
+
+C2] Challenge 2: Display current Date & Time in React.
+
+
+

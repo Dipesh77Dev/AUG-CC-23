@@ -1,22 +1,33 @@
 import './App.css'
 
+// why React =>
 // import main from './Components/Why React/main';
 import Main from './Components/Why React/main';
 
-// Challenges 
-import Challenge1 from './Components/Challenges/Challenge1';
+
+// Topics =>
+import MainTopics from './Components/React Topics/MainTopics';
+
+
+// Challenges =>
+import MainChallenges from './Components/Challenges/MainChallenges';
 
 
 function App() {
 
   return (
     <>
-      {/* Why React ==> */}
+      {/* 1] Why React ==> */}
       {/* <main /> */}
-      <Main />
+      {/* <Main /> */}
 
-      {/* Challenges ==> */}
-      {/* <Challenge1 /> */}
+
+      {/* 2] Topics ==> */}
+      {/* <MainTopics /> */}
+
+
+      {/* 3] Challenges ==> */}
+      <MainChallenges />
     </>
   )
 }
