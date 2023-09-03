@@ -1,0 +1,247 @@
+noscript - It gets used when someone had disabled JS, or when someone browser doesn't support JS it will show that message which we provide.
+
+1] REACT Creation => 
+
+1. Simple to create react app use - npx create-react-app appname;
+appname should be in small letter only. eg -
+reacttut    - right
+Reacttut    - wrong,    ReactTut    - wrong,    ReactTut    - wrong.
+after creating go to the created appname folder & do npm run, 
+For installing package - npm i packagename  OR npm install packagename --save.
+
+2. By using vite or parcel -
+npm create vite@latest, after that give project name & select a framework & variant(language), npm install & npm run dev.
+
+
+
+
+
+2] REACT =>
+Its a JS library used for building User Interface[UI - Its a point of human-computer interaction & communication in a device. It can include display screens, keyboads, mouse & appearance of desktop. i.e (Frontend part of page)].
+
+React is not a framework. Its a library. It is also known as ReactJS/React.js/React, we can get confused if we read some different notations in different places.
+React only knows one thing to make an awesome UI with better coding structure.
+
+
+History -
+It was designed by Jorden Walke, software engineer at Facebook. It was first deployed for facebook News feed around 2011. In 2013, React was open sourced at JS conference.
+Open Source - open source project is where the code to a certain project is completely open source, means anybody can see the code that was used when developing & also it are usually community-based & accept help from other programmers Or we can see the code & contribute if we see something is missing or our part is working better than that so developer will check if they find its great they will add.
+
+
+Uses -
+a. Component Based Approach - It is one of the core building blocks of React. In other words, we can say that every application we will develop in React will be made up of pieces called components. It make the task of building UIs much easier. We can reuse the created components as much we can when we needed.
+
+b. Declarative Approach [It are used by framework but react is library still it uses this approach] - It is a programming paradigm that expresses the logic of computation without describing its control flow.
+eg. If we got one client he want to start business, so he wants us to create a website like ecommerce, the client doesn't know how actual website to develop, so basically we will add every functionality whatever required for building ecommerce website. So in this client doesnt had idea, but he had only broad idea.
+
+c. DOM updates are handled gracefully & Virtual DOM.
+d. Reusable Code - Make components & used anywhere we want.
+e. React is designed for speed, speed for implementing the application simplicity & scalability.
+f. SPA concept.
+
+
+Why -
+Created & Maintained by Facebook. It has huge community on GitHub[Before us many developer had faced the problem & it had been solved by someone, so if we stuck we can use the chrome or any browser to solve the error]. It is Component Based Architecture.
+
+
+
+
+
+3] PreRequiste =>
+PreRequiste - Learning any new language/framework what other languages we need to learn.
+For React -
+a. Basic knowledge of HTML, CSS, and JS. [Imp]
+b. Understanding of ES6 features. [little IMP]
+c. Using npm for packages.  [Not that much imp]
+
+VS Code Extensions -
+Babel JS[Whenever we write es6 concept it will highlight that], 
+Babel ES6/ES7 
+Javascript (ES6) code Snippets(Boilerplate)
+vscode icons.
+
+
+
+
+
+4] Installation =>
+a. Install NodeJS & NPM(Node package Manager automatically gets installed when we install NodeJS).
+b. Install VSCode/Sublime/Atom/Brackets, etc.
+c. Install React from terminal -
+    c.1.1) npm install -g create-react-app
+    c.1.2) create-react-app --version (check if react had installed or not, we can use -v)
+    c.1.3) create-react-app <projectname>
+    OR
+    c.2) npx create-react-app <projectname>
+c.1] - We can use in any folder by c.1.1 & c.1.2.
+c.2] - We can use in the particular folder where we had to work
+
+
+node_modules - It is the repository of modules/library which we are using inside our project, whatever we are importing in our project that module or library should present inside node_modules folder. When we do npm install that time that module/library gets installed inside node_modules folder & one entry added in the package.json file OR Every packages are there.
+
+package.json - It is used to store the metadata associated with the project as well as to store the list of dependencies packages with their versions & we had script to run or build the app.
+
+package-lock.json - All the packages data are there.
+
+In src folder, no need of serviceWorker.js, setupTests.js, logo.svg, App.tests.js, & css files. [Imp is App.js & index.js].
+
+In public folder, Imp is index.html(As we know, when we had to write code for webpage we had to write in HTML, but now with the help of React we will write every <body> code in REACT, we will only change/add scripts in head tag in HTML file). 
+[robots.txt - Whenever we host the website, to find out in google crawling or better SEO; manifest.json - provide application details in plain json file; then we had logos & favicon]
+
+Which are not important its for beginner only.
+
+
+Folder Structure -->
+a) By using React(3000) -->
+Folder - node_modules, public(favicon.ico, index.html. logos, manifest.json, robots.txt), src(App.css, App.js, App.test.js, index.css, index.js, logo.svg, serviceWorker.js, setupTest.js)
+Files - package.json, package-lock.json, .gitignore, .README.md
+scripts in package.json - npm start(Start app); npm run build(bundle the app into static files for production); npm test(testing); npm run eject(Removes this tool & copies build dependencies, configuration files).
+
+
+b) By using Vite + React(5173) -->
+Folder - node_modules, public(vite.svg), src(assets folder, App.css, App.jsx, index.css, main.jsx)
+Files - package.json, package-lock.json, .gitignore, .README.md,  index.html, vite.config.js, .eslintrc.cjs(EsLint is used for validation, error handling like import, export, packages, etc..)
+
+
+
+
+
+5] Babel (https://babeljs.io/) [Go to try it out]=>
+main.jsx(Vite) or index.js/index.jsx(React) -->
+
+var React = require("react"); // node
+import React from "react";  // react (ES6 import & export)
+var ReactDOM = require('react-dom');
+
+ReactDOM.render(<h1> Hello world</h1>, document.getElementById('root'))
+
+
+Code Info -->
+render('what to show', 'where to show' (It deals with DOM), 'callback function') - Render method simply means show.
+When we had to write HTML code we use React module, & when we had to play with DOM we use ReactDOM module.
+
+
+Babel & Webpack Info -->
+Babel - It is JS compiler[It converts ES6 code into normal vanilla code which our browser understand & We can write Modern JS(ES6 code & rn on browser)].
+Webpack - It makes our files & folders in one bundle folder.
+Babel & Webpack automatically gets installed when we install the react.
+
+eg. if we write code -
+const name = "Dipesh";
+const myapp = () => {
+    console.log('ok');
+}
+So this ES6 code basically converts into normal JS code with the help of Babel & used/display on browser.
+"use strict";
+var name = "Dipesh";
+var myapp = function myapp() {
+    console.log('ok');
+}
+
+
+
+
+
+6] JSX [in render method when we use HTML + JS Code or component & in that component when we use HTML + JS Code] => 
+JSX - js extension & js XML.
+With the help of JSX we can write JS code + HTML code.
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+ReactDOM.render(<h1>Raj</h1>, document.getElementById('root'));
+
+That above line is converted in browser -
+import { jsx as _jsx } from "react/jsx-runtime";
+ReactDOM.render( /*#__PURE__*/_jsx("h1", {
+  children: " Hello world"
+}), document.getElementById('root'));
+
+We can convert into normal/pure JS[no use of babel & react] -
+var h1 = document.createElement("h1");
+h1.innerHTML = "Hello world"
+document.getElementById('root').appendChild(h1);
+
+
+We can see we are using ReactDOM, but we are not using React, so what's the use, when we write jsx & comment import React it will throw an error, bcoz jsx is a part of React.
+
+
+
+
+7] Render Multiple Elements & 8] React Fragments =>
+
+ReactDOM.render(<h1>Raj</h1> <p>Hello</p> ,document.getElementById('root'));
+We will get error - Adjacent JSX Element must be wrapped in an enclosig tag.
+
+In Render method it only takes one single element.
+So when we had to render multiple elements we had to wrap every element with an parent element i.e (<div></div>; <></>; <React.Fragment></React.Fragment>)
+
+a) Array Elements
+If our react version is 16+ we can return an array of elements for render()
+ReactDOM.render([
+    <h1>Raj</h1>, <p>Hello</p>, <h2>Gamers</h2>
+], document.getElementById('root'))
+
+const App = () => [
+  <p key="1">React 16 can return multiple elements ❤️</p>,
+  <p key="2">React 16 can return multiple elements ❤️</p>,
+  <p key="3">React 16 can return multiple elements ❤️</p>,
+];
+
+
+To avoid array notation and manually added keys to each of the element, you can use an Aux helper function that simply returns all its children.
+const Aux = props => props.children;
+
+const Aux = props => props.children;
+const App = () =>
+  <Aux>
+    <p>React 16 can return multiple elements ❤️</p>
+    <p>React 16 can return multiple elements ❤️</p>
+    <p>React 16 can return multiple elements ❤️</p>
+  </Aux>;
+
+
+b) Normal HTML Tags with parent container, mostly we use <div>
+<div> </div>
+ReactDOM.render(
+    <div>
+    <h1>Raj</h1> <p>Hello</p> <h2>Gamers</h2>
+    </div>
+, document.getElementById('root'))
+
+
+c) React v16.2 introduced another way of returning multiple elements. React.Fragment abstracted in JSX way via just an empty tag. Bare in mind that JSX syntax doesn’t support attributes — use a verbose way if you need so. No extra components needed, no array notation, no keys.
+Before version 16 we were using div
+
+
+<> </>  (Sugar fragment)
+const App = () => (
+  <>
+    <p>React 16 can return multiple elements ❤️</p>
+    <p>React 16 can return multiple elements ❤️</p>
+    <p>React 16 can return multiple elements ❤️</p>
+  </>
+);
+
+const App = () => (
+  <React.Fragment>
+    <p>React 16 can return multiple elements ❤️</p>
+    <p>React 16 can return multiple elements ❤️</p>
+    <p>React 16 can return multiple elements ❤️</p>
+  </React.Fragment>
+);
+
+What's the used of React Fragment or Sugar Fragment[Same O/p] ? ->
+In Broweser elements it display as -->
+a) when we used Array of elements - <div> <h1></h1><p></p></div>
+b) when we used div - <div><div> <h1></h1><p></p></div></div> [By this we getting 2 div, its basically creating extra node in DOM & we can get confused]
+c) when we used React Fragment - <div><h1></h1><p></p></div>
+React.Fragment is little bit faster & it contain less memory than <div> tag.
+A special fragment syntax in React 16.2 is indroduced as a syntactical sugar for fragments. i.e (<> </>)
+
+
+
+
+
+C1] Challenge 1 : Create Web App on Top 5 Netflix Series List using JSX.
+
