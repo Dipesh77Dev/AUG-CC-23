@@ -1,4 +1,6 @@
 noscript - It gets used when someone had disabled JS, or when someone browser doesn't support JS it will show that message which we provide.
+React file can be saved as .js or .jsx
+
 
 1] REACT Creation => 
 
@@ -242,6 +244,9 @@ A special fragment syntax in React 16.2 is indroduced as a syntactical sugar for
 
 
 
-
 C1] Challenge 1 : Create Web App on Top 5 Netflix Series List using JSX.
 
+
+
+
+11] JSX Expression =>
