@@ -3,6 +3,8 @@ import React from 'react'
 const name = "Rohit";
 const lName = "Yadav";
 const date = new Date().toLocaleString();
+const img = "https://picsum.photos/200/300.webp";
+const link = "https://www.youtube.com";
 
 const ExpressLiteral = () => {
   return (
@@ -24,6 +26,18 @@ const ExpressLiteral = () => {
       <h3>{`My FullName is => 
         FirstName - ${name} & lastName - ${lName}`}</h3>
       {/* <h3>`My FullName is => {name + ' ' + lName}`</h3> */}
+
+      {/* JSX Attributes  */}
+      <a href="" target="blank">Youtube</a>
+      <h1 contentEditable="true"> My real name is -- {name}</h1>
+      <img src="https://picsum.photos/seed/picsum/200/300" alt=""></img>
+      <img src={img} alt="" />
+      <hr />
+      <a href={link} target="_blank" title="You will visit Youtube">
+        <img src={img} alt="" />
+      </a>
+      {/* <img src = "https://picsum.photos/seed/picsum" /> - Self Closing Tag(<img />). [lorem picsum for dummy images] */}
+
     </>
   )
 }

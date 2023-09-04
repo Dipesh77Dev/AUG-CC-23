@@ -13,6 +13,11 @@ import MainTopics from './Components/React Topics/MainTopics';
 import MainChallenges from './Components/Challenges/MainChallenges';
 
 
+// Mini Projects =>
+import MainMiniProj from './Components/Mini Projects/MainMiniProj';
+
+
+
 function App() {
 
   return (
@@ -23,11 +28,15 @@ function App() {
 
 
       {/* 2] Topics ==> */}
-      {/* <MainTopics /> */}
+      <MainTopics />
 
 
       {/* 3] Challenges ==> */}
       <MainChallenges />
+
+
+      {/* 4] Mini Projects ==> */}
+      <MainMiniProj />
     </>
   )
 }

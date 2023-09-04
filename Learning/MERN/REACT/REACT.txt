@@ -1,5 +1,12 @@
 noscript - It gets used when someone had disabled JS, or when someone browser doesn't support JS it will show that message which we provide.
 React file can be saved as .js or .jsx
+Remember, In React when we write code in JSX each tags should be closed.
+Cases --> 
+camel Case - (noOfAge); 
+Pascal Case - (NoOfAge); 
+Snake Case - (no_of_age/No_Of_Age/NO_OF_AGE);
+Kebab Case - (no-of-age/No-Of-Age/NO-OF-AGE).
+
 
 
 1] REACT Creation => 
@@ -31,7 +38,7 @@ Open Source - open source project is where the code to a certain project is comp
 
 
 Uses -
-a. Component Based Approach - It is one of the core building blocks of React. In other words, we can say that every application we will develop in React will be made up of pieces called components. It make the task of building UIs much easier. We can reuse the created components as much we can when we needed.
+a. Component Based Approach[2 Component -- Class Component, Function Component] - It is one of the core building blocks of React. In other words, we can say that every application we will develop in React will be made up of pieces called components. It make the task of building UIs much easier. We can reuse the created components as much we can when we needed.
 
 b. Declarative Approach [It are used by framework but react is library still it uses this approach] - It is a programming paradigm that expresses the logic of computation without describing its control flow.
 eg. If we got one client he want to start business, so he wants us to create a website like ecommerce, the client doesn't know how actual website to develop, so basically we will add every functionality whatever required for building ecommerce website. So in this client doesnt had idea, but he had only broad idea.
@@ -247,7 +254,7 @@ C1] Challenge 1 : Create Web App on Top 5 Netflix Series List using JSX.
 
 
 
-11] JSX Expression &  12] Template Literals(``) =>
+11] JSX Expression, 12] Template Literals(``), 13] JSX Attributes=>
 eg.
 return( <h1>My name is Raj</h1> );
 
@@ -272,8 +279,32 @@ const lName = "Yadav";
 Template Literal --> <h3>{`My FullName is => FirstName - ${name} & lastName - ${lName}`}</h3>
 
 
+JSX Attribute -
+<a href = "" target = "blank"></a>   [href & target is property but in HTML we call as "Attribute" - which provides additional information about the element].
+Global Attribute(It can be used with all HTML Elements) - accesskey, class, contenteditable, dir, draggable, hidden, id, lang, spellcheck, style, tabindex, title, translate.
+
+
 
 C2] Challenge 2: Display current Date & Time in React.
 
 
 
+
+14] CSS Style(Class Vs ClassName), 15] Google Font, 16] Internal & Inline CSS =>
+
+In HTML if we want to do external styles we used class="" or id=""
+In JSX we used className="" or id=""  (if we write class instead of className, we will not get error in code but we will get warning/error in browser)
+Main reason is we write className in React - bcoz in React already we had class keyword reserved with class component.
+
+Same we can style CSS in 3 ways - Inline[just in same line using style & remember we should understand as object], Internal[defined in head or body], External[Other file]. 
+
+For having better font just use Google Fonts. (https://fonts.google.com/). [Add that font part link in html or import that in css & use css property wherever we had to change].
+
+
+
+C3 & MP1] Create Simple Greeting message website =>
+
+
+
+
+18]
