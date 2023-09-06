@@ -5,7 +5,7 @@ import Greet from './Greet'
 const MainMiniProj = () => {
   return (
     <>
-        <Greet />
+        {/* <Greet /> */}
     </>
   )
 }

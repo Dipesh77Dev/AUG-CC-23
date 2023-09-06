@@ -289,7 +289,6 @@ C2] Challenge 2: Display current Date & Time in React.
 
 
 
-
 14] CSS Style(Class Vs ClassName), 15] Google Font, 16] Internal & Inline CSS =>
 
 In HTML if we want to do external styles we used class="" or id=""
@@ -302,9 +301,32 @@ For having better font just use Google Fonts. (https://fonts.google.com/). [Add 
 
 
 
-C3 & MP1] Create Simple Greeting message website =>
+C3 & MP1] Create Simple Greeting message website.
 
 
 
 
-18]
+18] Components, 19]Rewrite/Reused Components, 20] Import/Export ==>
+In React everything is Component(divided into small parts).
+Remember whenever we create component it should start with capital letter, if we start with small letter it will not work/render; & for better understanding give file name same as we had component name.
+For Component in our project --> Go to - Why React folder>main.jsx file
+If our file extension is .jsx so no need to write extension while importing bcoz react understand it automatically.
+
+
+import means taking & export means giving, When we had only 1 function/when we don't have one function, we can use default with export. Import-export together is used to share data amongst component.
+Remember while export - 
+a) export default Heading [Correct].  
+b) export default Heading() [Wrong - bcoz Heading is component not a function we don't need to call like this, we had to export & import that particular component to other files].
+When we import a component & used that component in jsx is called as our custom element.
+While exporting when we use default, & in importing we can give any name to it. But default should be for only one variable/function.
+But when there will be more variable & function but we had given to one default, so rest we should export in {}, & in this we can pass many variables/functions name; But whatever we passed in {} the name should be same for variable/function in import & export.
+We can use *(wildcard for all export & import but we dont use most bcoz from this we didn't get proper understanding which are exported).
+When we are not using ES6 or later version in project we had to write module.exports to export multiple functions from a file. eg - module.exports = { sum , multiple }
+
+
+
+C4] Challenge 4 : Simple Calculater App.
+
+
+
+21] Props ==>
