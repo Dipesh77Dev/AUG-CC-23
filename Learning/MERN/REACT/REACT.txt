@@ -301,6 +301,7 @@ For having better font just use Google Fonts. (https://fonts.google.com/). [Add 
 
 
 
+
 C3 & MP1] Create Simple Greeting message website.
 
 
@@ -329,4 +330,90 @@ C4] Challenge 4 : Simple Calculater App.
 
 
 
-21] Props ==>
+21] Props, Array Little Intro, Array Map method & Arrow Functions ==>
+Props in Mini Projects.
+
+Props is nothing but just an attribute/property.
+eg. <input type="text" name="Raj", so when we see in console we get $0. [For value we can write $0.value, but if we do $0.myname is undefined we are getting in object form].
+
+props("stands for properties"). It are like function arguments in JS attributes in HTML.
+We can make our custom attributes/properties in JSX. It can be a data/object.
+We can have a custom element also. While writing in props if we are making more data dont put in commas for different attributes.
+It is one direction only means from parent to child. If we made props in parent component receive it in the childs component - in function parameters by 2 ways -
+a) props.    b) Destructure.
+
+
+An array is a special variable, which can hold more than one value at a time. It lets us store multiple values in a single variable.
+
+eg. var a = "Raj", var b = "Mandar", var c = "Tarun", var d = "Vedant".
+var arr = ['Raj', "Mandar", 'Tarun', "Vedant"];
+var arr = new Array('Raj', "Mandar", 'Tarun', "Vedant")
+var friends = friends[0]; friends[0] = "Raj";
+
+
+Arrow Function -
+
+function myname(a,b){
+  return a+b 
+}
+
+const myname = (a,b) =>{
+  return a+b 
+}
+
+const myname = (a,b) => a+b 
+
+
+For traversing basically we will use arrays methods like map, filter but most common method use is map.
+
+map method is used to traverse each data/loop & return data in new array rather creating any disturbances in old/original array.
+It also creates a new array with the results of calling a function for every array element. It calls the provided function once for each element in array in order.
+
+arr.map(function(currVal, index, arr), thisValue/=> {}).
+currVal [Required - Value of current element], index[Optional - Array index no of current element], arr[Optional - Array object of the current element belongs to].
+
+const old = ["Dipesh", "Mandar", "Tarun", "Vedant"];
+cl(old, old[2]);
+const new = old.map(function(currVal){
+  return currVal
+  return currVal + "Ok"; 
+})
+cl(new);
+
+const studentData = [
+  {id: 1, name: Raj, degree: "BSC-CS, age: 22},
+  {id: 2, name: Mandar, degree: "BSC-IT, age: 23},
+  {id: 3, name: Tarun, degree: "Engineer, age: 25},
+  {id: 4, name: Vedant, degree: "BSC-CS, age: 20},
+]
+cl(studentData, studentData[1].degree);
+
+const newStudentData = studentData.map( (currVal) => {
+  return `My name is ${currVal.name}. Highest Degree is ${currVal.degree}`
+})
+cl(newStudentData);
+
+
+
+
+
+22] DevTools =>
+We get every error in console & when we use map method we get one error - Each chlid in a list should have a unique "key" prop. [So we should give one unique key in data but name should be key only, eg. key = {}].
+Keys help react to identify which items have changed(added, removed, re-ordered). To give a unique identity to every element inside array, a key is required.
+
+We had Components after network in inspect dom mode in browser.
+For getting that we had more ways.
+
+a) Go to setting>extension>Go to Web Store>React Developer Tools[in search].
+
+
+
+
+
+23] Conditional Rendering =>
+if(condition){
+  // block of code to be executed if condition is true
+}
+else{
+  // block of code to be executed if condition is false
+}

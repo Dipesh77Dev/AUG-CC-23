@@ -3595,5 +3595,50 @@ let arr2 = arr1; // Both arr1 and arr2 refer to the same array
 console.log(arr1 + "-"+ arr2)
 arr2.push(4); // Modifies the original array, both arr1 and arr2 show [1, 2, 3, 4]
 console.log(arr1 + "-"+ arr2)
+
+
+
+
+2] Functions -->
+Named Function, Anonymous Function, Arrow Function, Immediately Invoked Function Expressions(IIFE), Higher Order Functions, Constructor Function
+
+a) Named Function [Traditional way] -
+function f1(){
+    console.log("Hello")
+}
+f1()
+
+b) Anonymous Function [Without function name or used as function expression/arguments] -
+let greet = function (name){
+    console.log(`Hello ${name}`)
+}
+greet("Raj")
+
+c) Arrow Function [Introduced in ES6, short Syntax & one-lined functions] -
+let greet = () => console.log("Hello")
+greet()
+
+d) IIFE [Executed immediately after their creation. Used to create private scopes & avoid polluting global namespace] -
+(function () {
+    let str = "Good Evening"
+    console.log(str)
+})()
+
+e) Higher Order Functions [Function that take 1 or more function as an arguments or return a function. Function which takes another function as an arguments is called HOF(Higher Order Function) eg. CallBack functn] -
+eg. map(), filter(), reduce()
+
+let arr = [10, 20, 30]
+let newArr = arr.map((x) => x + 10)
+console.log(newArr)
+
+f) Constructor Function [Used as blueprints for creating with similar properties & methods. They are invoked using the new keyword to create instances of objects]
+
+function Person(name, age){
+    this.name = name
+    this.age = age
+}
+
+let user1 = new Person("Raj", 23);
+console.log(user1.name, user1.age)
 */
 
