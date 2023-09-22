@@ -3,7 +3,7 @@ import React from 'react'
 import ExpressLiteral from './ExpressLiteral'
 import CSS from './CSS'
 import Component from './Component'
-import ConditionalRendering from './ConditionalRendering'
+import MainConditionalRendering from './Conditional Rendering/MainConditionalRendering'
 
 const MainTopics = () => {
   return (
@@ -11,7 +11,7 @@ const MainTopics = () => {
       {/* <ExpressLiteral /> */}
       {/* <CSS /> */}
       {/* <Component /> */}
-      <ConditionalRendering />
+      {/* <MainConditionalRendering /> */}
     </>
   )
 }

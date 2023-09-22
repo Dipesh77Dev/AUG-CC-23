@@ -302,7 +302,7 @@ For having better font just use Google Fonts. (https://fonts.google.com/). [Add 
 
 
 
-C3 & MP1] Create Simple Greeting message website.
+C3 & MP1] Challenge 3/Main Project 1 : Create Simple Greeting message website.
 
 
 
@@ -403,17 +403,33 @@ Keys help react to identify which items have changed(added, removed, re-ordered)
 
 We had Components after network in inspect dom mode in browser.
 For getting that we had more ways.
-
-a) Go to setting>extension>Go to Web Store>React Developer Tools[in search].
-
+Go to setting>extension>Go to Web Store>React Developer Tools[in search].
 
 
 
 
 23] Conditional Rendering =>
+a] if Statement - We can use the if JavaScript operator to decide which component to render.
 if(condition){
   // block of code to be executed if condition is true
 }
 else{
   // block of code to be executed if condition is false
 }
+b] Logical && Operator.
+c] Ternary Operators - condition ? true : false
+
+
+
+
+
+C5] Challenge 5 : Slot Machine Game [For Emoji - https://getemoji.com/]
+
+
+
+24] Emoji in VS Code => Extension - :emojisense: / Settings (Extensions) [use Ctrl + i = emojis]
+
+
+
+
+25] Hooks 
