@@ -432,4 +432,36 @@ C5] Challenge 5 : Slot Machine Game [For Emoji - https://getemoji.com/]
 
 
 
-25] Hooks 
+25] Hooks [useState, useEffect, useContext, useLocation, useRef, useParams, useHistory] =>
+Hooks are the new feature introduced in the React 16.8 version.
+It allows us to use state & other React features without writing a class. Hooks are the functions which hook into React state & lifecycle features from function components.
+It does not work inside classes.
+Hooks should always be used at the top level of React functions.
+Node version 6 or above. NPM version 5.2 or above.
+
+
+Array Destrucuring ->
+const name = ['Raj', 'Mandar', 'Tarun', 'Vedant'];
+cl(name, name[0], name[1], name[2], name[3]);
+
+With Destructure -
+const [name1, name2, name3, name4] = name;
+cl(name1, name2, name3, name4);
+
+a) useState - It is basically used to play with states.
+It is a function which returns an array with two items state object & updated function.
+In Js when we use function it return only one value.
+In React we get two items - current data and updated function = initial State/Data.
+const [state, setState] = React.useState(5);
+
+
+
+
+C6 & MP2] Challenge 6 : Show current time when we click on button or refresh the page, & Mini Project 2 : Make a digital clock.
+
+
+
+
+26] Events =>
+in JS - <button onclick = "fun1()">Click</button>
+in React - <button onClick = {fun1}>Click</button>
