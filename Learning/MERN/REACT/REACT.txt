@@ -462,6 +462,44 @@ C6 & MP2] Challenge 6 : Show current time when we click on button or refresh the
 
 
 
-26] Events =>
+26] Events[Nothing but trigger an action/function] =>
 in JS - <button onclick = "fun1()">Click</button>
 in React - <button onClick = {fun1}>Click</button>
+
+
+
+
+
+27] Forms[Every website require forms imp],  28] Login Forms Submit,  29] Complex Multiple Input Form States =>
+In React we have 2 forms: Controlled & Uncontrolled - 
+
+In most cases, we recommend using controlled components to implement forms. 
+In a controlled component, form data is handled by a React component. In a controlled component - The state within the component serves as “the single source of truth” for the input elements that are rendered by the component.
+The alternative is uncontrolled components, where form data is handled by the DOM itself. 
+
+Controlled Vs Uncontrolled - https://blog.logrocket.com/controlled-vs-uncontrolled-components-in-react/
+
+
+
+
+C7] Challenge 7 : React Login Form.
+
+
+
+30] Spread Operator, How we convert 100 lines of code in 2 lines =>
+[ (...) - its spread operator & rest operator but mostly it is spread]
+Usage - a) We can use anywhere spread operator array in the new array.
+b) We can concatenate more than 2 arrays. 
+c) We can destructure also in spread operator.
+The spread operator (...) is not typically used in template literals because its primary purpose is to expand arrays or objects into a new array or object. 
+
+Array - Concatenate, Destructure, Adding Elements.
+Objects - Combining two objects.
+
+
+
+MP3] Mini Project : ToDo List.
+
+
+
+C8] Challenge 8 : Increment & Decrement Counter.
