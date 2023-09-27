@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+/* Challenge 8 */
+
+.C8_main_div {
+  width: 100%;
+  height: 100vh;
+  background-color: #6983aa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.C8_center_div {
+  width: 25%;
+  height: 60vh;
+  background-color: #f4f4f4;
+  box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.C8_main_heading {
+  color: white;
+  background: blueviolet;
+  box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.3);
+  font-size: 50px;
+  padding: 6px 0 2px 0;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.C8_button {
+  min-height: 40px;
+  border-radius: 5%;
+  border-color: transparent;
+  background-color: #30336b;
+  color: #fff;
+  font-style: 20px;
+  border: none;
+  outline: none;
+  padding: 0 15;
+  margin-top: 30px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.C8_button:hover {
+  background-color: #22a6b3;
+}
+
+.C8_button_div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Challenge 9 */
+@import url("https://fonts.googleapis.com/css2?family=Bitter&family=Mate+SC&family=Raleway&family=Roboto:wght@500&family=Source+Sans+Pro:wght@300;600&family=Squada+One&display=swap");
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(#fcf5f5, #eff4fd);
+}
+
+.C9_main_section{
+  margin-top: 50%;
+  width: 80vw;
+  height: 100%;
+  padding: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.C9_main_heading {
+  text-align: center;
+  font-family: "Bitter", serif;
+  text-transform: capitalize;
+  font-size: 32px;
+  letter-spacing: 5;
+  word-spacing: 5px;
+  margin-bottom: 20px;
+  color: #2c3148;
+}
+
+.C9_accordian_main_div {
+  display: flex;
+  margin-top: 30px;
+  padding: 20px 0 20px 20px;
+  background: #f1f4ff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.C9_accordian_question {
+  margin-left: 25px;
+  margin-top: 11px;
+  font-family: "Mate SC", serif;
+  color: #303243;
+  font-family: "Raleway", sans-serif;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.C9_accordian_toggleIcon {
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  background: #fff;
+  padding: 5px;
+}
+
+.C9_accordian_answer {
+  padding: 30px 20px 40px 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  word-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.7;
+  background: #fcf5f5;
+  color: rgb(40, 37, 53);
+}

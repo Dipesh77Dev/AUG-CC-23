@@ -1,3 +1,5 @@
+VS Code Terminal - Ctrl + j, Ctrl + `
+
 noscript - It gets used when someone had disabled JS, or when someone browser doesn't support JS it will show that message which we provide.
 React file can be saved as .js or .jsx
 Remember, In React when we write code in JSX each tags should be closed.
@@ -30,6 +32,7 @@ Its a JS library used for building User Interface[UI - Its a point of human-comp
 
 React is not a framework. Its a library. It is also known as ReactJS/React.js/React, we can get confused if we read some different notations in different places.
 React only knows one thing to make an awesome UI with better coding structure.
+React should always have an closing tag in JSX & instead of class we provide className for CSS & when we write JavaScript in JSX enclosed in {}. When we had to use css with inline/internal styling we should use it as an object - {} [eg. style = {{width: '18rem'}}; style = {bigSize}].
 
 
 History -
@@ -43,7 +46,7 @@ a. Component Based Approach[2 Component -- Class Component, Function Component] 
 b. Declarative Approach [It are used by framework but react is library still it uses this approach] - It is a programming paradigm that expresses the logic of computation without describing its control flow.
 eg. If we got one client he want to start business, so he wants us to create a website like ecommerce, the client doesn't know how actual website to develop, so basically we will add every functionality whatever required for building ecommerce website. So in this client doesnt had idea, but he had only broad idea.
 
-c. DOM updates are handled gracefully & Virtual DOM.
+c. DOM updates are handled gracefully & Virtual DOM[Makes a copy of Dom in memory, so whenever we write JSX code so it goes to dom change the part whatever we need to change & then it goes to actual DOM].
 d. Reusable Code - Make components & used anywhere we want.
 e. React is designed for speed, speed for implementing the application simplicity & scalability.
 f. SPA concept.
@@ -498,8 +501,135 @@ Objects - Combining two objects.
 
 
 
-MP3] Mini Project : ToDo List.
+MP3] Mini Project : ToDo List. (Delete part remaining) 
 
 
 
 C8] Challenge 8 : Increment & Decrement Counter.
+
+
+
+
+31] Material UI & Icons, Bootstrap, SAAS, NPM with React =>
+[For Icons we had favicon, fontawesome, but mostly we use Material UI with react for icons; For CSS we can had Bootstrap, MUI, react-bootstrap, tailwind css, ..., etc].
+
+
+
+a.1.] Fontawesome -->
+
+Official Website -> https://fontawesome.com/
+For using fontawesome we had to import cdn into html & install packages..
+
+a] Normally -> npm install --save @fortawesome/fontawesome-free\
+
+b]core package which includes all the utilities to make the icons work -> npm i --save @fortawesome/fontawesome-svg-core
+
+c] Free Icon ->
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/free-regular-svg-icons
+npm i --save @fortawesome/free-brands-svg-icons
+
+d] With React -> npm i --save @fortawesome/react-fontawesome@latest
+
+When we want to work with free icons we had to import that in 3 ways - Dynamic Icon import, Individually, Globally.
+Ref -> https://fontawesome.com/docs/web/use-with/react/add-icons#add-icons-globally
+
+
+
+
+b.2.] Material UI [Its very Easy bcoz every icon of MUI we get in the form of components] -->
+
+a] NPM package -> https://www.npmjs.com/package/@material-ui/icons
+npm install @material-ui/icons & yarn add @material-ui/core
+
+
+b] Main & Updated MUI ->  https://mui.com/material-ui/material-icons/
+
+Official Websote -> https://mui.com/
+
+1. Default installation -> npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+2. Styled components -> npm install @mui/material @mui/styled-engine-sc styled-components
+3. Icons -> npm install @mui/icons-material
+4. Roboto font -> npm install @fontsource/roboto
+
+
+Q] IQ -> inbuild[normal defined by HTML with small letters] & custom/predefined[which we import & use with capital bcoz its an component] 
+
+
+
+c.3.] Bootstrap[Latest version 5] --> 
+
+Official website -> https://getbootstrap.com/
+https://www.npmjs.com/package/bootstrap
+
+For different version we can write npm i bootstrap@4.5.0
+
+It it doesn't work add this - 
+1. import 'bootstrap/dist/css/bootstrap.min.css'; [in App.jsx or index.jsx] 
+2. In index.html -
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+  crossorigin="anonymous"
+/>
+
+Extension - Bootstrap Snippets, Bootstrap, CSS intellisense, 
+
+
+
+d.4.] SASS(Syntactically Awesome Stylesheet) -> 
+
+Website -->[https://www.w3schools.com/sass/sass_intro.php]
+
+Most people when it come to big projects & we had to play with UI then mostly instead of CSS we use SASS.
+Sass is an extension to CSS. Sass is a CSS pre-processor. If Css take 100 lines so with help of Sass & extension scss we can reduce it to 50 lines.
+
+https://www.npmjs.com/package/sass
+
+Mostly developer used this so -> npm i --save-dev node-sass
+
+
+
+e.5] NPM[Node Package Manager] with React ->
+npm is the world's largest software registry. It contains over 8,00,000 code packages [eg. amazon warehouse]. Its free & open source developers use npm to share software. 
+
+
+Install Npm -
+npm is installed with Node.js[Means when we install node.js we get npm installed in our system]. Download Node.js[LTS] from official website - https://nodejs.org/en.
+After downlading node just check in cmd --> node --version    npm -v  
+Windows - cmd, Linux - cli.
+
+
+Software Package Manager -
+All npm packages are defined in files called - package.json[ex. npm init/npm init -y].
+Content of package.json must be written in JSON.
+At least two fields must be present in definition file:name & version.
+
+
+npm can manage dependencies means install & uninstall packages can be done.
+
+
+
+MP4] Mini project 4 : digital clock with node.js & react - install package(npm i react-clock).
+Whatever we need just write name with npm we will get packages.  
+
+
+
+MP5] Project 5 : ToDo List App with MUI. (Remaining).
+
+
+
+MP6] Project 6 : Live Covid-19 Tracker App using API, (Remaining).
+
+
+
+C9 & C10] Challenge 9 : Create an Accordian App. Challenge 10 - simple card website with bootstrap 4/5.
+
+
+
+MP7] Project 7 : Google Keep App clone. (Remaining).
+
+
+
+MP8] Project 8 : Live Search Weather App. (Remaining).
