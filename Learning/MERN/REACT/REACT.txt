@@ -451,11 +451,7 @@ With Destructure -
 const [name1, name2, name3, name4] = name;
 cl(name1, name2, name3, name4);
 
-a) useState - It is basically used to play with states.
-It is a function which returns an array with two items state object & updated function.
-In Js when we use function it return only one value.
-In React we get two items - current data and updated function = initial State/Data.
-const [state, setState] = React.useState(5);
+
 
 
 
@@ -624,7 +620,7 @@ MP6] Project 6 : Live Covid-19 Tracker App using API, (Remaining).
 
 
 
-C9 & C10] Challenge 9 : Create an Accordian App. Challenge 10 - simple card website with bootstrap 4/5.
+C9 & C10 & C11] Challenge 9 : Create an Accordian App. Challenge 10 : Simple card website with bootstrap 4/5. Challenge 11 : When user click on button change it in title also.
 
 
 
@@ -633,3 +629,62 @@ MP7] Project 7 : Google Keep App clone. (Remaining).
 
 
 MP8] Project 8 : Live Search Weather App. (Remaining).
+
+
+
+
+32] Remaining Hooks => Official Web -> https://react.dev/     [or w3schools or any website tutorial]
+React goes top to bottom approach in component & its unidirectional flow [(One way data can flow); Bidrectional flow - both way data can flow]
+[eg. parent -> child, we can pass data from parent to child; parent <- child, we can't pass data from child to parent]
+Advantage in unidirectional flow - Debugging, Better Control, Efficiency.
+
+
+a) useState - It is basically used to play with states or add a state variable to our component.
+It is a function which returns an array with two items state object & updated function.
+In Js when we use function it return only one value.
+In React we get two items - current data and updated function = initial State/Data.
+Syntax - const [state, setState] = React.useState(initialState);
+
+eg.
+import { useState } from 'react';
+
+const [age, setAge] = useState(28);
+const [name, setName] = useState('Taylor');
+const [todos, setTodos] = useState(() => createTodos());
+
+
+
+
+b) ContextAPI/useContext -
+If our component structure is Parent Component -> Child Component A -> Child Component B -> Child Component C.
+So. in this scenario if Parent Component has some data & if Child Component C needs the parent data so it can be passed with the helps of props but there was catch bcoz if only the Child Component C requires the parent data we had to pass it first to Child Component A then Child Component B & then Child Component C receives that data.
+
+React Context Api allows us to easily access data at different levels of the component tree, without passing props to every level of the Component.
+
+Steps: 
+for creating a context - createContext()
+after creating context we need to provide for use so we need - provider.
+After providing data we need to use /consume it - consumer [Consumer only understand function not a component].
+
+All work fine but when it comes to third step - consumer, when we had multiple datas to send that time it becomes very lengthy process & its make pyramid structure like callback hell.
+
+To avoid this we had useContext Hook().
+
+React's Context API, is wasy way to pass data deeply throughout our app without having to manually pass props down through multiple levels. It can be a good alternative to tools like REDUX when we need to do is pass data around..
+
+
+
+c) useEffect -
+We tell react that our component needs to do something after render. React will remember the function we passed & call it later after performing the DOM updates. We can think of lifecycle methods of class components componentDidMount, componentDidUpdate & componenWillUnmount can be replaced with useEffect() Hook.
+So render method is defined in index.js & in index.js we had app.js component, so whenever there will be change in App.js useEffect will always called.
+
+Types -
+useEffect ( () => {}).  // For every render.
+useEffect ( () => {}, [])   // Passing array for first render only.
+useEffect ( () => {}, [num])   // giving variable name in array dependency for render.
+
+Remember we should had only one useEffect in our code for rendering.
+
+
+
+d) useParams, useHistory, useLocation -

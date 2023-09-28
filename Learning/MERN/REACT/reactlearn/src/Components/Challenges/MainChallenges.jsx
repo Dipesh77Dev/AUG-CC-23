@@ -10,6 +10,8 @@ import Challenge7 from './Challenge7'
 import Challenge8 from './Challenge8'
 import Challenge9 from './Challenge9'
 import Challenge10 from './Challenge10'
+import Challenge11 from './Challenge11'
+
 
 const MainChallenges = () => {
   return (
@@ -23,6 +25,7 @@ const MainChallenges = () => {
       {/* <Challenge8 /> */}
       {/* <Challenge9 /> */}
       {/* <Challenge10 /> */}
+      {/* <Challenge11 /> */}
     </div>
   )
 }
