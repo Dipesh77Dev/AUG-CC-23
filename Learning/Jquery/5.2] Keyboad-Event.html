@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Event</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="main">
+      <form>
+        <label>User Name: </label>
+        <input
+          type="text"
+          name="userName"
+          id="username"
+          placeholder="Please enter your username"
+          autocomplete="off"
+          required
+        /><br />
+        <label>Email: </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Please enter your email"
+          autocomplete="off"
+          required
+        /><br />
+        <label>Password: </label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Please enter your password"
+          autocomplete="off"
+          required
+        />
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("input").keypress(function () {
+          $("#username").css("backgroundColor", "yellow");
+        });
+        $("input").keydown(function () {
+          $("#email").css("backgroundColor", "red");
+        });
+        $("input").keyup(function () {
+          $("#password").css("backgroundColor", "blue");
+        });
+      });
+    </script>
+  </body>
+</html>

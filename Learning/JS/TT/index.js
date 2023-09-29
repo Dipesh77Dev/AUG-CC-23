@@ -816,7 +816,7 @@ let myFriends = ['Dipesh', 'Tarun', 'Mandar', 'Vedant', 'Krishna']
 console.log(`Whole Array => ${myFriends}`)
 
 
-// For loop [i < myfriends.length - bcoz we know length always give one no. extra than index no -
+// For loop [i < myfriends.length - to traverse whole array once]
 for (let i = 0; i < myFriends.length; i++) {
     console.log(`Normal for loop => ${myFriends[i]}`)
 }

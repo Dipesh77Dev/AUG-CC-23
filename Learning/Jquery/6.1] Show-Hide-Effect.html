@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show-Hide Effect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+      .main {
+        display: flex;
+      }
+      .red {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+      .blue {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="red"></div>
+      <div class="red"></div>
+      <div class="blue"></div>
+      <div class="blue"></div>
+      <div class="blue"></div>
+      <div class="blue"></div>
+    </div>
+    <button id="btn">Show/Hide</button>
+
+    <script>
+      $(document).ready(function () {
+        $(".red").css("backgroundColor", "red");
+        $(".blue").css("backgroundColor", "blue");
+
+        $("#btn").click(function () {
+          // $(".red, .blue").hide(slow);
+          $(".red, .blue").hide('slow');
+        });
+
+        $("#btn").dblclick(function () {
+          $(".red, .blue").show('fast');
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!--
+Apply some property for different classes - $('.red, .blue') 
+.hide(speed, callback);
+Optional speed parameter specifies the speed of hiding/showing eg. 'fast', 'slow' or 'milliseconds'.
+-->

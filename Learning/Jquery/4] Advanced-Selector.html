@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Selector</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div style="width: 50%; margin: auto">
+      <ol type="1" style="list-style: none">
+        <li>0 : JS</li>
+        <li>1 : C/C++</li>
+        <li>2 : HTML/CSS</li>
+        <li>3 : BOOTSTRAP</li>
+        <li>4 : PYTHON</li>
+        <li>5 : JQUERY</li>
+        <li>6 : PHP</li>
+        <li>7 : JAVA</li>
+      </ol>
+
+      <ol type="1" style="list-style: none" id="oltag">
+        <li>0 : JS</li>
+        <li>1 : C/C++</li>
+        <li>2 : HTML/CSS</li>
+        <li>3 : BOOTSTRAP</li>
+        <li>4 : PYTHON</li>
+        <li>5 : JQUERY</li>
+        <li>6 : PHP</li>
+        <li>7 : JAVA</li>
+      </ol>
+    </div>
+
+    <button id="click">Click</button>
+
+    <script>
+      $(document).ready(function () {
+        // $("#click").css("marginLeft: 50%").click(function () {
+
+        $("#click").click(function () {
+          $("*").css({
+            backgroundColor: "yellow",
+            fontSize: "20px",
+            fontWeight: "bold",
+          });
+          $(this).css("backgroundColor", "blue");
+          // $("[type]").hide("slow");
+          // $('li:even').css("color" : "orange");
+          $("li:even").css("color", "orange");
+          $("li:odd").css("color", "green");
+          $("li:first-child").css({
+            color: "black",
+            textTransform: "lowercase",
+            textAlign: "center",
+          });
+          $("li:last-child").css({
+            color: "black",
+            textTransform: "lowercase",
+            textAlign: "right",
+          });
+          $("#oltag li:last-child").css({
+            color: "black",
+            textTransform: "lowercase",
+            textAlign: "right",
+            direction: "rtl",
+            textDecorationLine: "underline",
+          });
+          $("#oltag li:nth-child(2)").css({
+            color: "black",
+            textTransform: "lowercase",
+            textAlign: "right",
+            direction: "rtl",
+            textDecorationLine: "overline",
+          });
+          $("li:nth-child(4)").css({
+            color: "black",
+            textTransform: "lowercase",
+            textAlign: "right",
+            direction: "rtl",
+            textDecorationLine: "overline underline",
+          });
+          $("#oltag li:nth-last-child(2)").css({
+            color: "black",
+            letterSpacing: "10px",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!--
+Universal Selector - $(*).
+this Selector - For current element $(this).
+attribute - $("[type]").
+even/odd - $("li:even") / $("li:odd").
+
+For Nested Child ->
+First & Last Child of every element - $('li:first-child') / $('li:last-child').
+If we want to change last element of particular element - $('#oltag li:last-child').
+For middle elements - $('li:nth-child(4)').
+For middle elements but from last - $('#oltag li:nth-last-child(2)').
+-->
+

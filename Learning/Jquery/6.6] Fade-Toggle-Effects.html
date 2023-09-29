@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fade Toggle Effect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+      .center_div {
+        width: 500px;
+        height: 350px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #firstDiv {
+        width: 200px;
+        height: 100px;
+        background-color: chartreuse;
+      }
+      #secondDiv {
+        width: 200px;
+        height: 100px;
+        background-color: blueviolet;
+      }
+      #thirdDiv {
+        width: 200px;
+        height: 100px;
+        background-color: cadetblue;
+      }
+      #forthDiv {
+        width: 200px;
+        height: 100px;
+        background-color:crimson;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <h1>Fade Toggle Effects</h1>
+      <div class="center_div">
+        <button id="btn_toggle">Fade-toggle</button>
+        <hr />
+        <div id="firstDiv"></div>
+        <div id="secondDiv"></div>
+        <div id="thirdDiv"></div>
+        <div id="forthDiv"></div>
+        <br /><br />
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn_toggle").click(function () {
+          $("#firstDiv").fadeToggle("slow");
+          $("#secondDiv").fadeToggle("fast");
+          $("#thirdDiv").fadeToggle(2000);
+          $("#forthDiv").fadeToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

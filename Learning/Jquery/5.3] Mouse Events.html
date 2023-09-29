@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Event</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="main">
+      <p class="p1">Hello Gamers....</p>
+      <p style="font-size: 32px; color: red" class="p2">Hello Youtubers....</p>
+      <p class="p3">Hello Crickters....</p>
+      <p class="p4">Hello Footballers....</p>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $(".p1").mouseenter(function () {
+          $(this).css({
+            color: "blue",
+            "font-size": "32px",
+          });
+        });
+        $(".p2").mouseleave(function () {
+          $(this).css("color", "black");
+        });
+        $(".p3").mouseup(function () {
+          $(this).css("color", "yellow");
+        });
+        $(".p4").mousedown(function () {
+          $(this).css("color", "orange");
+        });
+      });
+    </script>
+  </body>
+</html>
+

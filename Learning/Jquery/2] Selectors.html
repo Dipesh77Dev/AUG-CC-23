@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectors</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p class="class1" style="background-color: orange; color: white">
+      My background color is orange & text is in white with class attribute...
+    </p>
+    <br />
+    <p id="id1" style="background-color: green; color: white">
+      My background color is green & text is in white with id attribute...
+    </p>
+    <br />
+
+    <ul>
+      <li style="background-color: orange; color: white">1st list</li>
+      <li style="background-color: green; color: white">2nd list</li>
+      <li style="background-color: orange; color: white">3rd list</li>
+      <li style="background-color: green; color: white">4th list</li>
+    </ul>
+
+    <button
+      id="hide"
+      style="
+        background-color: #0c17f8;
+        color: white;
+        border: none;
+        padding: 10px;
+      "
+    >
+      Hide
+    </button>
+
+    <button
+      id="show"
+      style="
+        background-color: #0c17f8;
+        color: white;
+        border: none;
+        padding: 10px;
+      "
+    >
+      Show
+    </button>
+
+    <script>
+      $(document).ready(function () {
+        $("#hide").click(function () {
+          // $(li).hide();   // Will not work
+          $("p").hide();
+          $("ul").hide();
+          $("#id1").hide();
+          $(".class1").hide();
+          $("ul li").hide();
+          // $('li: first').hide(); // Will not work
+          $("li:first").hide();
+          $("li:last").hide();
+        });
+        $("#show").click(function () {
+          $("p").show();
+          $("ul").show();
+          $("#id1").show();
+          $(".class1").show();
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+<!--
+Elements Selector - $('p').hide(); $('ul').hide();
+Id Selector - $("#id1").hide();
+Class Selector - $(".class1").hide();
+Custom jQuery Selector [if we don't want to pass any class or id for list but if we don't want to remove whole list just we want to work on any 1 list that can be done] - $('li:first').hide(); - First Element; $("li:last").hide(); - Last Element.
+-->

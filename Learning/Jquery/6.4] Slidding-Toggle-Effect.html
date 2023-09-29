@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slidding Toggle Effect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+      .su,
+      .sd {
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+      }
+      .su {
+        padding: 50px;
+        display: none;
+      }
+      h1 {
+        text-align: center;
+        color: orchid;
+        text-transform: uppercase;
+        font-style: 3em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <h1>SlideToggle() method - Toggles between slideUp() and slideDown() methods.</h1>
+      <div class="sd">Click to slide down panel</div>
+      <div class="su">India Lift the world cup again after 12 years.... 😃</div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $(".sd").click(function () {
+          $(".su").slideToggle(1000);
+        });
+      });
+    </script>
+  </body>
+</html>
+

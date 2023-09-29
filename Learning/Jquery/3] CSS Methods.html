@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Methods</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <a href="https://www.w3schools.com/Jquery/" id="anchor"
+      >Welcome to jquery tutorial</a
+    ><br />
+
+    <p id="changePara">JQUERY is very easy coding language</p>
+
+    <button id="css">CSS Changes 1</button>
+    <button id="css1">CSS Changes 2</button>
+
+    <script>
+      $(document).ready(function () {
+        $("#css").click(function () {
+          $("#anchor").css("text-decoration", "none");
+        });
+        $("#css1").click(function () {
+          $("#changePara").css({
+            "fontSize": "32px",
+            "color": "blue",
+            "background-color": "orange",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Syntax: css("propertyname", "value") -->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction</title>
+    <!-- Manually -->
+    <!-- <script src="./jquery-3.7.1.min.js"></script> -->
+
+    <!-- CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div id="test">I am going to hide</div>
+    <div class="test1">I am going to hide</div>
+    <button onclick="hideandseek()">JS Hide</button>
+    <button id="hideandseek">jQuery Hide</button>
+
+    <script>
+      document.getElementById("test").innerHTML = "Hello World!!! - By JS";
+
+      function hideandseek() {
+        document.getElementById("test").style.display = "none";
+      }
+
+      $(document).ready(function () {
+        $("#test").text("Hello World!!! - By jQuery");
+        $("#hideandseek").click(function () {
+          $(".test1").hide();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+1] JQUERY Intro =>
+It is lightweight, 'write less, do more', JS library OR jQuery greatly simplifies JavaScript programming.
+It contains a set of functions(reusable functions) creating using JS.
+
+
+
+1.1] Why JQUERY =>
+It takes a lot of commont tasks that require many lines of JS code to accomplish & wraps them into methods that we can call with a single line of code.
+It also simplifies a lot of complicated things from JS, [like AJAX calls, HTML/DOM manipulation, HTML event methods, Also from CSS - eg. CSS manipulation, Effects and Animations].
+JQuery functions are completely browser independent.
+Many if the biggest companies on web use jQuery eg. Google, Microsoft, IBM, Netflix, etc.
+
+
+
+1.2] Syntax =>
+$(selector).action() 
+eg. $('#test').hide();
+
+$ -> define/access jQuery; (selector) -> Query/Find HTML Elements; action() -> what type of action to be performed on the element.
+
+We had to write all jquery code inside $(document).ready(function (){}) -> This is to prevent any jQuery code from running before the document is finished loading (is ready).
+It is good practice to wait for the document to be fully loaded and ready before working with it. This also allows you to have your JavaScript code before the body of your document, in the head section.
+eg. Trying to hide an element that is not created yet; Trying to get the size of an image that is not loaded yet
+
+jquery Shorter method - $(function(){});
+
+
+
+1.3] How to use [2 versions] =>
+
+Production - For live website bcoz it has been minified & compressed.
+Development - Testing & Development(uncompressed & readable code).
+
+For using this both (production and development) we had 2 options - a) Directly download file & use manually; b) with cdn.  [both should be enclosed in script tag in head section].
+
+a) https://jquery.com/download/ - Choose the production version & right click for save link as.
+b) https://cdnjs.com/libraries/jquery
+
+
+By using manually we had downloaded it in our local machine, so if we don't have net we can easily work on it. But for cdn we required net to performed.
+CDN is faster bcoz it works on internet.
+
+Best use of JS in HTML is used in body tag, bcoz if we write in head it will work slow.
+
+
+
+
+
+2] Selectors =>
+jQuery selectors allow us to select and manipulate HTML element(s).
+Selectors are used to find/select HTML elements based on their name, id, classes, types, attributes, values of attributes & much more.
+
+
+a) Elements Selector - $("p")          [It selects elements based on the element name].
+
+
+b) Id Selector - $("#test")           [#id selector uses the id attribute of an HTML tag to find the specific element; An id should be unique within a page, so you should use the #id selector when we want to find a single, unique element].
+
+
+c) Class Selector - $(".test");     [.class selector finds elements with a specific class.]
+
+
+d) Custom jQuery Selector [if we don't want to pass any class or id for list but if we don't want to remove whole list just we want to work on any 1 list that can be done] - $('li:first').hide(); - First Element; $("li:last").hide(); - Last Element.
+
+
+e) More Selector -->
+$("*") - All Elements.
+$(this) - Current HTML Element.
+$("p.intro") - Selects all <p> elements with class="intro"
+$("p:first") - Selects the first <p> element
+$("ul li:first") - Selects the first <li> element of the first <ul>
+$("ul li:first-child") - Selects the first <li> element of every <ul>
+$("[href]") - Selects all elements with an href attribute
+$("a[target='_blank']") - Selects all <a> elements with a target attribute value equal to "_blank"
+$("a[target!='_blank']") - Selects all <a> elements with a target attribute value NOT equal to "_blank"
+$(":button") - Selects all <button> elements and <input> elements of type="button"
+$("tr:even") - Selects all even <tr> elements
+$("tr:odd") - Selects all odd <tr> elements
+
+
+If our website contains a lot of pages, and we want our jQuery functions to be easy to maintain, we can put our jQuery functions in a separate .js file & attach that into <head> section. 
+
+
+
+
+
+3] CSS Methods => 
+In jquery rather using inline css we can write in best way - 
+Syntax: css("propertyname", "value")
+
+
+a) Single CSS property ->
+eg.  $("#anchor").css("text-decoration", "none")
+
+
+b) For Multiple CSS properties ->
+$("#changePara").css({
+    "fontSize": "32px",
+    "color": "blue",
+    "background-color": "orange",
+});
+
+We can write "background-color" like this it will work, but jquery tells us to write like this - "backgroundColor"
+
+
+
+
+
+4] Advanced Selector =>
+
+Universal Selector - $(*).
+this Selector - For current element $(this).
+attribute - $("[type]").
+even/odd - $("li:even") / $("li:odd").
+
+For Nested Child ->
+First & Last Child of every element - $('li:first-child') / $('li:last-child').
+If we want to change last element of particular element - $('#oltag li:last-child').
+For middle elements - $('li:nth-child(4)').
+For middle elements but from last - $('#oltag li:nth-last-child(2)').
+
+
+
+
+
+5] Events [In short when actions are triggered]=>
+All the different visitors' actions that a web page can respond to are called events.
+An event represents the precise moment when something happens. [If we go to website, if we click, it redirects to the another section or page immediately bcoz of event happens]
+
+eg. moving a mouse over an element, selecting a radio button, clicking on an element, etc.
+
+The term "fires/fired" is often used with events. Example: "The keypress event is fired, the moment you press a key".
+
+a.] Mouse Events - click, dblclick, mouseenter, mouseleave.
+b.] keyboard Events - keypress, keydown, keyup.
+c.] Form Events - submit, change, focus, blur
+d.] Document/Window Events - load, resize, scroll, unload.
+
+
+
+
+5.1] click vs dblclick event ->
+click() : It attaches an event handler function to an HTML element. The function is executed when the user clicks on the HTML element.
+
+dblclick() : It attaches an event handler function to an HTML element. The function is executed when the user double-clicks on the HTML element.
+
+
+
+5.2] Keyboard Events ->
+3 types -
+
+a) keyup(): Event fired when a key is released on the keyboard.
+b) keydown(): Event fired when a key is pressed on the keyboard.
+a) keypress(): Event fired when a key is pressed on the keyboard.
+
+From above keydown() & keypress() looks like they are same thing, but keypress() is the initial stage & keydown() is the final stage.
+
+
+
+5.3] Mouse Events ->
+4 types -
+
+a) mouseenter(): It attaches an event handler function to an HTML Element.Function is executed when mouse enter the HTML element.
+b) mouseleave(): It attaches an event handler function to an HTML Element.Function is executed when mouse pointer leaves the HTML element.
+c) mouseup(): It attaches an event handler function to an HTML Element. Function is executed when left, middle, right mouse button is pressed down, while mouse is over the HTML element.
+d) mousedown(): It attaches an event handler function to an HTML Element. Function is executed when left, middle, right mouse button is released, while mouse is over the HTML element.
+
+
+
+
+5.4] Focus & Blur Events -> Focus means to be present in particular area, blur means to come outside of it.
+
+focus() - It attaches an event handler function to an HTML form field. The function is executed when the form field gets focus
+
+blur() - It attaches an event handler function to an HTML form field. The function is executed when the form field loses focus
+
+
+
+5.5] hover(), on()    [Remaining].
+
+
+
+
+
+6] Effects => 
+$(selector).action(speed,callback);
+Optional speed parameter specifies the speed of hiding/showing eg. 'fast', 'slow' or 'milliseconds'.
+Optional callback parameter is a function to be executed after particular action completes.
+
+
+
+6.1] Show & Hide Effects ->
+Apply same property for different classes - $('.red, .blue') 
+
+For hide - $(".red, .blue").hide('slow');
+For show - $(".red, .blue").show('fast');
+
+
+
+6.2] Toggle Effect -> It toggles between hide() and show() for selected elements. 
+
+
+
+6.3] Slider Effect [eg. Accordian] ->
+a) slidedown() - It is used to slide down an element;   
+b) slideup() - It is used to slide up an element.
+
+
+
+6.4] Slider Toggle Effect -> It toggles between slideUp() & slideDown() methods.
+
+
+
+6.5] Fade Effect [imp & mostly used] ->
+a) fadeIn() - It is used to fade in a hidden element.
+b) fadeOut() - It is used to fade out a visible element.
+c) FadeTo() - It allows fading to a given opacity (value between 0 & 1).
+
+
+
+6.6] Fade Toggle Effect -> It toggles between fadeIn() & fadeOut() methods.
+
+
+
+

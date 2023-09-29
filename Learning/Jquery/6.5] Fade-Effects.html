@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fade Effect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+      .center_div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 350px;
+      }
+      #firstDiv {
+        width: 200px;
+        height: 100px;
+        background-color: chartreuse;
+      }
+      #secondDiv {
+        width: 200px;
+        height: 100px;
+        background-color: blueviolet;
+      }
+      #thirdDiv {
+        width: 200px;
+        height: 100px;
+        background-color: cadetblue;
+      }
+      #forthDiv {
+        width: 200px;
+        height: 100px;
+        background-color: blanchedalmond;
+      }
+      #fifthDiv {
+        width: 200px;
+        height: 100px;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <h1>Fade In & Fade Out Effects</h1>
+      <div class="center_div">
+        <button id="btn_fade_out">Fade-out</button>
+        <button id="btn_fade_in">Fade-in</button>
+        <button id="btn_fade_to">Fade-to</button>
+        <hr />
+        <div id="firstDiv"></div>
+        <div id="secondDiv"></div>
+        <div id="thirdDiv"></div>
+        <div id="forthDiv"></div>
+        <div id="fifthDiv"></div>
+        <br /><br />
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn_fade_out").click(function () {
+          // $("#firstDiv, #secondDiv, #thirdDiv").fadeOut(1500);
+          $("#firstDiv").fadeOut("slow");
+          $("#secondDiv").fadeOut("fast");
+          $("#thirdDiv").fadeOut(2000);
+        });
+        $("#btn_fade_in").click(function () {
+          $("#firstDiv").fadeIn();
+          $("#secondDiv").fadeIn("fast");
+          $("#thirdDiv").fadeIn(2000);
+        });
+        $('#btn_fade_to').click(function () {
+          $('#forthDiv').fadeTo("slow", 0.15);
+          $('#fifthDiv').fadeTo("slow", 0.3);
+        })
+      });
+    </script>
+  </body>
+</html>

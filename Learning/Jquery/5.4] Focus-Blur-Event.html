@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus-Blur-Event</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="main">
+      <input type="text" name="" id="textbox" />
+      <span class="showFocus">Welcome...</span>
+      <span class="showBlur">Thanks & Good-Bye...</span>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("span").css("display", "none");
+        $("#textbox").focus(function () {
+          $(".showFocus").css("display", "inline").fadeOut(3000);
+        });
+        $("#textbox").blur(function () {
+            $(".showBlur").css("display", "inline").fadeOut(3000);
+          });
+      });
+    </script>
+  </body>
+</html>

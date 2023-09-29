@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sit vitae
+      magni. Harum minus voluptate, eaque vero id laudantium! Voluptates.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis enim
+      explicabo expedita voluptates commodi mollitia pariatur error aliquid qui
+      atque fugit, odit ipsa? Soluta libero dicta suscipit magni fuga minus
+      voluptates dolorem at cumque ea autem, quia illo voluptatem non et
+      consectetur est, pariatur excepturi voluptas, sint porro ipsam commodi!
+    </p>
+    <button id="btn">Event-Click</button>
+
+    <script>
+        $(document).ready(function (){
+            $('#btn').click(function (){
+                $('p:first-child').css('color', 'red')
+            })
+        });
+    </script>
+  </body>
+</html>
