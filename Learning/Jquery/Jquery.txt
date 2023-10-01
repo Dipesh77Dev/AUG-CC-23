@@ -223,3 +223,40 @@ c) FadeTo() - It allows fading to a given opacity (value between 0 & 1).
 
 
 
+7] DatePicker [https://jqueryui.com/] =>
+
+Go to above website & click on download for using some jquery UI.
+We will get zip files, unzip them & copy the jquery-ui.min css & js file to our root folder.
+
+
+
+
+
+8] Animations => Animate() - It performs a custom animation of a set of CSS properties.
+
+
+
+
+
+9] Alert pop up [JS/JQuery plugin - https://sweetalert.js.org/guides/] => 
+
+
+
+9.1] PopUp-Image.
+
+
+
+
+
+10] Dimensions =>
+
+
+
+
+
+11] Form Validation =>
+
+
+
+
+12] MP1.

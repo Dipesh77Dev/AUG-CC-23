@@ -984,7 +984,7 @@ console.log(
 
 
 
-// Array.prototype.filter() : Returns a new array containing all elements of the calling array for which the provided filtering function returns true. It does't mutate the current array(doesn't change any value in current array instead it makes a new array with updated one).
+// Array.prototype.filter() : Returns a new array containing all elements of the calling array for which the provided filtering function returns true. It does't mutate the current array(doesn't change any value in current array instead it makes a new array with updated one). If not found returns - []
 // For solving all above problem we had one solution that it returns all the elements in an new array i.e (filter method). [Its very important bcoz, it are using in React & Node for filteration].
 
 // Contitn 1 - prices > 500

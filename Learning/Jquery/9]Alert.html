@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alert</title>
+    <style>
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .btn_div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+
+  <body>
+    <h1>JQuery animate Method</h1>
+    <div class="btn_div">
+      <button id="btn1" onclick="popUp()" id="pop">Alert with JS</button>
+      <button id="btn2">Alert with JQuery</button>
+    </div>
+    <script>
+      function popUp() {
+        // alert("JS activated...");
+        // swal("Great Work", "Yahoo done...", "Success") // (title, text, argument to change eg. icons)
+
+        // swal("Great Work", "Yahoo done...", "success") 
+
+        swal({
+            title: "Great Work", 
+            text: "Yahoo done...", 
+            icon: "success",   // warning, danger, etc...
+            button: 'Dude!'
+        }) 
+
+      }
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>
+
+
+
+<!-- 
+#pop {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  } 
+-->
