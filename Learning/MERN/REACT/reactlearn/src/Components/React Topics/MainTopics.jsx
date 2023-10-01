@@ -11,6 +11,7 @@ import Events from './Basics/Events'
 import MainForms from './Forms/MainForms'
 import SpreadOperator from './Basics/SpreadOperator';
 import MainCssIcon from './Material UI & Bootstrap/MainCssIcon';
+import HooksAll from './All Hooks/HooksAll';
 
 const MainTopics = () => {
   return (
@@ -24,6 +25,7 @@ const MainTopics = () => {
       <MainForms />
       {/* <SpreadOperator /> */}
       <MainCssIcon />
+      <HooksAll />
     </>
   )
 }

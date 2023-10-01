@@ -1,4 +1,6 @@
 VS Code Terminal - Ctrl + j, Ctrl + `
+npm used for globally installed, npx can be used for particular project installed.
+
 
 noscript - It gets used when someone had disabled JS, or when someone browser doesn't support JS it will show that message which we provide.
 React file can be saved as .js or .jsx
@@ -8,6 +10,8 @@ camel Case - (noOfAge);
 Pascal Case - (NoOfAge); 
 Snake Case - (no_of_age/No_Of_Age/NO_OF_AGE);
 Kebab Case - (no-of-age/No-Of-Age/NO-OF-AGE).
+
+
 
 
 
@@ -35,12 +39,13 @@ React only knows one thing to make an awesome UI with better coding structure.
 React should always have an closing tag in JSX & instead of class we provide className for CSS & when we write JavaScript in JSX enclosed in {}. When we had to use css with inline/internal styling we should use it as an object - {} [eg. style = {{width: '18rem'}}; style = {bigSize}].
 
 
-History -
+a) History -
 It was designed by Jorden Walke, software engineer at Facebook. It was first deployed for facebook News feed around 2011. In 2013, React was open sourced at JS conference.
 Open Source - open source project is where the code to a certain project is completely open source, means anybody can see the code that was used when developing & also it are usually community-based & accept help from other programmers Or we can see the code & contribute if we see something is missing or our part is working better than that so developer will check if they find its great they will add.
+Current version - 18.2.0
 
 
-Uses -
+b) Uses -
 a. Component Based Approach[2 Component -- Class Component, Function Component] - It is one of the core building blocks of React. In other words, we can say that every application we will develop in React will be made up of pieces called components. It make the task of building UIs much easier. We can reuse the created components as much we can when we needed.
 
 b. Declarative Approach [It are used by framework but react is library still it uses this approach] - It is a programming paradigm that expresses the logic of computation without describing its control flow.
@@ -49,11 +54,18 @@ eg. If we got one client he want to start business, so he wants us to create a w
 c. DOM updates are handled gracefully & Virtual DOM[Makes a copy of Dom in memory, so whenever we write JSX code so it goes to dom change the part whatever we need to change & then it goes to actual DOM].
 d. Reusable Code - Make components & used anywhere we want.
 e. React is designed for speed, speed for implementing the application simplicity & scalability.
-f. SPA concept.
+f. SPA concept[Single-Page-Application -> No reload in page when we traverse/navigate to other pages].
 
 
-Why -
+c) Why -
 Created & Maintained by Facebook. It has huge community on GitHub[Before us many developer had faced the problem & it had been solved by someone, so if we stuck we can use the chrome or any browser to solve the error]. It is Component Based Architecture.
+
+
+d) How React Work -
+React is a tool for building UI components.
+React creates a VIRTUAL DOM in memory[Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, where it does all the necessary manipulating, before making the changes in the actual browser DOM].
+React only changes what needs to be changed!
+React finds out what changes have been made, and changes only what needs to be changed.
 
 
 

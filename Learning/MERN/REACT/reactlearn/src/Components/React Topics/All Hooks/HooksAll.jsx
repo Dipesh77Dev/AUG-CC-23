@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+
+import BeforeHooks from "./BeforeHooks";
+import MainUseState from "./UseState-Hooks/MainUseState";
 
 const HooksAll = () => {
   return (
-    <div>HooksAll</div>
-  )
-}
+    <>
+      {/* <BeforeHooks /> */}
+        <MainUseState />
+    </>
+  );
+};
 
-export default HooksAll
+export default HooksAll;
