@@ -2,14 +2,14 @@ import React from 'react'
 
 import "./Forms/Form.css";
 
-import ExpressLiteral from './ExpressLiteral'
-import CSS from './CSS'
-import Component from './Component'
+import ExpressLiteral from './Basics/ExpressLiteral'
+import CSS from './Basics/CSS'
+import Component from './Basics/Component'
 import MainConditionalRendering from './Conditional Rendering/MainConditionalRendering'
 import MainHook from './Hooks/MainHook'
-import Events from './Events'
+import Events from './Basics/Events'
 import MainForms from './Forms/MainForms'
-import SpreadOperator from './SpreadOperator';
+import SpreadOperator from './Basics/SpreadOperator';
 import MainCssIcon from './Material UI & Bootstrap/MainCssIcon';
 
 const MainTopics = () => {
