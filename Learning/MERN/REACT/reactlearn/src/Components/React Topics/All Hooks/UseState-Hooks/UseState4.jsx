@@ -32,7 +32,7 @@ const UseState4 = () => {
             display: "flex",
             flexDirection: "column",
             width: "100%",
-            height: "50vh",
+            height: "70vh",
             paddingTop: "250px",
             justifyContent: "center",
             alignItems: "center",
@@ -84,6 +84,12 @@ const UseState4 = () => {
           </button>
         </div>
       </form>
+      <hr />
+      <div>
+        <p style={{textAlign: "center"}}>
+          My Data is -- Name: {name}, User: {username}, Email: {email}
+        </p>
+      </div>
     </>
   );
 };

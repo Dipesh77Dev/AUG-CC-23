@@ -1,4 +1,41 @@
-[useState, useEffect, useLayoutEffect, useRef, useContext, useReducer, useMemo, useCallback, custom Hooks].
+Re-Rendering -> Why react components needs to re-render after the first render? 
+React Component we build is combination of state variables & props, so the UI is computed based on the value of those variables, which means that it needs to be recomputed when those values change.
+If react components did not re-render we would keep seeing the same UI all time & similar to static pages.
+
+Basically components re-render - whenever its state changes or props passed to it change.
+
+eg. function Counter(){
+    const [count, setCount] = React.useState(0);
+
+    return(
+        <main>
+            <BigCountNumber count = {count} />
+            <button onClick = {() => setCount(count + 1)}>Increment</button>
+        </main>
+        <TestComponent /> It will also re-render
+    )
+}
+
+const BigCountNumber({count}){
+    return(
+        <p>
+            <span>Count: </span> {count}
+        </p>
+    )
+}
+
+function App(){
+    return <Counter />
+}
+
+So whenever we click on button, we are updating a state variable in Counter Component with useState, due to this the Counter component re-renders, when that happens all the components inside of counter component will get re-rendered, so now BigCountNumber component also get re-rendered & we see the updated number on UI.
+Note App Component does not re-render bcoz its outside the Counter component.
+
+Counter is re-rendering ok but why BigCountNumber is also re-rendering bcoz of props we receive.
+
+Whenever parent renders, all childrens re-render.
+Bcoz react assumes that all components are not pure which means the rendered o/p of those components does not just depends upon the inputs we provide to it, maybe test component needs to call an API & get latest data on something that has now changed from last time it rendered, basically we can see how easy it is to the component to be not pure due to the side-effects, so react doesnt take any risk & it better to just render all childer & generate latest UI.
+
 
 
 
@@ -60,23 +97,22 @@ Hooks cannot be conditional.
 
 
 4.1] useState =>
-useState Hook allows us to track state in a function component. State generally refers to data or properties that need to be tracking in an application. 
+a] useState Hook allows us to track state in a function component. State generally refers to data or properties that need to be tracking in an application. 
 useState accepts an initial state and returns two values/elements in array: The current state; A function that updates the state.
 
 
-a] import ->
+b] import ->
 
-a) const [value, setValue] = React.useState();
+b.1) const [value, setValue] = React.useState();
 
-b) import { useState } from "react";  //Notice that we are destructuring useState from react as it is a named export.
+b.2) import { useState } from "react";  // Notice that we are destructuring useState from react as it is a named export.
 const [value, setValue] = useState();
 
 
-b] Syntax ->
-
+c] Syntax ->
 const [value, setValue] = useState(0);
 
-Above eg. 0 = initial value of state variable(eg. value). value = current state. setValue = function which updates the state.
+Above eg. 0 = initial value of state variable(eg. value). value = current state. setValue = function which updates the state; Notice that again we are destructuring the returned value from useState.
 These names are variables that can be named anything we would like.
 
 
@@ -84,14 +120,14 @@ For update our state we use our state updator function.
 We should never directly update state. Ex: color = "red" is not allowed.
 
 
-c] What can state hold ->
+d] What can state hold ->
 The useState Hook can be used to keep track of strings, numbers, booleans, arrays, objects, and any combination of these.
 We could create multiple state Hooks to track individual values.
 
 useState(), useState(5), useState(""), useState("Raj"), useState(null), useState(true), useState([]), useState({}), useState(undefined)....
 
 
-Updating Objects & Arrays in State -
+e] Updating Objects & Arrays in State -
  const [car, setCar] = useState({
     brand: "Ford",
     model: "Mustang",
@@ -115,3 +151,170 @@ We then return an object, spreading the previousState and overwriting only the c
 
 
 
+
+4.2] useEffect =>
+a] It lets us perform side Effects/effects in functional components.
+eg. Data fetching, setting up subscriptions, manually changing the DOM/, directly updating the DOM, timers.
+To tackle lifecycle methods of class components such as [componentDidMount, componentDidUpdate, componentWillUnmount] we had useEffect hook.
+It accepts two arguments. The second argument is optional.
+
+For eg. useEffect runs on every render. That means that when the count changes, a render happens, which then triggers & another gets effected.
+There are several ways to control when side effects run.
+We should always include the second parameter which accepts an array. We can optionally pass dependencies to useEffect in this array.
+
+
+b] Syntax -> 
+useEffect( () => {}, [dependency]);
+
+No dependency passed: 
+useEffect(() => {
+  //Runs on every render
+});
+
+An empty array:
+useEffect(() => {
+  //Runs only on the first render
+}, []);
+
+Props or state values:
+useEffect(() => {
+  //Runs on the first render
+  //And any time any dependency value changes
+  }, [prop, state]);
+If there are multiple dependencies, they should be included in the useEffect dependency array.
+
+
+Some effects require cleanup to reduce memory leaks.
+Timeouts, subscriptions, event listeners, and other effects that are no longer needed should be disposed.
+We do this by including a return function at the end of the useEffect Hook.
+
+
+c] Difference between useEffect and useLayoutEffect ->
+useEffect runs asynchronously & after a render is painted to screen.
+useLayoutEffect runs synchronously, after a render but before the screen is updated.
+We use useEffect only for 90% - 95%
+React always follow top-to-bottom approach.
+Everytime it doesn't care how many useEffect are there it will run fist useLayoutEffect if its there, because it is synchronous in nature. 
+
+In useEffect first our screen gets updated & we get datas.
+In useEffect we can do flickering. Befor having screen updation, the data has been already updated in background.
+
+
+
+
+
+
+3] useContext -
+a] React Context is a way to manage state globally.
+It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+
+
+b] Problem -
+State should be held by the highest parent component in the stack that requires access to the state.
+To illustrate, we have many nested components. The component at the top and bottom of the stack need access to the state.
+To do this without Context, we will need to pass the state as "props" through each nested component. This is called "prop drilling".
+
+So to tackle this problems of props drilling we can use useContext.
+
+In this we had one store which we pass to main components & can be followed by 2 things - Provider(which will send the value) & Consumer(which will receive the value).
+
+
+c] Steps -
+c.1] context[creation of context]
+c.2] provider[giving the value]
+c.3] consumer[taking the value], but it was lengthy process, so we can use useContext() Hook.
+
+
+
+
+
+4] useRef [useState & useEffect were re-rendering again & again] =>
+a] It allows us to persist values between renders. 
+It can be used to store a mutable value that does not cause a re-render when updated Or create a mutable value which will not be re-rendered the component. 
+It can be used to access a DOM element directly.
+
+
+If we tried to count how many times our application renders using the useState Hook, we would be caught in an infinite loop since this Hook itself causes a re-render. For avoiding this we can use the useRef hook.
+
+useRef() only returns one item. It returns an Object called current.
+When we initialize useRef we set the initial value: useRef(0) eg[It's like doing this: const count = {current: 0}. We can access the count by using count.current].
+
+
+b] Accessing DOM Elements ->
+In general, we want to let React handle all DOM manipulation.
+But there are some instances where useRef can be used without causing issues.
+In React, we can add a ref attribute to an element to access it directly in the DOM.
+
+The useRef Hook can also be used to keep track of previous state values. This is because we are able to persist useRef values between renders.
+
+
+
+
+
+5] useReducer =>
+a] The useReducer Hook is similar to the useState Hook, but more powerful than it. 
+If our application is small & we need less state go with useState, if we had big application & need to handle more state with complex logics we can use useReducer or Redux for state management in the application.
+
+
+b] Syntax -
+const [state, dispatch] = useReducer(<reducer>, <initialState>);
+
+The useReducer Hook returns the current state and a dispatch method.
+
+It accepts 2 arguments[i.e reducer, initialState].
+The reducer function - contains our custom state logic and accepts 2 parameters in it i.e (state & action);
+initialState - it can be a simple value but generally will contain an object & it will be the data of our state variable.
+dispatch - when we want to perform any operation we use this because dispatch triggers the action methods of reducer function & we play with the state.
+
+
+
+
+
+
+6] useMemo =>
+a] It returns a memoized value.
+It only runs when one of its dependencies update. This can improve performance.
+It is same as useEffect Hook, but with little difference.
+
+
+b] Syntax ->
+const var_name = useMemo(callback, [dependency]);
+
+In useEffect we can't return data, instead of returning a data/value we have cleanup function. but in useMemo by callback we can return the data/value. So with the help of callback function we can return the value for the variable, in useEffect we can't do this.
+
+
+
+
+
+7] useCallback =>
+a] It returns a memoized callback function.
+This allows us to isolate resource intensive functions so that they will not automatically run on every render.
+It only runs when one of its dependencies update. This can improve performance.
+One reason to use useCallback is to prevent a component from re-rendering unless its props have changed.
+
+If we want to play with function/component we can't use useMemo because it is used to return a variable, So for returning a function/component we can use useCallback.  
+
+
+b] Syntax ->
+const var_name = useCallback(callback, [dependency]);
+
+
+
+The useMemo and useCallback Hooks are similar. The main difference is that useMemo returns a memoized value and useCallback returns a memoized function.
+Memoization is an optimization feature in React which, when used in right place, increase the performance of the program.
+Think of memoization as caching a value so that it does not need to be recalculated.
+
+
+
+
+
+8] Custom Hooks =>
+a] Hooks are reusable functions.
+When you have component logic that needs to be used by multiple components, we can extract that logic to a custom Hook.
+Custom Hooks start with "use". Example: useFetch.
+
+
+
+
+
+[useState, useEffect, useLayoutEffect, useRef, useContext, useReducer, useMemo, useCallback, custom Hooks].

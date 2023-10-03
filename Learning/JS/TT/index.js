@@ -1032,8 +1032,45 @@ FindMethod14 - ${findMethod14},
 FindMethod15 - ${findMethod15}`)
 
 
+// It returns a new array with all the element that satiesfies the condition that is passed inside the callback of filter() method. Array elements that does not satisfy the condition inside callback of filter() are skipped & not included inside the new array.
+
 
 // Sort & Compare an Array[ASC, DES] - It sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+
+
+let arrr = [23, 4, 5, 60, 80];
+let filteredArray = arrr.filter((item, index, array) => {
+    console.log(item);   // 23
+    console.log(index);    // 0
+    console.log(array);   //  [23, 4, 5, 60, 80]
+});
+
+let moreThanThirty = arrr.filter((moreThan)=> {
+    return moreThan > 30
+});
+console.log(moreThanThirty) // [60,80]
+
+let isOddArray = arrr.filter((item)=> {
+    return item % 2 != 0;
+});
+console.log(isOddArray) // [23,5]
+
+let arry = [
+    { club: "Barcelona", country: "Spain"},
+    { club: "Manchester United", country: "England"},
+    { club: "Real Madrid", country: "Spain"},
+    { club: "Liverpool", country: "England"},
+]
+
+let clubFromEngland = arry.filter((item)=> {
+    return item.country === "England"
+});
+console.log(clubFromEngland)
+
+
+
+
+
 
 // Array.prototype.sort() -
 
